@@ -17,11 +17,12 @@ struct state {
     
 }
 
-class APRMainViewController: UIViewController, CAAnimationDelegate {
+class APRMainViewController: UIViewController  {
     
     var states: [state] = []
     let circleLayer: CAShapeLayer! = CAShapeLayer()
     var newView:UIView?
+    var finishedButtonAnimation = false
 
     @IBOutlet weak var buttonsView: UIView!
     
@@ -82,7 +83,11 @@ class APRMainViewController: UIViewController, CAAnimationDelegate {
 
     }
     
-func 
+
+    override func animationDidStop(anim: CAAnimation!, finished flag: Bool) {
+        finishedButtonAnimation = true
+    }
+    
     func animateCircle(duration: NSTimeInterval) {
         // We want to animate the strokeEnd property of the circleLayer
         let animation = CABasicAnimation(keyPath: "strokeEnd")
@@ -115,7 +120,19 @@ func
     
     func liftUpState(Sender: UIButton! ){
         
-        if
+        if (finishedButtonAnimation) {
+            
+            println("finished")
+            
+        }
+        
+        else {
+            
+            circleLayer.removeAnimationForKey("animateCircle")
+            
+        }
+        
+        finishedButtonAnimation = false
         
     }
         
