@@ -9,11 +9,10 @@
 
 //IBOutlets
 @property (nonatomic, weak) IBOutlet UIImageView *flowCircle;
-@property (nonatomic, weak) IBOutlet FBSDKLoginButton *facebookButton;
-@property (nonatomic, weak) IBOutlet UIButton *toMainButton;
+@property (nonatomic, weak) IBOutlet UIButton *loginButton;
 
 //private helpers
-
+- (void)saveToken;
 
 @end
 #pragma mark -
@@ -24,16 +23,15 @@
 /**
  * @method viewDidLoad
  *
- * Called when this Login view is loaded
+ * Called when this Login view is loaded.
+ * Mainly sets FB LoginButton's delegate as self.
+ *
  * @note called once during lifetime of app launch
  */
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 
-    self.facebookButton.delegate = self;
-
-    //init any variables
     stopSpin = NO;
     [self setNeedsStatusBarAppearanceUpdate];
 }
@@ -52,53 +50,39 @@
     [self rotateFlowCircle];
 }
 
-- (IBAction)toMain:(id)sender
-{
-    UIStoryboard *secondStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    UIViewController *mainVC = [secondStoryBoard instantiateViewControllerWithIdentifier:@"MainVC"];
-    [self presentViewController:mainVC animated:YES completion:NULL];
-}
 
-
-
-#pragma mark - FB Login Button
+#pragma mark - LoginButton Callback
 /**
- * @method loginButton:didCompleteWithResult:error
+ * @method login
  *
- * @param loginButton
- * @param result
- * @param error
+ * Called when user presses the login button.
  */
-- (void)loginButton:(FBSDKLoginButton *)loginButton didCompleteWithResult:(FBSDKLoginManagerLoginResult *)result
-              error:(NSError *)error
+- (IBAction)login:(id)sender
 {
-    if (error)
-        return;
-
-    FBSDKAccessToken *token = [FBSDKAccessToken currentAccessToken];
-    NSDictionary *tokenData = [[NSMutableDictionary alloc] init];
-    [tokenData setValue:token.appID forKey:@"appID"];
-    [tokenData setValue:token.userID forKey:@"userID"];
-    [tokenData setValue:token.refreshDate forKey:@"refreshDate"];
-    [tokenData setValue:token.tokenString forKey:@"tokenString"];
-    [tokenData setValue:token.expirationDate forKey:@"expirationDate"];
-    [tokenData setValue:token.permissions.allObjects forKey:@"permissions"];
-    [tokenData setValue:token.declinedPermissions.allObjects forKey:@"declinedPermissions"];
-    [[NSUserDefaults standardUserDefaults] setObject:tokenData forKey:@"currentAccessToken"];
-
+    FBSDKLoginManager *login = [[FBSDKLoginManager alloc] init];
+    [login logInWithReadPermissions:@[@"email"] handler:^(FBSDKLoginManagerLoginResult *result, NSError *error) {
+        if (error)
+        {
+            // Process error
+        }
+        else if (result.isCancelled)
+        {
+            // Handle cancellations
+        }
+        else
+        {
+            // If you ask for multiple permissions at once, you
+            // should check if specific permissions missing
+            if ([result.grantedPermissions containsObject:@"email"])
+            {
+                [FBSDKAccessToken setCurrentAccessToken:result.token];
+                [self saveToken];
+                [self toMain];
+            }
+        }
+    }];
 }
 
-/**
- * @method loginButtonDidLogout
- *
- *
- *
- * @method loginButton
- */
-- (void) loginButtonDidLogOut:(FBSDKLoginButton *)loginButton
-{
-    [[NSUserDefaults standardUserDefaults] setObject:nil forKey:@"currentAccessToken"];
-}
 
 
 #pragma mark - UI Customization
@@ -135,6 +119,41 @@
     {
         [self rotateFlowCircle];
     }];
+}
+
+/**
+ * @method saveToken
+ *
+ * Gets the current access token and saves it to NSUserDefaults.
+ */
+- (void)saveToken
+{
+    FBSDKAccessToken *token = [FBSDKAccessToken currentAccessToken];
+    NSDictionary *tokenData = [[NSMutableDictionary alloc] init];
+    [tokenData setValue:token.appID forKey:@"appID"];
+    [tokenData setValue:token.userID forKey:@"userID"];
+    [tokenData setValue:token.refreshDate forKey:@"refreshDate"];
+    [tokenData setValue:token.tokenString forKey:@"tokenString"];
+    [tokenData setValue:token.expirationDate forKey:@"expirationDate"];
+    [tokenData setValue:token.permissions.allObjects forKey:@"permissions"];
+    [tokenData setValue:token.declinedPermissions.allObjects forKey:@"declinedPermissions"];
+    [[NSUserDefaults standardUserDefaults] setObject:tokenData forKey:@"currentAccessToken"];
+}
+
+
+#pragma mark - Navigation
+/**
+ * @method toMain
+ *
+ * Switches to Main Storyboard
+ */
+- (void)toMain
+{
+    stopSpin = YES;
+
+    UIStoryboard *secondStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UIViewController *mainVC = [secondStoryBoard instantiateViewControllerWithIdentifier:@"MainVC"];
+    [self presentViewController:mainVC animated:YES completion:NULL];
 }
 
 @end

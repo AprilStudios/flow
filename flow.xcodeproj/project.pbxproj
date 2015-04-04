@@ -7,13 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7C4E9D931ACFF73C005D5258 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C4E9D911ACFF73C005D5258 /* Main.storyboard */; };
 		7CE3F46C1ACFDC7F008A3AA3 /* APRMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE3F46B1ACFDC7F008A3AA3 /* APRMainViewController.swift */; };
 		953512AD1ACFC29B00B0B2C9 /* flow.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 953512AB1ACFC29B00B0B2C9 /* flow.xcdatamodeld */; };
 		953512AF1ACFC29B00B0B2C9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 953512AE1ACFC29B00B0B2C9 /* Images.xcassets */; };
 		953512BE1ACFC29C00B0B2C9 /* flowTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 953512BD1ACFC29C00B0B2C9 /* flowTests.m */; };
 		955B18B61ACFC31D00D0D8EA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 955B18B51ACFC31D00D0D8EA /* AppDelegate.m */; };
 		956D046E1ACFC540009BC09C /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 956D046A1ACFC540009BC09C /* Login.storyboard */; };
-		956D046F1ACFC540009BC09C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 956D046C1ACFC540009BC09C /* Main.storyboard */; };
+		956D046F1ACFC540009BC09C /* (null) in Resources */ = {isa = PBXBuildFile; };
 		958C8E301ACFEA88002EC76B /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 958C8E2D1ACFEA88002EC76B /* FBSDKCoreKit.framework */; };
 		958C8E311ACFEA88002EC76B /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 958C8E2E1ACFEA88002EC76B /* FBSDKLoginKit.framework */; };
 		958C8E321ACFEA88002EC76B /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 958C8E2F1ACFEA88002EC76B /* FBSDKShareKit.framework */; };
@@ -31,9 +32,11 @@
 		958C8E4F1ACFFB2F002EC76B /* license.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 958C8E461ACFFB2F002EC76B /* license.pdf */; };
 		958C8E531ACFFD63002EC76B /* Flow Circle.idraw in Resources */ = {isa = PBXBuildFile; fileRef = 958C8E511ACFFD63002EC76B /* Flow Circle.idraw */; };
 		958C8E541ACFFD63002EC76B /* Flow Circle.png in Resources */ = {isa = PBXBuildFile; fileRef = 958C8E521ACFFD63002EC76B /* Flow Circle.png */; };
+		95D860911AD054360081DE57 /* Facebook Login Button.idraw in Resources */ = {isa = PBXBuildFile; fileRef = 95D8608E1AD054360081DE57 /* Facebook Login Button.idraw */; };
+		95D860921AD054360081DE57 /* FBLogin (Pressed).png in Resources */ = {isa = PBXBuildFile; fileRef = 95D8608F1AD054360081DE57 /* FBLogin (Pressed).png */; };
+		95D860931AD054360081DE57 /* FBLogin.png in Resources */ = {isa = PBXBuildFile; fileRef = 95D860901AD054360081DE57 /* FBLogin.png */; };
 		95F829FE1ACFC92500DC5864 /* APRLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95F829FD1ACFC92500DC5864 /* APRLoginViewController.m */; };
 		95F82A101ACFCCC300DC5864 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 953512B01ACFC29B00B0B2C9 /* LaunchScreen.xib */; };
-		95F82A131ACFCD0900DC5864 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 95F82A111ACFCD0900DC5864 /* Info.plist */; };
 		95F82A141ACFCD0900DC5864 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 95F82A121ACFCD0900DC5864 /* main.m */; };
 /* End PBXBuildFile section */
 
@@ -48,6 +51,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7C4E9D921ACFF73C005D5258 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = flow/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7CE3F46A1ACFDC7F008A3AA3 /* flow-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "flow-Bridging-Header.h"; sourceTree = "<group>"; };
 		7CE3F46B1ACFDC7F008A3AA3 /* APRMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APRMainViewController.swift; path = Classes/APRMainViewController.swift; sourceTree = "<group>"; };
 		953512A11ACFC29B00B0B2C9 /* flow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = flow.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -60,7 +64,6 @@
 		955B18B41ACFC31D00D0D8EA /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Classes/AppDelegate.h; sourceTree = "<group>"; };
 		955B18B51ACFC31D00D0D8EA /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = Classes/AppDelegate.m; sourceTree = "<group>"; };
 		956D046B1ACFC540009BC09C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Login.storyboard; sourceTree = "<group>"; };
-		956D046D1ACFC540009BC09C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		958C8E2D1ACFEA88002EC76B /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		958C8E2E1ACFEA88002EC76B /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		958C8E2F1ACFEA88002EC76B /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
@@ -78,6 +81,9 @@
 		958C8E461ACFFB2F002EC76B /* license.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = license.pdf; sourceTree = "<group>"; };
 		958C8E511ACFFD63002EC76B /* Flow Circle.idraw */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Flow Circle.idraw"; sourceTree = "<group>"; };
 		958C8E521ACFFD63002EC76B /* Flow Circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Flow Circle.png"; sourceTree = "<group>"; };
+		95D8608E1AD054360081DE57 /* Facebook Login Button.idraw */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Facebook Login Button.idraw"; sourceTree = "<group>"; };
+		95D8608F1AD054360081DE57 /* FBLogin (Pressed).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "FBLogin (Pressed).png"; sourceTree = "<group>"; };
+		95D860901AD054360081DE57 /* FBLogin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FBLogin.png; sourceTree = "<group>"; };
 		95F829FC1ACFC92500DC5864 /* APRLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = APRLoginViewController.h; path = Classes/APRLoginViewController.h; sourceTree = "<group>"; };
 		95F829FD1ACFC92500DC5864 /* APRLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = APRLoginViewController.m; path = Classes/APRLoginViewController.m; sourceTree = "<group>"; };
 		95F82A111ACFCD0900DC5864 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -180,9 +186,9 @@
 		955B18B21ACFC2D400D0D8EA /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				7C4E9D911ACFF73C005D5258 /* Main.storyboard */,
 				953512B01ACFC29B00B0B2C9 /* LaunchScreen.xib */,
 				956D046A1ACFC540009BC09C /* Login.storyboard */,
-				956D046C1ACFC540009BC09C /* Main.storyboard */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -210,6 +216,7 @@
 		958C8E351ACFF33B002EC76B /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				95D8608D1AD054360081DE57 /* Buttons */,
 				958C8E361ACFF33B002EC76B /* Backgrounds */,
 				958C8E391ACFF33B002EC76B /* Icons */,
 				958C8E501ACFFD63002EC76B /* Logos */,
@@ -268,6 +275,17 @@
 			path = Logos;
 			sourceTree = "<group>";
 		};
+		95D8608D1AD054360081DE57 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				95D8608E1AD054360081DE57 /* Facebook Login Button.idraw */,
+				95D8608F1AD054360081DE57 /* FBLogin (Pressed).png */,
+				95D860901AD054360081DE57 /* FBLogin.png */,
+			);
+			name = Buttons;
+			path = flow/Resources/Images/Buttons;
+			sourceTree = SOURCE_ROOT;
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -317,6 +335,7 @@
 				TargetAttributes = {
 					953512A01ACFC29B00B0B2C9 = {
 						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = P25BA56T67;
 					};
 					953512B61ACFC29B00B0B2C9 = {
 						CreatedOnToolsVersion = 6.2;
@@ -353,19 +372,22 @@
 				958C8E531ACFFD63002EC76B /* Flow Circle.idraw in Resources */,
 				958C8E4E1ACFFB2F002EC76B /* Amazing Grotesk Ultra.otf in Resources */,
 				958C8E3B1ACFF33B002EC76B /* tweed_@2X.png in Resources */,
+				7C4E9D931ACFF73C005D5258 /* Main.storyboard in Resources */,
 				953512AF1ACFC29B00B0B2C9 /* Images.xcassets in Resources */,
 				956D046E1ACFC540009BC09C /* Login.storyboard in Resources */,
 				958C8E4A1ACFFB2F002EC76B /* Amazing Grotesk Demi.otf in Resources */,
 				958C8E4F1ACFFB2F002EC76B /* license.pdf in Resources */,
 				958C8E481ACFFB2F002EC76B /* Amazing Grotesk Book.otf in Resources */,
+				95D860931AD054360081DE57 /* FBLogin.png in Resources */,
 				958C8E4B1ACFFB2F002EC76B /* Amazing Grotesk Light Italic.otf in Resources */,
 				958C8E4C1ACFFB2F002EC76B /* Amazing Grotesk Light.otf in Resources */,
-				95F82A131ACFCD0900DC5864 /* Info.plist in Resources */,
 				958C8E471ACFFB2F002EC76B /* Amazing Grotesk Book Italic.otf in Resources */,
-				956D046F1ACFC540009BC09C /* Main.storyboard in Resources */,
+				956D046F1ACFC540009BC09C /* (null) in Resources */,
 				958C8E3A1ACFF33B002EC76B /* tweed.png in Resources */,
 				958C8E4D1ACFFB2F002EC76B /* Amazing Grotesk Ultra Italic.otf in Resources */,
 				958C8E491ACFFB2F002EC76B /* Amazing Grotesk Demi Italic.otf in Resources */,
+				95D860911AD054360081DE57 /* Facebook Login Button.idraw in Resources */,
+				95D860921AD054360081DE57 /* FBLogin (Pressed).png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -410,6 +432,15 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		7C4E9D911ACFF73C005D5258 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7C4E9D921ACFF73C005D5258 /* Base */,
+			);
+			name = Main.storyboard;
+			path = ..;
+			sourceTree = "<group>";
+		};
 		953512B01ACFC29B00B0B2C9 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -424,14 +455,6 @@
 				956D046B1ACFC540009BC09C /* Base */,
 			);
 			name = Login.storyboard;
-			sourceTree = "<group>";
-		};
-		956D046C1ACFC540009BC09C /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				956D046D1ACFC540009BC09C /* Base */,
-			);
-			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -519,6 +542,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/flow",
@@ -539,6 +563,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/flow",

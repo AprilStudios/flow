@@ -36,8 +36,8 @@
     if (token && token.expirationDate.timeIntervalSinceNow > 0)
     {
         [FBSDKAccessToken setCurrentAccessToken:token];
-        sbName = @"Main";
-        vcName = @"MainVC";
+//        sbName = @"Main";
+//        vcName = @"MainVC";
     }
     
     //Set appropriate VC
