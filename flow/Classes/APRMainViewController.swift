@@ -17,28 +17,60 @@ struct state {
     
 }
 
-class APRMainViewController: UIViewController  {
+//  Controls the Main View
+//  This includes the states selector, and the label from the current state
+//
+
+class APRMainViewController: UIViewController, UIScrollViewDelegate  {
     
     var states: [state] = []
     let circleLayer: CAShapeLayer! = CAShapeLayer()
     var newView:UIView?
+    var startedButtonAnimation = false
     var finishedButtonAnimation = false
+    var stateButtons: [UIButton] = []
+    var currentPage = 0
 
     @IBOutlet weak var buttonsView: UIView!
     
     @IBOutlet weak var stateScrollView: UIScrollView!
     
     @IBOutlet weak var currentStateLabel: UILabel!
-    @IBOutlet weak var scrollContentView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        stateScrollView.contentSize = CGSizeMake(200, 200)
+        println ("old")
         stateScrollView.showsHorizontalScrollIndicator = false
         stateScrollView.showsVerticalScrollIndicator = false
-        states.append(state(name: "Working", circleColor: UIColor.blueColor()))
+        
+        states.append(state(name: "Working", circleColor: UIColor.lightGrayColor()))
         states.append(state(name: "Eating", circleColor: UIColor.yellowColor()))
         states.append(state(name: "Lifting", circleColor: UIColor.cyanColor()))
+        states.append(state(name: "Studying", circleColor: UIColor.magentaColor()))
+        states.append(state(name: "Fucking", circleColor: UIColor.greenColor()))
+        
+        var i = 0
+
+        for state in states {
+            
+            stateButtons.append(UIButton(frame: CGRect(x: i*200 + 20, y: 20, width: 180, height: 180)))
+            stateButtons[i].backgroundColor = states[i].circleColor
+            stateButtons[i].layer.cornerRadius = (stateButtons[i].bounds.size.height/2)
+            
+            //newButton.setTitleColor(getRandomColor(), forState: UIControlState.Normal)
+            //newButton.setTitle(states[i].name, forState: UIControlState.Normal)
+            
+            println("added target")
+            stateButtons[i].addTarget(self, action: "changeState:", forControlEvents: UIControlEvents.TouchDown)
+            stateButtons[i].addTarget(self, action: "liftUpState:", forControlEvents: UIControlEvents.TouchUpInside)
+            stateScrollView.addSubview(stateButtons[i])
+            i+=1
+            
+        }
+        
+        stateScrollView.contentSize = CGSizeMake(CGFloat(200*states.count), 200)
+        println(stateScrollView.contentSize)
+
         
        
         
@@ -47,26 +79,11 @@ class APRMainViewController: UIViewController  {
     
     override func viewDidLayoutSubviews() {
         
-        var i = 0
         
         
-        for state in states {
-        var newButton = UIButton(frame: CGRect(x: i*200, y: 0, width: 180, height: 180))
-        newButton.backgroundColor = states[i].circleColor
-            
-        newButton.layer.cornerRadius = (newButton.bounds.size.height/2);
-        scrollContentView.addSubview(newButton)
-            
-        //newButton.setTitleColor(getRandomColor(), forState: UIControlState.Normal)
-        //newButton.setTitle(states[i].name, forState: UIControlState.Normal)
-        newButton.addTarget(self, action: "changeState:", forControlEvents: UIControlEvents.TouchDown)
-        newButton.addTarget(self, action: "liftUpState:", forControlEvents: UIControlEvents.TouchUpInside)
-        i+=1
-            
-        }
-
+        println("set size")
         
-        let circlePath = UIBezierPath(arcCenter: CGPoint(x: 87, y: 138), radius: 90, startAngle: 0.0, endAngle: CGFloat(M_PI * 2.0), clockwise: true)
+        let circlePath = UIBezierPath(arcCenter: CGPoint(x: buttonsView.frame.origin.x + 91, y: buttonsView.frame.origin.y + 65),  radius: 100, startAngle: 0.0, endAngle: CGFloat(M_PI * 2.0), clockwise: true)
         
         // Setup the CAShapeLayer with the path, colors, and line width
         circleLayer.path = circlePath.CGPath
@@ -83,12 +100,14 @@ class APRMainViewController: UIViewController  {
 
     }
     
-
+    
     override func animationDidStop(anim: CAAnimation!, finished flag: Bool) {
         finishedButtonAnimation = true
     }
     
+    
     func animateCircle(duration: NSTimeInterval) {
+        println("animating")
         // We want to animate the strokeEnd property of the circleLayer
         let animation = CABasicAnimation(keyPath: "strokeEnd")
         
@@ -113,9 +132,12 @@ class APRMainViewController: UIViewController  {
     
     func changeState (Sender: UIButton!){
         
+        println("called")
         currentStateLabel.text = Sender.titleColorForState(UIControlState.Normal)?.description
+        if (!startedButtonAnimation){
         animateCircle(1.0)
-        
+        }
+        startedButtonAnimation = true
     }
     
     func liftUpState(Sender: UIButton! ){
@@ -123,6 +145,8 @@ class APRMainViewController: UIViewController  {
         if (finishedButtonAnimation) {
             
             println("finished")
+            finishedButtonAnimation = false
+            startedButtonAnimation = false
             
         }
         
@@ -132,8 +156,16 @@ class APRMainViewController: UIViewController  {
             
         }
         
-        finishedButtonAnimation = false
         
+    }
+    
+    func scrollViewWillBeginDecelerating(scrollView: UIScrollView) {
+        scrollView.userInteractionEnabled = false
+        circleLayer.strokeEnd = 0.0
+    }
+    
+     func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
+        scrollView.userInteractionEnabled = true
     }
         
     override func didReceiveMemoryWarning() {
