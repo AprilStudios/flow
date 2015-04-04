@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="yQy-Uz-78N">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Login View Controller-->
@@ -16,8 +17,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jRZ-2u-jgw">
-                                <rect key="frame" x="170" y="486" width="54" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jRZ-2u-jgw">
+                                <rect key="frame" x="273" y="550" width="54" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="54" id="Wck-3C-2Mt"/>
+                                    <constraint firstAttribute="height" constant="30" id="fQp-XB-45c"/>
+                                </constraints>
                                 <state key="normal" title="To Main">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -25,8 +30,28 @@
                                     <action selector="toMain:" destination="yQy-Uz-78N" eventType="touchUpInside" id="yk6-0o-NiS"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AF2-TO-m39">
+                                <rect key="frame" x="229" y="448" width="143" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="5Kh-dc-Qfk"/>
+                                    <constraint firstAttribute="width" constant="143" id="MUl-qJ-YlO"/>
+                                </constraints>
+                                <state key="normal" title="Login with Facebook">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="GfM-2l-JmB" firstAttribute="top" secondItem="jRZ-2u-jgw" secondAttribute="bottom" constant="20" id="9uQ-t9-6mk"/>
+                            <constraint firstItem="jRZ-2u-jgw" firstAttribute="top" secondItem="AF2-TO-m39" secondAttribute="bottom" constant="72" id="C7g-Iy-Emb"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="jRZ-2u-jgw" secondAttribute="trailing" constant="257" id="H53-pm-YDn"/>
+                            <constraint firstItem="jRZ-2u-jgw" firstAttribute="leading" secondItem="UI8-oi-jfa" secondAttribute="leadingMargin" constant="257" id="SE0-St-E88"/>
+                            <constraint firstItem="AF2-TO-m39" firstAttribute="leading" secondItem="UI8-oi-jfa" secondAttribute="leadingMargin" constant="213" id="gxA-hd-evX"/>
+                            <constraint firstItem="AF2-TO-m39" firstAttribute="top" secondItem="6Ho-o1-QA9" secondAttribute="bottom" constant="428" id="sd9-2Y-T7v"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="AF2-TO-m39" secondAttribute="trailing" constant="212" id="uuY-qy-Hdc"/>
+                            <constraint firstItem="jRZ-2u-jgw" firstAttribute="top" secondItem="6Ho-o1-QA9" secondAttribute="bottom" constant="530" id="vWV-fr-bfA"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="toMainButton" destination="jRZ-2u-jgw" id="FLP-8U-uDJ"/>
