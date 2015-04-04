@@ -49,6 +49,10 @@
     APRUser *u = [[APRUser alloc] initWithN:@"SWAGSWAG" u:@"NO"];
     [parseManager addUser:u];
     
+    APRState *s = [[APRState alloc] initWithN:@"jogging" c:@"blue" i:@"person" s:1 o:@"Swag"];
+    [parseManager addState:s];
+    //[parseManager addStateForUser:u s:s];
+    
     
     /* Facebook */
     [FBSDKLoginButton class];
