@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		557652351AD004AC006EE863 /* test.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 557652341AD004AC006EE863 /* test.storyboard */; };
+		557652371AD0082F006EE863 /* NewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557652361AD0082F006EE863 /* NewViewController.swift */; };
 		7CE3F46C1ACFDC7F008A3AA3 /* APRMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE3F46B1ACFDC7F008A3AA3 /* APRMainViewController.swift */; };
 		953512AD1ACFC29B00B0B2C9 /* flow.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 953512AB1ACFC29B00B0B2C9 /* flow.xcdatamodeld */; };
 		953512AF1ACFC29B00B0B2C9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 953512AE1ACFC29B00B0B2C9 /* Images.xcassets */; };
@@ -37,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		557652341AD004AC006EE863 /* test.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = test.storyboard; sourceTree = "<group>"; };
+		557652361AD0082F006EE863 /* NewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewViewController.swift; sourceTree = "<group>"; };
 		7CE3F46A1ACFDC7F008A3AA3 /* flow-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "flow-Bridging-Header.h"; sourceTree = "<group>"; };
 		7CE3F46B1ACFDC7F008A3AA3 /* APRMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APRMainViewController.swift; path = Classes/APRMainViewController.swift; sourceTree = "<group>"; };
 		953512A11ACFC29B00B0B2C9 /* flow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = flow.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -149,6 +153,7 @@
 				955B18B41ACFC31D00D0D8EA /* AppDelegate.h */,
 				955B18B51ACFC31D00D0D8EA /* AppDelegate.m */,
 				7CE3F46B1ACFDC7F008A3AA3 /* APRMainViewController.swift */,
+				557652361AD0082F006EE863 /* NewViewController.swift */,
 				95F829FC1ACFC92500DC5864 /* APRLoginViewController.h */,
 				95F829FD1ACFC92500DC5864 /* APRLoginViewController.m */,
 			);
@@ -160,6 +165,7 @@
 			children = (
 				953512B01ACFC29B00B0B2C9 /* LaunchScreen.xib */,
 				956D046A1ACFC540009BC09C /* Login.storyboard */,
+				557652341AD004AC006EE863 /* test.storyboard */,
 				956D046C1ACFC540009BC09C /* Main.storyboard */,
 			);
 			name = Views;
@@ -259,6 +265,7 @@
 				TargetAttributes = {
 					953512A01ACFC29B00B0B2C9 = {
 						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = P25BA56T67;
 					};
 					953512B61ACFC29B00B0B2C9 = {
 						CreatedOnToolsVersion = 6.2;
@@ -296,6 +303,7 @@
 				956D046E1ACFC540009BC09C /* Login.storyboard in Resources */,
 				95F82A131ACFCD0900DC5864 /* Info.plist in Resources */,
 				956D046F1ACFC540009BC09C /* Main.storyboard in Resources */,
+				557652351AD004AC006EE863 /* test.storyboard in Resources */,
 				958C8E3A1ACFF33B002EC76B /* tweed.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -317,6 +325,7 @@
 				953512AD1ACFC29B00B0B2C9 /* flow.xcdatamodeld in Sources */,
 				95F829FE1ACFC92500DC5864 /* APRLoginViewController.m in Sources */,
 				95F82A141ACFCD0900DC5864 /* main.m in Sources */,
+				557652371AD0082F006EE863 /* NewViewController.swift in Sources */,
 				7CE3F46C1ACFDC7F008A3AA3 /* APRMainViewController.swift in Sources */,
 				955B18B61ACFC31D00D0D8EA /* AppDelegate.m in Sources */,
 			);
@@ -450,6 +459,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/flow",
@@ -470,6 +480,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/flow",

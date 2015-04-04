@@ -19,6 +19,9 @@ struct state {
 class APRMainViewController: UIViewController {
     
     var states: [state] = []
+    var firstName:String!
+    var secondName:String!
+    var email:String!
     
     
     override func viewDidLoad() {
@@ -47,5 +50,12 @@ class APRMainViewController: UIViewController {
     // Pass the selected object to the new view controller.
     }
     */
+    
+}
+func loginViewFetchedUserInfo(loginView: FBLoginView!, user : FBGraphUser){
+    (connection, user, error)-> Void in
+    self.email== user.objectForKey("email") as String!
+    
+    
     
 }

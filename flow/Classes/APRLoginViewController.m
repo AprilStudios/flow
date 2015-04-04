@@ -32,8 +32,8 @@
 - (IBAction)toMain:(id)sender
 {
     // Get the storyboard named secondStoryBoard from the main bundle:
-    UIStoryboard *secondStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    UIViewController *mainVC = [secondStoryBoard instantiateViewControllerWithIdentifier:@"MainVC"];
+    UIStoryboard *secondStoryBoard = [UIStoryboard storyboardWithName:@"test" bundle:nil];
+    UIViewController *mainVC = [secondStoryBoard instantiateViewControllerWithIdentifier:@"testVC"];
     
     // Then push the new view controller in the usual way:
     [self presentViewController:mainVC animated:YES completion:NULL];
