@@ -2,7 +2,6 @@
 #import "APRLoginViewController.h"
 
 
-
 @interface APRLoginViewController ()
 {
     BOOL stopSpin;
@@ -10,7 +9,7 @@
 
 //IBOutlets
 @property (nonatomic, weak) IBOutlet UIImageView *flowCircle;
-@property (nonatomic, weak) IBOutlet UIButton *facebookButton;
+@property (nonatomic, weak) IBOutlet FBSDKLoginButton *facebookButton;
 @property (nonatomic, weak) IBOutlet UIButton *toMainButton;
 
 //private helpers
@@ -31,6 +30,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
+    self.facebookButton.delegate = self;
 
     //init any variables
     stopSpin = NO;
@@ -53,12 +54,50 @@
 
 - (IBAction)toMain:(id)sender
 {
-    // Get the storyboard named secondStoryBoard from the main bundle:
     UIStoryboard *secondStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     UIViewController *mainVC = [secondStoryBoard instantiateViewControllerWithIdentifier:@"MainVC"];
-    
-    // Then push the new view controller in the usual way:
     [self presentViewController:mainVC animated:YES completion:NULL];
+}
+
+
+
+#pragma mark - FB Login Button
+/**
+ * @method loginButton:didCompleteWithResult:error
+ *
+ * @param loginButton
+ * @param result
+ * @param error
+ */
+- (void)loginButton:(FBSDKLoginButton *)loginButton didCompleteWithResult:(FBSDKLoginManagerLoginResult *)result
+              error:(NSError *)error
+{
+    if (error)
+        return;
+
+    FBSDKAccessToken *token = [FBSDKAccessToken currentAccessToken];
+    NSDictionary *tokenData = [[NSMutableDictionary alloc] init];
+    [tokenData setValue:token.appID forKey:@"appID"];
+    [tokenData setValue:token.userID forKey:@"userID"];
+    [tokenData setValue:token.refreshDate forKey:@"refreshDate"];
+    [tokenData setValue:token.tokenString forKey:@"tokenString"];
+    [tokenData setValue:token.expirationDate forKey:@"expirationDate"];
+    [tokenData setValue:token.permissions.allObjects forKey:@"permissions"];
+    [tokenData setValue:token.declinedPermissions.allObjects forKey:@"declinedPermissions"];
+    [[NSUserDefaults standardUserDefaults] setObject:tokenData forKey:@"currentAccessToken"];
+
+}
+
+/**
+ * @method loginButtonDidLogout
+ *
+ *
+ *
+ * @method loginButton
+ */
+- (void) loginButtonDidLogOut:(FBSDKLoginButton *)loginButton
+{
+    [[NSUserDefaults standardUserDefaults] setObject:nil forKey:@"currentAccessToken"];
 }
 
 

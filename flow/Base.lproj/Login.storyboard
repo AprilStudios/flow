@@ -43,9 +43,9 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="byP-hd-ddZ" customClass="FBSDKLoginButton">
-                                <rect key="frame" x="200" y="460" width="200" height="40"/>
+                                <rect key="frame" x="200" y="440" width="200" height="60"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="MtE-71-49G"/>
+                                    <constraint firstAttribute="height" constant="60" id="MtE-71-49G"/>
                                     <constraint firstAttribute="width" constant="200" id="ljh-Rg-MtE"/>
                                 </constraints>
                                 <state key="normal" title="Button">
@@ -63,7 +63,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.1642630116354688" green="0.26285104728323166" blue="0.38888888888888873" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.16426301160000001" green="0.26285104729999997" blue="0.38888888890000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="iGG-Gh-RHZ" secondAttribute="centerX" id="8PO-Fe-knb"/>
                             <constraint firstItem="GfM-2l-JmB" firstAttribute="top" secondItem="jRZ-2u-jgw" secondAttribute="bottom" constant="40" id="9uQ-t9-6mk"/>

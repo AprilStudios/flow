@@ -17,13 +17,35 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
-    // Override point for customization after application launch.
     [FBSDKLoginButton class];
     
-    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Login" bundle:nil];
-    UIViewController *vc = (UIViewController *)[sb instantiateViewControllerWithIdentifier:@"LoginVC"];
+    //AccessToken
+    NSDictionary *tokenData = [[NSUserDefaults standardUserDefaults] objectForKey:@"currentAccessToken"];
+    FBSDKAccessToken *token = (!tokenData) ? nil : [[FBSDKAccessToken alloc]
+                                                    initWithTokenString:tokenData[@"tokenString"]
+                                                    permissions:tokenData[@"permissions"]
+                                                    declinedPermissions:tokenData[@"declinedPermissions"]
+                                                    appID:tokenData[@"appID"]
+                                                    userID:tokenData[@"userID"]
+                                                    expirationDate:tokenData[@"expirationDate"]
+                                                    refreshDate:tokenData[@"refreshDate"]];
+    
+    //Determine which VC to show
+    NSString *sbName = @"Login";
+    NSString *vcName = @"LoginVC";
+    if (token && token.expirationDate.timeIntervalSinceNow > 0)
+    {
+        [FBSDKAccessToken setCurrentAccessToken:token];
+        sbName = @"Main";
+        vcName = @"MainVC";
+    }
+    
+    //Set appropriate VC
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:sbName bundle:nil];
+    UIViewController *vc = (UIViewController *)[sb instantiateViewControllerWithIdentifier:vcName];
     [self.window setRootViewController:vc];
     
+    //Show window
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     
