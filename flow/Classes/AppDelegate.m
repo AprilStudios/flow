@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "flow-Bridging-Header.h"
+#import "flow-Swift.h"
 
 @interface AppDelegate ()
 
@@ -16,6 +18,28 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    // [Optional] Power your app with Local Datastore. For more info, go to
+    // https://parse.com/docs/ios_guide#localdatastore/iOS
+    [Parse enableLocalDatastore];
+    
+    // Initialize Parse.
+    [Parse setApplicationId:@"Buvc8IDSHi03HzlX3yvsfKcRivHGUE6Ii29yXdjb"
+                  clientKey:@"Y2D55Q2nA3CgUWQGS61IlHy3K5r9iop8wM3fAkQF"];
+    
+    // [Optional] Track statistics around application opens.
+    [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
+
+    PFObject *testObject = [PFObject objectWithClassName:@"TestObject"];
+    testObject[@"foo"] = @"bar";
+    [testObject saveInBackground];
+    
+    APRParseManager *parseManager = [[APRParseManager alloc]init];
+    [parseManager test];
+
+    
+    
+    
+    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
