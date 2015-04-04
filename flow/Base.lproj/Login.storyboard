@@ -4,10 +4,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="wzh-Ek-hV1">
             <objects>
-                <viewController id="yQy-Uz-78N" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginVC" id="yQy-Uz-78N" customClass="APRLoginViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="6Ho-o1-QA9"/>
                         <viewControllerLayoutGuide type="bottom" id="GfM-2l-JmB"/>
@@ -15,8 +15,22 @@
                     <view key="view" contentMode="scaleToFill" id="UI8-oi-jfa">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jRZ-2u-jgw">
+                                <rect key="frame" x="170" y="486" width="54" height="30"/>
+                                <state key="normal" title="To Main">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="toMain:" destination="yQy-Uz-78N" eventType="touchUpInside" id="yk6-0o-NiS"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="toMainButton" destination="jRZ-2u-jgw" id="FLP-8U-uDJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gqk-f0-rnv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

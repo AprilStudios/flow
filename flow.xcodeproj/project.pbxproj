@@ -139,9 +139,9 @@
 		955B18B11ACFC2C900D0D8EA /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				7CE3F46B1ACFDC7F008A3AA3 /* APRMainViewController.swift */,
 				955B18B41ACFC31D00D0D8EA /* AppDelegate.h */,
 				955B18B51ACFC31D00D0D8EA /* AppDelegate.m */,
+				7CE3F46B1ACFDC7F008A3AA3 /* APRMainViewController.swift */,
 				95F829FC1ACFC92500DC5864 /* APRLoginViewController.h */,
 				95F829FD1ACFC92500DC5864 /* APRLoginViewController.m */,
 			);
