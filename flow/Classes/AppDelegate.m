@@ -38,13 +38,18 @@
      [testObject saveInBackground];*/
     
     APRParseManager *parseManager = [[APRParseManager alloc]init];
-    [parseManager test];
+    /*[parseManager test];
     [parseManager nicknameForUserID:@"abcde" completion:^(NSString *nickname){
         NSLog(@"async nickname: %@", nickname);
     }];
     [parseManager userIDForNickname:@"LOLDENNIS" completion:^(NSString *userID){
         NSLog(@"async id: %@", userID);
-    }];
+    }];*/
+    //APRUser u = APRUser(@"SWAGSWAGLIKECAILLOU", @"NO");
+    APRUser *u = [[APRUser alloc] initWithN:@"SWAGSWAG" u:@"NO"];
+    [parseManager addUser:u];
+    
+    
     /* Facebook */
     [FBSDKLoginButton class];
     

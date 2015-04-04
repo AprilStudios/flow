@@ -13,10 +13,10 @@ class APRParseManager: NSObject {
         super.init()
         println("SwiftClass init")
     }
+    
     func addUser(u: APRUser) {
         var tempUser = PFObject(className:"APRUser")
         tempUser["userID"] = u.getUserID()
-        tempUser["facebookID"] = u.getFacebookID()
         tempUser["nickname"] = u.getNickname()
         tempUser.saveInBackgroundWithBlock {
             (success: Bool, error: NSError!) -> Void in

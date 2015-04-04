@@ -14,8 +14,7 @@ import Foundation
 {
     private var state: APRState
     private var nickname: String
-    private var facebookID: String
-    private var userID: Int
+    private var userID: String
     private var objectID: String
     private var timeSinceChanged: NSDate
     private var stateTimes: Dictionary<APRState,Int32>
@@ -26,8 +25,7 @@ import Foundation
     {
         self.state = APRState()
         self.nickname=String()
-        self.facebookID=String()
-        self.userID=Int()
+        self.userID=String()
         self.objectID=String()
         self.timeSinceChanged = NSDate()
         self.stateTimes = Dictionary<APRState,Int32>()
@@ -37,11 +35,10 @@ import Foundation
         super.init()
     }
     
-    init(n:String, f:String, u:Int)
+    init(n:String, u:String)
     {
         self.state = APRState()
         self.nickname=n
-        self.facebookID=f
         self.userID=u
         self.objectID=String()
         self.timeSinceChanged = NSDate()
@@ -57,10 +54,7 @@ import Foundation
     func getNickname()-> String{
         return nickname
     }
-    func getFacebookID()-> String {
-        return facebookID
-    }
-    func getUserID()-> Int {
+    func getUserID()-> String {
         return userID
     }
     func getObjectID()-> String {
