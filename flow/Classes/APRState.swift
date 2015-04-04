@@ -1,21 +1,29 @@
-//
-//  APRState.swift
-//  flow
-//
-//  Created by Alex Hong on 4/4/15.
-//  Copyright (c) 2015 AprilStudios. All rights reserved.
-//
 
 import Foundation
 
-class APRState: NSObject {
+/**
+* @class APRState
+* @brief APRState
+*
+*
+* @author Kevin Wu, Alex Hong
+* @version 0.1
+*/
+@objc class APRState: NSObject
+{
     private var name: String
     private var color: String
     private var icon: String
     private var stateID: Int
     private var objectID: String
 
-    override init() {
+    /**
+     * @method init
+     *
+     *
+     */
+    override init()
+    {
         self.name = String()
         self.color = String()
         self.icon = String()
@@ -24,7 +32,13 @@ class APRState: NSObject {
         super.init()
     }
     
-    init(n:String, c:String, i:String, s:Int, o:String) {
+    /**
+     *
+     *
+     *
+     */
+    init(n:String, c:String, i:String, s:Int, o:String)
+    {
         self.name=n
         self.color=c
         self.icon=i
@@ -33,31 +47,50 @@ class APRState: NSObject {
         super.init()
     }
     
-    func getName() -> String {
+    
+    /* Accessors */
+    func getName() -> String
+    {
         return name
     }
-    func getColor() -> String {
+    
+    func getColor() -> String
+    {
         return color
     }
-    func getIcon() -> String {
+
+    func getIcon() -> String
+    {
         return icon
     }
-    func getStateID() -> Int {
+    
+    func getStateID() -> Int
+    {
         return stateID
     }
-    func getObjectID() -> String {
+    
+    func getObjectID() -> String
+    {
         return objectID
     }
-    func setName(n:String) -> Void {
+    
+    func setName(n:String) -> Void
+    {
         name = n
     }
-    func setColor(c:String) -> Void {
+    
+    func setColor(c:String) -> Void
+    {
         color = c
     }
-    func setIcon(i:String) -> Void {
+    
+    func setIcon(i:String) -> Void
+    {
         icon = i
     }
-    func setObjectID(o:String)-> Void {
+    
+    func setObjectID(o:String)-> Void
+    {
         objectID = o
     }
     

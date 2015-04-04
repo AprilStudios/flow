@@ -1,13 +1,17 @@
-//
-//  APRUser.swift
-//  flow
-//
-//  Created by Alex Hong on 4/4/15.
-//  Copyright (c) 2015 AprilStudios. All rights reserved.
-//
+
 import Foundation
 
-class APRUser: NSObject {
+/**
+ * @class APRUser
+ * @brief APRUser
+ *
+ * 
+ *
+ * @author Alex Hong, Kevin Wu
+ * @version 0.1
+ */
+@objc class APRUser: NSObject
+{
     private var state: APRState
     private var nickname: String
     private var facebookID: String
@@ -18,7 +22,8 @@ class APRUser: NSObject {
     private var customStates:[APRState]
     private var stateVisabilities:Dictionary<APRState, Bool>
     
-    override init() {
+    override init()
+    {
         self.state = APRState()
         self.nickname=String()
         self.facebookID=String()
@@ -31,7 +36,9 @@ class APRUser: NSObject {
         
         super.init()
     }
-    init(n:String, f:String, u:Int) {
+    
+    init(n:String, f:String, u:Int)
+    {
         self.state = APRState()
         self.nickname=n
         self.facebookID=f
