@@ -7,14 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		953512A71ACFC29B00B0B2C9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 953512A61ACFC29B00B0B2C9 /* main.m */; };
 		953512AD1ACFC29B00B0B2C9 /* flow.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 953512AB1ACFC29B00B0B2C9 /* flow.xcdatamodeld */; };
 		953512AF1ACFC29B00B0B2C9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 953512AE1ACFC29B00B0B2C9 /* Images.xcassets */; };
-		953512B21ACFC29B00B0B2C9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 953512B01ACFC29B00B0B2C9 /* LaunchScreen.xib */; };
 		953512BE1ACFC29C00B0B2C9 /* flowTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 953512BD1ACFC29C00B0B2C9 /* flowTests.m */; };
 		955B18B61ACFC31D00D0D8EA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 955B18B51ACFC31D00D0D8EA /* AppDelegate.m */; };
 		956D046E1ACFC540009BC09C /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 956D046A1ACFC540009BC09C /* Login.storyboard */; };
 		956D046F1ACFC540009BC09C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 956D046C1ACFC540009BC09C /* Main.storyboard */; };
+		95F829FE1ACFC92500DC5864 /* APRLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95F829FD1ACFC92500DC5864 /* APRLoginViewController.m */; };
+		95F82A091ACFCC8000DC5864 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95F82A061ACFCC8000DC5864 /* FBSDKCoreKit.framework */; };
+		95F82A0A1ACFCC8000DC5864 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95F82A071ACFCC8000DC5864 /* FBSDKLoginKit.framework */; };
+		95F82A0B1ACFCC8000DC5864 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95F82A081ACFCC8000DC5864 /* FBSDKShareKit.framework */; };
+		95F82A101ACFCCC300DC5864 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 953512B01ACFC29B00B0B2C9 /* LaunchScreen.xib */; };
+		95F82A131ACFCD0900DC5864 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 95F82A111ACFCD0900DC5864 /* Info.plist */; };
+		95F82A141ACFCD0900DC5864 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 95F82A121ACFCD0900DC5864 /* main.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,8 +34,6 @@
 
 /* Begin PBXFileReference section */
 		953512A11ACFC29B00B0B2C9 /* flow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = flow.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		953512A51ACFC29B00B0B2C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		953512A61ACFC29B00B0B2C9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		953512AC1ACFC29B00B0B2C9 /* flow.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = flow.xcdatamodel; sourceTree = "<group>"; };
 		953512AE1ACFC29B00B0B2C9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		953512B11ACFC29B00B0B2C9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -41,6 +44,13 @@
 		955B18B51ACFC31D00D0D8EA /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = Classes/AppDelegate.m; sourceTree = "<group>"; };
 		956D046B1ACFC540009BC09C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Login.storyboard; sourceTree = "<group>"; };
 		956D046D1ACFC540009BC09C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		95F829FC1ACFC92500DC5864 /* APRLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = APRLoginViewController.h; path = Classes/APRLoginViewController.h; sourceTree = "<group>"; };
+		95F829FD1ACFC92500DC5864 /* APRLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = APRLoginViewController.m; path = Classes/APRLoginViewController.m; sourceTree = "<group>"; };
+		95F82A061ACFCC8000DC5864 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = Frameworks/FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		95F82A071ACFCC8000DC5864 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = Frameworks/FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		95F82A081ACFCC8000DC5864 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = Frameworks/FBSDKShareKit.framework; sourceTree = "<group>"; };
+		95F82A111ACFCD0900DC5864 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		95F82A121ACFCD0900DC5864 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,6 +58,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95F82A0A1ACFCC8000DC5864 /* FBSDKLoginKit.framework in Frameworks */,
+				95F82A091ACFCC8000DC5864 /* FBSDKCoreKit.framework in Frameworks */,
+				95F82A0B1ACFCC8000DC5864 /* FBSDKShareKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,6 +95,7 @@
 		953512A31ACFC29B00B0B2C9 /* flow */ = {
 			isa = PBXGroup;
 			children = (
+				95F829FF1ACFCC4000DC5864 /* Frameworks */,
 				953512AB1ACFC29B00B0B2C9 /* flow.xcdatamodeld */,
 				955B18B21ACFC2D400D0D8EA /* Views */,
 				955B18B11ACFC2C900D0D8EA /* Classes */,
@@ -95,8 +109,8 @@
 		953512A41ACFC29B00B0B2C9 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				953512A51ACFC29B00B0B2C9 /* Info.plist */,
-				953512A61ACFC29B00B0B2C9 /* main.m */,
+				95F82A111ACFCD0900DC5864 /* Info.plist */,
+				95F82A121ACFCD0900DC5864 /* main.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -123,6 +137,8 @@
 			children = (
 				955B18B41ACFC31D00D0D8EA /* AppDelegate.h */,
 				955B18B51ACFC31D00D0D8EA /* AppDelegate.m */,
+				95F829FC1ACFC92500DC5864 /* APRLoginViewController.h */,
+				95F829FD1ACFC92500DC5864 /* APRLoginViewController.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -142,6 +158,16 @@
 			children = (
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		95F829FF1ACFCC4000DC5864 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				95F82A061ACFCC8000DC5864 /* FBSDKCoreKit.framework */,
+				95F82A071ACFCC8000DC5864 /* FBSDKLoginKit.framework */,
+				95F82A081ACFCC8000DC5864 /* FBSDKShareKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -224,9 +250,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				953512B21ACFC29B00B0B2C9 /* LaunchScreen.xib in Resources */,
+				95F82A101ACFCCC300DC5864 /* LaunchScreen.xib in Resources */,
 				953512AF1ACFC29B00B0B2C9 /* Images.xcassets in Resources */,
 				956D046E1ACFC540009BC09C /* Login.storyboard in Resources */,
+				95F82A131ACFCD0900DC5864 /* Info.plist in Resources */,
 				956D046F1ACFC540009BC09C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -245,8 +272,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				953512A71ACFC29B00B0B2C9 /* main.m in Sources */,
 				953512AD1ACFC29B00B0B2C9 /* flow.xcdatamodeld in Sources */,
+				95F829FE1ACFC92500DC5864 /* APRLoginViewController.m in Sources */,
+				95F82A141ACFCD0900DC5864 /* main.m in Sources */,
 				955B18B61ACFC31D00D0D8EA /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -377,6 +405,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/flow",
+					"$(PROJECT_DIR)/flow/Frameworks",
+				);
 				INFOPLIST_FILE = flow/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -387,6 +420,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/flow",
+					"$(PROJECT_DIR)/flow/Frameworks",
+				);
 				INFOPLIST_FILE = flow/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
