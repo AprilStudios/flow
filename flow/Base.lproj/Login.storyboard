@@ -3,6 +3,11 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Amazing Grotesk Light Italic.otf">
+            <string>AmazingGrotesk-LightItalic</string>
+        </mutableArray>
+    </customFonts>
     <scenes>
         <!--Login View Controller-->
         <scene sceneID="wzh-Ek-hV1">
@@ -16,40 +21,51 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jRZ-2u-jgw">
-                                <rect key="frame" x="273" y="530" width="54" height="30"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Flow Circle.png" translatesAutoresizingMaskIntoConstraints="NO" id="NSL-op-gzJ">
+                                <rect key="frame" x="150" y="100" width="300" height="300"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="54" id="Wck-3C-2Mt"/>
-                                    <constraint firstAttribute="height" constant="30" id="fQp-XB-45c"/>
+                                    <constraint firstAttribute="height" constant="300" id="vaq-K5-yq8"/>
+                                    <constraint firstAttribute="width" constant="300" id="wvA-eI-FE9"/>
                                 </constraints>
-                                <state key="normal" title="To Main">
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="flow" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iGG-Gh-RHZ">
+                                <rect key="frame" x="225" y="220" width="150" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="4Jh-Fk-gfP"/>
+                                    <constraint firstAttribute="height" constant="60" id="zJf-1r-PyA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AmazingGrotesk-LightItalic" family="Amazing Grotesk" pointSize="47"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="byP-hd-ddZ">
+                                <rect key="frame" x="188" y="455" width="225" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="MtE-71-49G"/>
+                                    <constraint firstAttribute="width" constant="225" id="ljh-Rg-MtE"/>
+                                </constraints>
+                                <state key="normal" image="FBLogin.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="toMain:" destination="yQy-Uz-78N" eventType="touchUpInside" id="yk6-0o-NiS"/>
+                                    <action selector="login:" destination="yQy-Uz-78N" eventType="touchUpInside" id="YYn-SV-9HN"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="byP-hd-ddZ" customClass="FBSDKLoginButton">
-                                <rect key="frame" x="200" y="460" width="200" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="MtE-71-49G"/>
-                                    <constraint firstAttribute="width" constant="200" id="ljh-Rg-MtE"/>
-                                </constraints>
-                                <state key="normal" title="Button">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.1642630116354688" green="0.26285104728323166" blue="0.38888888888888873" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.16426301160000001" green="0.26285104729999997" blue="0.38888888890000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="GfM-2l-JmB" firstAttribute="top" secondItem="jRZ-2u-jgw" secondAttribute="bottom" constant="40" id="9uQ-t9-6mk"/>
+                            <constraint firstAttribute="centerX" secondItem="iGG-Gh-RHZ" secondAttribute="centerX" id="8PO-Fe-knb"/>
+                            <constraint firstItem="NSL-op-gzJ" firstAttribute="centerY" secondItem="iGG-Gh-RHZ" secondAttribute="centerY" id="CZ7-VW-DJ6"/>
                             <constraint firstAttribute="centerX" secondItem="byP-hd-ddZ" secondAttribute="centerX" id="Hoq-5J-Fzn"/>
                             <constraint firstItem="GfM-2l-JmB" firstAttribute="top" secondItem="byP-hd-ddZ" secondAttribute="bottom" constant="100" id="Mnh-gJ-0S2"/>
-                            <constraint firstAttribute="centerX" secondItem="jRZ-2u-jgw" secondAttribute="centerX" id="avq-Jo-8JG"/>
+                            <constraint firstItem="iGG-Gh-RHZ" firstAttribute="top" secondItem="6Ho-o1-QA9" secondAttribute="bottom" constant="200" id="lRL-xt-sOa"/>
+                            <constraint firstItem="NSL-op-gzJ" firstAttribute="centerX" secondItem="iGG-Gh-RHZ" secondAttribute="centerX" id="wBz-8w-mN9"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="toMainButton" destination="jRZ-2u-jgw" id="FLP-8U-uDJ"/>
+                        <outlet property="flowCircle" destination="NSL-op-gzJ" id="ZkC-y3-3Gl"/>
+                        <outlet property="loginButton" destination="byP-hd-ddZ" id="9kO-sN-YNO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gqk-f0-rnv" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -57,4 +73,8 @@
             <point key="canvasLocation" x="589" y="508"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="FBLogin.png" width="500" height="100"/>
+        <image name="Flow Circle.png" width="1000" height="1000"/>
+    </resources>
 </document>

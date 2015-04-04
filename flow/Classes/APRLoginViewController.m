@@ -2,10 +2,17 @@
 #import "APRLoginViewController.h"
 
 
-
 @interface APRLoginViewController ()
+{
+    BOOL stopSpin;
+}
 
-@property (nonatomic, weak) IBOutlet UIButton *toMainButton;
+//IBOutlets
+@property (nonatomic, weak) IBOutlet UIImageView *flowCircle;
+@property (nonatomic, weak) IBOutlet UIButton *loginButton;
+
+//private helpers
+- (void)saveToken;
 
 @end
 #pragma mark -
@@ -16,28 +23,66 @@
 /**
  * @method viewDidLoad
  *
- * Called when this Login view is loaded
+ * Called when this Login view is loaded.
+ * Mainly sets FB LoginButton's delegate as self.
+ *
  * @note called once during lifetime of app launch
  */
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 
-    //init any variables
+    stopSpin = NO;
     [self setNeedsStatusBarAppearanceUpdate];
-    //self.view.backgroundColor = [UIColor blackColor];//[UIColor colorWithPatternImage:[UIImage imageNamed:@"tweed_@2x"]];
 }
 
 
-- (IBAction)toMain:(id)sender
+/**
+ * @method viewWillLoad
+ *
+ * Called when this view is about to appear
+ * @note called every time this view is going to appear
+ */
+- (void)viewWillAppear:(BOOL)animated
 {
-    // Get the storyboard named secondStoryBoard from the main bundle:
-    UIStoryboard *secondStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    UIViewController *mainVC = [secondStoryBoard instantiateViewControllerWithIdentifier:@"MainVC"];
+    [super viewWillAppear:animated];
     
-    // Then push the new view controller in the usual way:
-    [self presentViewController:mainVC animated:YES completion:NULL];
+    [self rotateFlowCircle];
 }
+
+
+#pragma mark - LoginButton Callback
+/**
+ * @method login
+ *
+ * Called when user presses the login button.
+ */
+- (IBAction)login:(id)sender
+{
+    FBSDKLoginManager *login = [[FBSDKLoginManager alloc] init];
+    [login logInWithReadPermissions:@[@"email"] handler:^(FBSDKLoginManagerLoginResult *result, NSError *error) {
+        if (error)
+        {
+            // Process error
+        }
+        else if (result.isCancelled)
+        {
+            // Handle cancellations
+        }
+        else
+        {
+            // If you ask for multiple permissions at once, you
+            // should check if specific permissions missing
+            if ([result.grantedPermissions containsObject:@"email"])
+            {
+                [FBSDKAccessToken setCurrentAccessToken:result.token];
+                [self saveToken];
+                [self toMain];
+            }
+        }
+    }];
+}
+
 
 
 #pragma mark - UI Customization
@@ -52,4 +97,72 @@
 }
 
 
+#pragma mark - Private Heleprs
+/**
+ * @method rotateFlowCircle
+ *
+ * Rotates the flow circle after a slight delay
+ * as long as stop animation flag is not false.
+ */
+- (void)rotateFlowCircle
+{
+    if (stopSpin)
+        return;
+    
+    [UIView animateWithDuration:1.0 delay:0.5
+    options:UIViewAnimationOptionAllowUserInteraction | UIViewAnimationOptionCurveEaseInOut
+    animations:^
+    {
+        self.flowCircle.transform = CGAffineTransformRotate(self.flowCircle.transform, -M_PI_2);
+    }
+    completion:^(BOOL finished)
+    {
+        [self rotateFlowCircle];
+    }];
+}
+
+/**
+ * @method saveToken
+ *
+ * Gets the current access token and saves it to NSUserDefaults.
+ */
+- (void)saveToken
+{
+    FBSDKAccessToken *token = [FBSDKAccessToken currentAccessToken];
+    NSDictionary *tokenData = [[NSMutableDictionary alloc] init];
+    [tokenData setValue:token.appID forKey:@"appID"];
+    [tokenData setValue:token.userID forKey:@"userID"];
+    [tokenData setValue:token.refreshDate forKey:@"refreshDate"];
+    [tokenData setValue:token.tokenString forKey:@"tokenString"];
+    [tokenData setValue:token.expirationDate forKey:@"expirationDate"];
+    [tokenData setValue:token.permissions.allObjects forKey:@"permissions"];
+    [tokenData setValue:token.declinedPermissions.allObjects forKey:@"declinedPermissions"];
+    [[NSUserDefaults standardUserDefaults] setObject:tokenData forKey:@"currentAccessToken"];
+}
+
+
+#pragma mark - Navigation
+/**
+ * @method toMain
+ *
+ * Switches to Main Storyboard
+ */
+- (void)toMain
+{
+    stopSpin = YES;
+
+    UIStoryboard *secondStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UIViewController *mainVC = [secondStoryBoard instantiateViewControllerWithIdentifier:@"MainVC"];
+    [self presentViewController:mainVC animated:YES completion:NULL];
+}
+
 @end
+
+
+
+
+
+
+
+
+
