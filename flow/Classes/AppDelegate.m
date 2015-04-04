@@ -20,6 +20,7 @@
     [FBSDKLoginButton class];
     
     //AccessToken
+    NSString *username = [[NSUserDefaults standardUserDefaults] objectForKey:@"username"];
     NSDictionary *tokenData = [[NSUserDefaults standardUserDefaults] objectForKey:@"currentAccessToken"];
     FBSDKAccessToken *token = (!tokenData) ? nil : [[FBSDKAccessToken alloc]
                                                     initWithTokenString:tokenData[@"tokenString"]
@@ -36,8 +37,14 @@
     if (token && token.expirationDate.timeIntervalSinceNow > 0)
     {
         [FBSDKAccessToken setCurrentAccessToken:token];
-//        sbName = @"Main";
-//        vcName = @"MainVC";
+        
+        sbName = @"Main";
+        vcName = @"MainVC";
+        if (username)
+        {
+            sbName = @"Login";
+            vcName = @"UsernameVC";
+        }
     }
     
     //Set appropriate VC

@@ -12,7 +12,7 @@
 @property (nonatomic, weak) IBOutlet UIButton *loginButton;
 
 //private helpers
-- (void)saveToken;
+- (void)saveToken:(FBSDKAccessToken *)token;
 
 @end
 #pragma mark -
@@ -60,7 +60,9 @@
 - (IBAction)login:(id)sender
 {
     FBSDKLoginManager *login = [[FBSDKLoginManager alloc] init];
-    [login logInWithReadPermissions:@[@"email"] handler:^(FBSDKLoginManagerLoginResult *result, NSError *error) {
+    [login logInWithReadPermissions:@[@"email"]
+    handler:^(FBSDKLoginManagerLoginResult *result, NSError *error)
+    {
         if (error)
         {
             // Process error
@@ -76,8 +78,10 @@
             if ([result.grantedPermissions containsObject:@"email"])
             {
                 [FBSDKAccessToken setCurrentAccessToken:result.token];
-                [self saveToken];
-                [self toMain];
+                [self saveToken:result.token];
+                
+                stopSpin = YES;
+                [self performSegueWithIdentifier:@"UsernameSegue" sender:self];
             }
         }
     }];
@@ -122,13 +126,14 @@
 }
 
 /**
- * @method saveToken
+ * @method saveToken:
  *
  * Gets the current access token and saves it to NSUserDefaults.
+ *
+ * @param token - FB AccessToken to save
  */
-- (void)saveToken
+- (void)saveToken:(FBSDKAccessToken *)token
 {
-    FBSDKAccessToken *token = [FBSDKAccessToken currentAccessToken];
     NSDictionary *tokenData = [[NSMutableDictionary alloc] init];
     [tokenData setValue:token.appID forKey:@"appID"];
     [tokenData setValue:token.userID forKey:@"userID"];
@@ -149,8 +154,6 @@
  */
 - (void)toMain
 {
-    stopSpin = YES;
-
     UIStoryboard *secondStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     UIViewController *mainVC = [secondStoryBoard instantiateViewControllerWithIdentifier:@"MainVC"];
     [self presentViewController:mainVC animated:YES completion:NULL];
