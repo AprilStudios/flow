@@ -1,6 +1,8 @@
 
 #import "APRLoginViewController.h"
 
+#import "flow-Swift.h"
+
 
 @interface APRLoginViewController ()
 {
@@ -60,31 +62,32 @@
 - (IBAction)login:(id)sender
 {
     FBSDKLoginManager *login = [[FBSDKLoginManager alloc] init];
+    
     [login logInWithReadPermissions:@[@"email"]
-    handler:^(FBSDKLoginManagerLoginResult *result, NSError *error)
-    {
-        if (error)
-        {
-            // Process error
-        }
-        else if (result.isCancelled)
-        {
-            // Handle cancellations
-        }
-        else
-        {
-            // If you ask for multiple permissions at once, you
-            // should check if specific permissions missing
-            if ([result.grantedPermissions containsObject:@"email"])
-            {
-                [FBSDKAccessToken setCurrentAccessToken:result.token];
-                [self saveToken:result.token];
-                
-                stopSpin = YES;
-                [self performSegueWithIdentifier:@"UsernameSegue" sender:self];
+     handler:^(FBSDKLoginManagerLoginResult *result, NSError *error)
+     {
+         if (error)
+         {
+             // Process error
+         }
+         else if (result.isCancelled)
+         {
+             // Handle cancellations
+         }
+         else
+         {
+             // If you ask for multiple permissions at once, you
+             // should check if specific permissions missing
+             if ([result.grantedPermissions containsObject:@"email"])
+             {
+                 [FBSDKAccessToken setCurrentAccessToken:result.token];
+                 [self saveToken:result.token];
+                 
+                 stopSpin = YES;
+                 [self performSegueWithIdentifier:@"UsernameSegue" sender:self];
             }
-        }
-    }];
+         }
+     }];
 }
 
 

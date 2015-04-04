@@ -1,11 +1,11 @@
 
-#import "APRUsernameViewController.h"
+#import "APRNicknameViewController.h"
 
 
 
-@interface APRUsernameViewController ()
+@interface APRNicknameViewController ()
 
-@property (nonatomic, weak) IBOutlet UITextField *usernameField;
+@property (nonatomic, weak) IBOutlet UITextField *nicknameField;
 @property (nonatomic, weak) IBOutlet UILabel *errorLabel;
 
 @end
@@ -13,7 +13,7 @@
 
 
 
-@implementation APRUsernameViewController
+@implementation APRNicknameViewController
 /**
  * @method viewDidLoad
  *
@@ -43,25 +43,25 @@
  * @method start:
  *
  * Called when user presses "Start!" button.
- * Gets the text in usernameField,
+ * Gets the text in nicknameField,
  * and if not empty, calls checkUsername.
  */
 - (IBAction)start:(id)sender
 {
-    [self.usernameField resignFirstResponder];
-    [self checkUsername:self.usernameField.text];
+    [self.nicknameField resignFirstResponder];
+    [self checkNickname:self.nicknameField.text];
 }
 
 /**
  * @method textFieldShouldReturn:
  *
- * Called when user presses "Go" on usernameField.
+ * Called when user presses "Go" on nicknameField.
  * Checks if
  */
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
-    [self.usernameField resignFirstResponder];
-    [self checkUsername:self.usernameField.text];
+    [self.nicknameField resignFirstResponder];
+    [self checkNickname:self.nicknameField.text];
     
     return YES;
 }
@@ -75,7 +75,7 @@
  * is already a existing username.
  * If not, pushes to the screen to home.
  */
-- (void)checkUsername:(NSString *)username
+- (void)checkNickname:(NSString *)username
 {
     if ( username.length == 0 )
         self.errorLabel.text = @"Enter a nickname!";

@@ -7,6 +7,6 @@
  *
  * Intermediate VC for allowing user to select a username
  */
-@interface APRUsernameViewController : UIViewController <UITextFieldDelegate>
+@interface APRNicknameViewController : UIViewController <UITextFieldDelegate>
 
 @end
