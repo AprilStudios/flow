@@ -39,6 +39,8 @@
 		FA9DBD901ACFEBDF00806A2C /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA9DBD851ACFEBDF00806A2C /* Security.framework */; };
 		FA9DBD911ACFEBDF00806A2C /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA9DBD861ACFEBDF00806A2C /* StoreKit.framework */; };
 		FA9DBD921ACFEBDF00806A2C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA9DBD871ACFEBDF00806A2C /* SystemConfiguration.framework */; };
+		FA9DBD941ACFF2BA00806A2C /* APRUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9DBD931ACFF2BA00806A2C /* APRUser.swift */; };
+		FA9DBD961ACFF2C900806A2C /* APRState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9DBD951ACFF2C900806A2C /* APRState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +92,8 @@
 		FA9DBD851ACFEBDF00806A2C /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		FA9DBD861ACFEBDF00806A2C /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		FA9DBD871ACFEBDF00806A2C /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		FA9DBD931ACFF2BA00806A2C /* APRUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APRUser.swift; sourceTree = "<group>"; };
+		FA9DBD951ACFF2C900806A2C /* APRState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APRState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -203,6 +207,8 @@
 		955B18B11ACFC2C900D0D8EA /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				FA9DBD931ACFF2BA00806A2C /* APRUser.swift */,
+				FA9DBD951ACFF2C900806A2C /* APRState.swift */,
 				FA9DBD6F1ACFE9B000806A2C /* APRParseManager.swift */,
 				955B18B41ACFC31D00D0D8EA /* AppDelegate.h */,
 				955B18B51ACFC31D00D0D8EA /* AppDelegate.m */,
@@ -350,8 +356,10 @@
 			files = (
 				953512AD1ACFC29B00B0B2C9 /* flow.xcdatamodeld in Sources */,
 				FA9DBD701ACFE9B000806A2C /* APRParseManager.swift in Sources */,
+				FA9DBD941ACFF2BA00806A2C /* APRUser.swift in Sources */,
 				95F829FE1ACFC92500DC5864 /* APRLoginViewController.m in Sources */,
 				95F82A141ACFCD0900DC5864 /* main.m in Sources */,
+				FA9DBD961ACFF2C900806A2C /* APRState.swift in Sources */,
 				7CE3F46C1ACFDC7F008A3AA3 /* APRMainViewController.swift in Sources */,
 				955B18B61ACFC31D00D0D8EA /* AppDelegate.m in Sources */,
 			);

@@ -29,16 +29,13 @@
     // [Optional] Track statistics around application opens.
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
 
-    PFObject *testObject = [PFObject objectWithClassName:@"TestObject"];
+    /*PFObject *testObject = [PFObject objectWithClassName:@"TestObject"];
     testObject[@"foo"] = @"bar";
-    [testObject saveInBackground];
+    [testObject saveInBackground];*/
     
     APRParseManager *parseManager = [[APRParseManager alloc]init];
     [parseManager test];
 
-    
-    
-    
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.

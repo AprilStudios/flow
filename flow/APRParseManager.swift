@@ -14,16 +14,28 @@ class APRParseManager: NSObject {
         println("SwiftClass init")
     }
     func test() -> Void {
-        var gameScore = PFObject(className: "GameScore")
+        
+        //updating and not updating
+        /*var gameScore = PFObject(className: "GameScore")
         gameScore.setObject(1337, forKey: "score")
         gameScore.setObject("Sean Plott", forKey: "playerName")
         gameScore.saveInBackgroundWithBlock {
             (success: Bool!, error: NSError!) -> Void in
             if (success != nil) {
-                NSLog("Object created with id: \(gameScore.objectId)")
+                println("Object created with id: \(gameScore.objectId)")
             } else {
-                NSLog("%@", error)
+                println("%@", error)
             }
         }
+        var query = PFQuery(className:"GameScore")
+        query.getObjectInBackgroundWithId("qZzAaTMckw") {
+            (gameScore: PFObject!, error: NSError!)-> Void in
+            if error != nil {
+                println(error)
+            } else {
+                gameScore["score"] = 200
+                gameScore.saveInBackground()
+            }
+        }*/
     }
 }
