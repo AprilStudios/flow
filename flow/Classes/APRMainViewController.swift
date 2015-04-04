@@ -29,7 +29,8 @@ class APRMainViewController: UIViewController, UIScrollViewDelegate  {
     var startedButtonAnimation = false
     var finishedButtonAnimation = false
     var stateButtons: [UIButton] = []
-    var currentPage = 0
+    var currentPage: Double = 0
+    var prevPage: Double = 0
 
     @IBOutlet weak var buttonsView: UIView!
     
@@ -79,16 +80,13 @@ class APRMainViewController: UIViewController, UIScrollViewDelegate  {
     
     override func viewDidLayoutSubviews() {
         
-        
-        
         println("set size")
         
-        let circlePath = UIBezierPath(arcCenter: CGPoint(x: buttonsView.frame.origin.x + 91, y: buttonsView.frame.origin.y + 65),  radius: 100, startAngle: 0.0, endAngle: CGFloat(M_PI * 2.0), clockwise: true)
+        let circlePath = UIBezierPath(arcCenter: CGPoint(x: buttonsView.frame.origin.x + 91, y: buttonsView.frame.origin.y + 65),  radius: 100, startAngle: CGFloat(-M_PI/2), endAngle: CGFloat(3*M_PI/2.0), clockwise: true)
         
         // Setup the CAShapeLayer with the path, colors, and line width
         circleLayer.path = circlePath.CGPath
         circleLayer.fillColor = UIColor.clearColor().CGColor
-        circleLayer.strokeColor = UIColor.redColor().CGColor
         circleLayer.lineWidth = 5.0
         
         // Don't draw the circle initially
@@ -103,11 +101,22 @@ class APRMainViewController: UIViewController, UIScrollViewDelegate  {
     
     override func animationDidStop(anim: CAAnimation!, finished flag: Bool) {
         finishedButtonAnimation = true
+        println("anime")
+        
+        var pulseAnimation:CABasicAnimation = CABasicAnimation(keyPath: "opacity");
+        pulseAnimation.duration = 0.25
+        pulseAnimation.toValue = 0.5
+        pulseAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+        pulseAnimation.autoreverses = true
+        pulseAnimation.repeatCount = 2
+        circleLayer.addAnimation(pulseAnimation, forKey: "pulse")
     }
     
     
     func animateCircle(duration: NSTimeInterval) {
         println("animating")
+        
+        circleLayer.strokeColor = states[Int(currentPage)].circleColor.CGColor
         // We want to animate the strokeEnd property of the circleLayer
         let animation = CABasicAnimation(keyPath: "strokeEnd")
         
@@ -133,9 +142,9 @@ class APRMainViewController: UIViewController, UIScrollViewDelegate  {
     func changeState (Sender: UIButton!){
         
         println("called")
-        currentStateLabel.text = Sender.titleColorForState(UIControlState.Normal)?.description
+        //currentStateLabel.text = Sender.titleColorForState(UIControlState.Normal)?.description
         if (!startedButtonAnimation){
-        animateCircle(1.0)
+        animateCircle(0.5)
         }
         startedButtonAnimation = true
     }
@@ -160,11 +169,18 @@ class APRMainViewController: UIViewController, UIScrollViewDelegate  {
     }
     
     func scrollViewWillBeginDecelerating(scrollView: UIScrollView) {
-        scrollView.userInteractionEnabled = false
+        var width = Double(scrollView.frame.size.width)
+        prevPage = (Double(scrollView.contentOffset.x) + (0.5 * width)) / width - 0.5
         circleLayer.strokeEnd = 0.0
+
+        scrollView.userInteractionEnabled = false
+        
     }
     
      func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
+        var width = Double(scrollView.frame.size.width)
+        currentPage = (Double(scrollView.contentOffset.x) + (0.5 * width)) / width - 0.5
+        println(currentPage)
         scrollView.userInteractionEnabled = true
     }
         
