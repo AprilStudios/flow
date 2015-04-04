@@ -85,8 +85,70 @@ class APRParseManager: NSObject {
         }
     }
     
-    
-    
+    /*func makeUser(objectId:String)-> APRUser {
+        var userQuery = PFQuery(className: "APRUser")
+        userQuery.getObjectInBackgroundWithId(u) {
+            (userObject: PFObject!, error:NSError!)-> Void in
+            if error == nil && userObject != nil {
+                println(userObject)
+            } else {
+                println(error)
+            }
+        }
+    }*/
+    /*func makeState(objectId:String)-> APRState {
+
+    }*/
+
+    func nicknameForUserID(u:NSString, completion:((nickname:NSString)->Void)) -> Void
+    {
+        var userQuery = PFQuery(className: "APRUser")
+        userQuery.whereKey("userID", equalTo:u)
+        userQuery.findObjectsInBackgroundWithBlock
+        {
+            (objects: [AnyObject]!, error: NSError!) -> Void in
+            if error == nil
+            {
+                println("Successfully retrieved")
+                if let objects = objects as? [PFObject]
+                {
+                    let n = objects[0]["nickname"] as NSString
+                    completion(nickname: n)
+                    
+                    return
+                }
+            }
+            else
+            {
+                println("Error")
+            }
+        }
+    }
+
+    func userIDForNickname(nickname:NSString, completion:((userID:NSString)->Void)) -> Void
+    {
+        var userQuery = PFQuery(className: "APRUser")
+        userQuery.whereKey("nickname", equalTo:nickname)
+        userQuery.findObjectsInBackgroundWithBlock
+            {
+                (objects: [AnyObject]!, error: NSError!) -> Void in
+                if error == nil
+                {
+                    println("Successfully retrieved")
+                    if let objects = objects as? [PFObject]
+                    {
+                        let n = objects[0]["userID"] as NSString
+                        completion(userID: n)
+                        
+                        return
+                    }
+                }
+                else
+                {
+                    println("Error")
+                }
+        }
+    }
     
     func test() -> Void {
         

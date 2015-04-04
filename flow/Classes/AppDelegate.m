@@ -39,8 +39,12 @@
     
     APRParseManager *parseManager = [[APRParseManager alloc]init];
     [parseManager test];
-    
-    
+    [parseManager nicknameForUserID:@"abcde" completion:^(NSString *nickname){
+        NSLog(@"async nickname: %@", nickname);
+    }];
+    [parseManager userIDForNickname:@"LOLDENNIS" completion:^(NSString *userID){
+        NSLog(@"async id: %@", userID);
+    }];
     /* Facebook */
     [FBSDKLoginButton class];
     
