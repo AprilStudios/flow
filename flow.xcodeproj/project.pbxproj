@@ -13,6 +13,8 @@
 		953512B21ACFC29B00B0B2C9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 953512B01ACFC29B00B0B2C9 /* LaunchScreen.xib */; };
 		953512BE1ACFC29C00B0B2C9 /* flowTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 953512BD1ACFC29C00B0B2C9 /* flowTests.m */; };
 		955B18B61ACFC31D00D0D8EA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 955B18B51ACFC31D00D0D8EA /* AppDelegate.m */; };
+		95F588F01ACFC43300E6F25A /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95F588EF1ACFC43300E6F25A /* Login.storyboard */; };
+		95F588F21ACFC43C00E6F25A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95F588F11ACFC43C00E6F25A /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +39,8 @@
 		953512BD1ACFC29C00B0B2C9 /* flowTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = flowTests.m; sourceTree = "<group>"; };
 		955B18B41ACFC31D00D0D8EA /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Classes/AppDelegate.h; sourceTree = "<group>"; };
 		955B18B51ACFC31D00D0D8EA /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = Classes/AppDelegate.m; sourceTree = "<group>"; };
+		95F588EF1ACFC43300E6F25A /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		95F588F11ACFC43C00E6F25A /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +131,8 @@
 			isa = PBXGroup;
 			children = (
 				953512B01ACFC29B00B0B2C9 /* LaunchScreen.xib */,
+				95F588EF1ACFC43300E6F25A /* Login.storyboard */,
+				95F588F11ACFC43C00E6F25A /* Main.storyboard */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -220,6 +226,8 @@
 			files = (
 				953512B21ACFC29B00B0B2C9 /* LaunchScreen.xib in Resources */,
 				953512AF1ACFC29B00B0B2C9 /* Images.xcassets in Resources */,
+				95F588F01ACFC43300E6F25A /* Login.storyboard in Resources */,
+				95F588F21ACFC43C00E6F25A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
