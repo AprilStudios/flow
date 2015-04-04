@@ -18,6 +18,8 @@
 		958C8E311ACFEA88002EC76B /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 958C8E2E1ACFEA88002EC76B /* FBSDKLoginKit.framework */; };
 		958C8E321ACFEA88002EC76B /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 958C8E2F1ACFEA88002EC76B /* FBSDKShareKit.framework */; };
 		958C8E341ACFEA9B002EC76B /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 958C8E331ACFEA9B002EC76B /* Bolts.framework */; };
+		958C8E3A1ACFF33B002EC76B /* tweed.png in Resources */ = {isa = PBXBuildFile; fileRef = 958C8E371ACFF33B002EC76B /* tweed.png */; };
+		958C8E3B1ACFF33B002EC76B /* tweed_@2X.png in Resources */ = {isa = PBXBuildFile; fileRef = 958C8E381ACFF33B002EC76B /* tweed_@2X.png */; };
 		95F829FE1ACFC92500DC5864 /* APRLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95F829FD1ACFC92500DC5864 /* APRLoginViewController.m */; };
 		95F82A101ACFCCC300DC5864 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 953512B01ACFC29B00B0B2C9 /* LaunchScreen.xib */; };
 		95F82A131ACFCD0900DC5864 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 95F82A111ACFCD0900DC5864 /* Info.plist */; };
@@ -52,6 +54,8 @@
 		958C8E2E1ACFEA88002EC76B /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		958C8E2F1ACFEA88002EC76B /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
 		958C8E331ACFEA9B002EC76B /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		958C8E371ACFF33B002EC76B /* tweed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tweed.png; sourceTree = "<group>"; };
+		958C8E381ACFF33B002EC76B /* tweed_@2X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tweed_@2X.png"; sourceTree = "<group>"; };
 		95F829FC1ACFC92500DC5864 /* APRLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = APRLoginViewController.h; path = Classes/APRLoginViewController.h; sourceTree = "<group>"; };
 		95F829FD1ACFC92500DC5864 /* APRLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = APRLoginViewController.m; path = Classes/APRLoginViewController.m; sourceTree = "<group>"; };
 		95F82A111ACFCD0900DC5864 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -164,6 +168,7 @@
 		955B18B31ACFC2F700D0D8EA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				958C8E351ACFF33B002EC76B /* Images */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -177,6 +182,32 @@
 				958C8E2F1ACFEA88002EC76B /* FBSDKShareKit.framework */,
 			);
 			path = Frameworks;
+			sourceTree = "<group>";
+		};
+		958C8E351ACFF33B002EC76B /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				958C8E361ACFF33B002EC76B /* Backgrounds */,
+				958C8E391ACFF33B002EC76B /* Icons */,
+			);
+			name = Images;
+			path = Resources/Images;
+			sourceTree = "<group>";
+		};
+		958C8E361ACFF33B002EC76B /* Backgrounds */ = {
+			isa = PBXGroup;
+			children = (
+				958C8E371ACFF33B002EC76B /* tweed.png */,
+				958C8E381ACFF33B002EC76B /* tweed_@2X.png */,
+			);
+			path = Backgrounds;
+			sourceTree = "<group>";
+		};
+		958C8E391ACFF33B002EC76B /* Icons */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Icons;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,10 +291,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				95F82A101ACFCCC300DC5864 /* LaunchScreen.xib in Resources */,
+				958C8E3B1ACFF33B002EC76B /* tweed_@2X.png in Resources */,
 				953512AF1ACFC29B00B0B2C9 /* Images.xcassets in Resources */,
 				956D046E1ACFC540009BC09C /* Login.storyboard in Resources */,
 				95F82A131ACFCD0900DC5864 /* Info.plist in Resources */,
 				956D046F1ACFC540009BC09C /* Main.storyboard in Resources */,
+				958C8E3A1ACFF33B002EC76B /* tweed.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -18,6 +18,8 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
     // Override point for customization after application launch.
+    [FBSDKLoginButton class];
+    
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Login" bundle:nil];
     UIViewController *vc = (UIViewController *)[sb instantiateViewControllerWithIdentifier:@"LoginVC"];
     [self.window setRootViewController:vc];

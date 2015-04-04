@@ -13,17 +13,19 @@
 
 @implementation APRLoginViewController
 
-
+/**
+ * @method viewDidLoad
+ *
+ * Called when this Login view is loaded
+ * @note called once during lifetime of app launch
+ */
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 
-    NSLog(@"??");
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    //init any variables
+    [self setNeedsStatusBarAppearanceUpdate];
+    //self.view.backgroundColor = [UIColor blackColor];//[UIColor colorWithPatternImage:[UIImage imageNamed:@"tweed_@2x"]];
 }
 
 
@@ -37,14 +39,17 @@
     [self presentViewController:mainVC animated:YES completion:NULL];
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+#pragma mark - UI Customization
+/**
+ * @method preferredStatusBarStytle
+ *
+ * Returns the preferred style for status bar.
+ */
+- (UIStatusBarStyle) preferredStatusBarStyle
+{
+    return UIStatusBarStyleLightContent;
 }
-*/
+
 
 @end
