@@ -1,26 +1,86 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Main View Controller-->
         <scene sceneID="QuC-Mh-Vy7">
             <objects>
-                <viewController storyboardIdentifier="MainVC" id="bG5-F2-9aU" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainVC" id="bG5-F2-9aU" customClass="APRMainViewController" customModule="flow" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="zgR-TB-Hgi"/>
-                        <viewControllerLayoutGuide type="bottom" id="btq-AZ-HQU"/>
+                        <viewControllerLayoutGuide type="top" id="VUg-Rc-iRQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="RLD-lm-DmF"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="2Ce-FP-XoQ">
+                    <view key="view" contentMode="scaleToFill" id="2Ce-FP-XoQ" userLabel="MyMainView">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tds-vj-Tip" userLabel="ButtonsView">
+                                <rect key="frame" x="20" y="48" width="560" height="349"/>
+                                <subviews>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zE0-8E-PqW">
+                                        <rect key="frame" x="10" y="65" width="530" height="177"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pap-87-W9L">
+                                                <rect key="frame" x="-8" y="-8" width="530" height="177"/>
+                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="177" id="cv3-hb-oHQ"/>
+                                                    <constraint firstAttribute="width" constant="530" id="u5k-se-nR9"/>
+                                                </constraints>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eXG-md-hmp">
+                                                <rect key="frame" x="2" y="2" width="42" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="Pap-87-W9L" firstAttribute="trailing" secondItem="zE0-8E-PqW" secondAttribute="trailingMargin" id="BO2-1M-yh4"/>
+                                            <constraint firstItem="Pap-87-W9L" firstAttribute="leading" secondItem="zE0-8E-PqW" secondAttribute="leading" constant="-8" id="BuF-OS-gBf"/>
+                                            <constraint firstItem="Pap-87-W9L" firstAttribute="bottom" secondItem="zE0-8E-PqW" secondAttribute="bottomMargin" id="HqW-aG-e3q"/>
+                                            <constraint firstItem="Pap-87-W9L" firstAttribute="top" secondItem="zE0-8E-PqW" secondAttribute="top" constant="-8" id="pPf-Ld-sqq"/>
+                                        </constraints>
+                                    </scrollView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="zE0-8E-PqW" firstAttribute="leading" secondItem="tds-vj-Tip" secondAttribute="leading" constant="10" id="49m-LZ-Jji"/>
+                                    <constraint firstAttribute="bottom" secondItem="zE0-8E-PqW" secondAttribute="bottom" constant="107" id="4ie-6L-ZJW"/>
+                                    <constraint firstAttribute="centerX" secondItem="zE0-8E-PqW" secondAttribute="centerX" constant="12" id="5yf-uG-Zzh"/>
+                                    <constraint firstAttribute="trailing" secondItem="zE0-8E-PqW" secondAttribute="trailing" constant="20" id="AZd-Mr-Zqa"/>
+                                    <constraint firstItem="zE0-8E-PqW" firstAttribute="top" secondItem="tds-vj-Tip" secondAttribute="top" constant="65" id="K5N-EZ-fyp"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Whu-Oc-COh">
+                                <rect key="frame" x="238" y="510" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="tds-vj-Tip" firstAttribute="top" secondItem="VUg-Rc-iRQ" secondAttribute="bottom" constant="28" id="2l3-d2-JWG"/>
+                            <constraint firstAttribute="trailing" secondItem="tds-vj-Tip" secondAttribute="trailing" constant="20" id="cWR-FG-23z"/>
+                            <constraint firstItem="RLD-lm-DmF" firstAttribute="top" secondItem="tds-vj-Tip" secondAttribute="bottom" constant="203" id="umF-Oj-t9r"/>
+                            <constraint firstItem="tds-vj-Tip" firstAttribute="leading" secondItem="2Ce-FP-XoQ" secondAttribute="leading" constant="20" id="wcB-4C-HLs"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="buttonsView" destination="tds-vj-Tip" id="6eR-Af-XrG"/>
+                        <outlet property="currentStateLabel" destination="Whu-Oc-COh" id="9hN-Jm-1k5"/>
+                        <outlet property="scrollContentView" destination="Pap-87-W9L" id="MXP-aN-V22"/>
+                        <outlet property="stateScrollView" destination="zE0-8E-PqW" id="8hW-og-BqF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Oi9-69-UKv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="513" y="339"/>
+            <point key="canvasLocation" x="504" y="300"/>
         </scene>
     </scenes>
 </document>
