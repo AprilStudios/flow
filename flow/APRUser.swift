@@ -31,12 +31,12 @@ class APRUser: NSObject {
         
         super.init()
     }
-    init(n:String, f:String, u:Int, o:String) {
+    init(n:String, f:String, u:Int) {
         self.state = APRState()
         self.nickname=n
         self.facebookID=f
         self.userID=u
-        self.objectID=o
+        self.objectID=String()
         self.timeSinceChanged = NSDate()
         self.stateTimes = Dictionary<APRState,Int32>()
         self.customStates = [APRState]()
@@ -76,6 +76,9 @@ class APRUser: NSObject {
     }
     func setNickname(n:String)-> Void {
         nickname = n
+    }
+    func setObjectID(o:String)-> Void{
+        objectID = o
     }
     func setTimeSinceChanged(date:NSDate)-> Void {
         timeSinceChanged = date

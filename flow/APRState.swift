@@ -57,5 +57,8 @@ class APRState: NSObject {
     func setIcon(i:String) -> Void {
         icon = i
     }
+    func setObjectID(o:String)-> Void {
+        objectID = o
+    }
     
 }
