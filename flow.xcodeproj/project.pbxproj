@@ -20,6 +20,17 @@
 		958C8E341ACFEA9B002EC76B /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 958C8E331ACFEA9B002EC76B /* Bolts.framework */; };
 		958C8E3A1ACFF33B002EC76B /* tweed.png in Resources */ = {isa = PBXBuildFile; fileRef = 958C8E371ACFF33B002EC76B /* tweed.png */; };
 		958C8E3B1ACFF33B002EC76B /* tweed_@2X.png in Resources */ = {isa = PBXBuildFile; fileRef = 958C8E381ACFF33B002EC76B /* tweed_@2X.png */; };
+		958C8E471ACFFB2F002EC76B /* Amazing Grotesk Book Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 958C8E3E1ACFFB2F002EC76B /* Amazing Grotesk Book Italic.otf */; };
+		958C8E481ACFFB2F002EC76B /* Amazing Grotesk Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = 958C8E3F1ACFFB2F002EC76B /* Amazing Grotesk Book.otf */; };
+		958C8E491ACFFB2F002EC76B /* Amazing Grotesk Demi Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 958C8E401ACFFB2F002EC76B /* Amazing Grotesk Demi Italic.otf */; };
+		958C8E4A1ACFFB2F002EC76B /* Amazing Grotesk Demi.otf in Resources */ = {isa = PBXBuildFile; fileRef = 958C8E411ACFFB2F002EC76B /* Amazing Grotesk Demi.otf */; };
+		958C8E4B1ACFFB2F002EC76B /* Amazing Grotesk Light Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 958C8E421ACFFB2F002EC76B /* Amazing Grotesk Light Italic.otf */; };
+		958C8E4C1ACFFB2F002EC76B /* Amazing Grotesk Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 958C8E431ACFFB2F002EC76B /* Amazing Grotesk Light.otf */; };
+		958C8E4D1ACFFB2F002EC76B /* Amazing Grotesk Ultra Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 958C8E441ACFFB2F002EC76B /* Amazing Grotesk Ultra Italic.otf */; };
+		958C8E4E1ACFFB2F002EC76B /* Amazing Grotesk Ultra.otf in Resources */ = {isa = PBXBuildFile; fileRef = 958C8E451ACFFB2F002EC76B /* Amazing Grotesk Ultra.otf */; };
+		958C8E4F1ACFFB2F002EC76B /* license.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 958C8E461ACFFB2F002EC76B /* license.pdf */; };
+		958C8E531ACFFD63002EC76B /* Flow Circle.idraw in Resources */ = {isa = PBXBuildFile; fileRef = 958C8E511ACFFD63002EC76B /* Flow Circle.idraw */; };
+		958C8E541ACFFD63002EC76B /* Flow Circle.png in Resources */ = {isa = PBXBuildFile; fileRef = 958C8E521ACFFD63002EC76B /* Flow Circle.png */; };
 		95F829FE1ACFC92500DC5864 /* APRLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95F829FD1ACFC92500DC5864 /* APRLoginViewController.m */; };
 		95F82A101ACFCCC300DC5864 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 953512B01ACFC29B00B0B2C9 /* LaunchScreen.xib */; };
 		95F82A131ACFCD0900DC5864 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 95F82A111ACFCD0900DC5864 /* Info.plist */; };
@@ -56,6 +67,17 @@
 		958C8E331ACFEA9B002EC76B /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		958C8E371ACFF33B002EC76B /* tweed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tweed.png; sourceTree = "<group>"; };
 		958C8E381ACFF33B002EC76B /* tweed_@2X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tweed_@2X.png"; sourceTree = "<group>"; };
+		958C8E3E1ACFFB2F002EC76B /* Amazing Grotesk Book Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Amazing Grotesk Book Italic.otf"; sourceTree = "<group>"; };
+		958C8E3F1ACFFB2F002EC76B /* Amazing Grotesk Book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Amazing Grotesk Book.otf"; sourceTree = "<group>"; };
+		958C8E401ACFFB2F002EC76B /* Amazing Grotesk Demi Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Amazing Grotesk Demi Italic.otf"; sourceTree = "<group>"; };
+		958C8E411ACFFB2F002EC76B /* Amazing Grotesk Demi.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Amazing Grotesk Demi.otf"; sourceTree = "<group>"; };
+		958C8E421ACFFB2F002EC76B /* Amazing Grotesk Light Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Amazing Grotesk Light Italic.otf"; sourceTree = "<group>"; };
+		958C8E431ACFFB2F002EC76B /* Amazing Grotesk Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Amazing Grotesk Light.otf"; sourceTree = "<group>"; };
+		958C8E441ACFFB2F002EC76B /* Amazing Grotesk Ultra Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Amazing Grotesk Ultra Italic.otf"; sourceTree = "<group>"; };
+		958C8E451ACFFB2F002EC76B /* Amazing Grotesk Ultra.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Amazing Grotesk Ultra.otf"; sourceTree = "<group>"; };
+		958C8E461ACFFB2F002EC76B /* license.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = license.pdf; sourceTree = "<group>"; };
+		958C8E511ACFFD63002EC76B /* Flow Circle.idraw */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Flow Circle.idraw"; sourceTree = "<group>"; };
+		958C8E521ACFFD63002EC76B /* Flow Circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Flow Circle.png"; sourceTree = "<group>"; };
 		95F829FC1ACFC92500DC5864 /* APRLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = APRLoginViewController.h; path = Classes/APRLoginViewController.h; sourceTree = "<group>"; };
 		95F829FD1ACFC92500DC5864 /* APRLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = APRLoginViewController.m; path = Classes/APRLoginViewController.m; sourceTree = "<group>"; };
 		95F82A111ACFCD0900DC5864 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -148,9 +170,9 @@
 			children = (
 				955B18B41ACFC31D00D0D8EA /* AppDelegate.h */,
 				955B18B51ACFC31D00D0D8EA /* AppDelegate.m */,
-				7CE3F46B1ACFDC7F008A3AA3 /* APRMainViewController.swift */,
 				95F829FC1ACFC92500DC5864 /* APRLoginViewController.h */,
 				95F829FD1ACFC92500DC5864 /* APRLoginViewController.m */,
+				7CE3F46B1ACFDC7F008A3AA3 /* APRMainViewController.swift */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -168,6 +190,7 @@
 		955B18B31ACFC2F700D0D8EA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				958C8E3C1ACFFB2F002EC76B /* Fonts */,
 				958C8E351ACFF33B002EC76B /* Images */,
 			);
 			name = Resources;
@@ -189,6 +212,7 @@
 			children = (
 				958C8E361ACFF33B002EC76B /* Backgrounds */,
 				958C8E391ACFF33B002EC76B /* Icons */,
+				958C8E501ACFFD63002EC76B /* Logos */,
 			);
 			name = Images;
 			path = Resources/Images;
@@ -208,6 +232,40 @@
 			children = (
 			);
 			path = Icons;
+			sourceTree = "<group>";
+		};
+		958C8E3C1ACFFB2F002EC76B /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				958C8E3D1ACFFB2F002EC76B /* Amazing Grotesk */,
+			);
+			name = Fonts;
+			path = Resources/Fonts;
+			sourceTree = "<group>";
+		};
+		958C8E3D1ACFFB2F002EC76B /* Amazing Grotesk */ = {
+			isa = PBXGroup;
+			children = (
+				958C8E3E1ACFFB2F002EC76B /* Amazing Grotesk Book Italic.otf */,
+				958C8E3F1ACFFB2F002EC76B /* Amazing Grotesk Book.otf */,
+				958C8E401ACFFB2F002EC76B /* Amazing Grotesk Demi Italic.otf */,
+				958C8E411ACFFB2F002EC76B /* Amazing Grotesk Demi.otf */,
+				958C8E421ACFFB2F002EC76B /* Amazing Grotesk Light Italic.otf */,
+				958C8E431ACFFB2F002EC76B /* Amazing Grotesk Light.otf */,
+				958C8E441ACFFB2F002EC76B /* Amazing Grotesk Ultra Italic.otf */,
+				958C8E451ACFFB2F002EC76B /* Amazing Grotesk Ultra.otf */,
+				958C8E461ACFFB2F002EC76B /* license.pdf */,
+			);
+			path = "Amazing Grotesk";
+			sourceTree = "<group>";
+		};
+		958C8E501ACFFD63002EC76B /* Logos */ = {
+			isa = PBXGroup;
+			children = (
+				958C8E511ACFFD63002EC76B /* Flow Circle.idraw */,
+				958C8E521ACFFD63002EC76B /* Flow Circle.png */,
+			);
+			path = Logos;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -290,13 +348,24 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				958C8E541ACFFD63002EC76B /* Flow Circle.png in Resources */,
 				95F82A101ACFCCC300DC5864 /* LaunchScreen.xib in Resources */,
+				958C8E531ACFFD63002EC76B /* Flow Circle.idraw in Resources */,
+				958C8E4E1ACFFB2F002EC76B /* Amazing Grotesk Ultra.otf in Resources */,
 				958C8E3B1ACFF33B002EC76B /* tweed_@2X.png in Resources */,
 				953512AF1ACFC29B00B0B2C9 /* Images.xcassets in Resources */,
 				956D046E1ACFC540009BC09C /* Login.storyboard in Resources */,
+				958C8E4A1ACFFB2F002EC76B /* Amazing Grotesk Demi.otf in Resources */,
+				958C8E4F1ACFFB2F002EC76B /* license.pdf in Resources */,
+				958C8E481ACFFB2F002EC76B /* Amazing Grotesk Book.otf in Resources */,
+				958C8E4B1ACFFB2F002EC76B /* Amazing Grotesk Light Italic.otf in Resources */,
+				958C8E4C1ACFFB2F002EC76B /* Amazing Grotesk Light.otf in Resources */,
 				95F82A131ACFCD0900DC5864 /* Info.plist in Resources */,
+				958C8E471ACFFB2F002EC76B /* Amazing Grotesk Book Italic.otf in Resources */,
 				956D046F1ACFC540009BC09C /* Main.storyboard in Resources */,
 				958C8E3A1ACFF33B002EC76B /* tweed.png in Resources */,
+				958C8E4D1ACFFB2F002EC76B /* Amazing Grotesk Ultra Italic.otf in Resources */,
+				958C8E491ACFFB2F002EC76B /* Amazing Grotesk Demi Italic.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
