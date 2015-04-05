@@ -32,24 +32,25 @@ class APRMainViewController: UIViewController, UIScrollViewDelegate, UIGestureRe
     var currentPage: Double = 0
     var prevPage: Double = 0
     var lpgc = UILongPressGestureRecognizer()
+    var pieView: PieChartView?
 
     @IBAction func addStateButton(sender: AnyObject) {
         
         states.append(state(name: "newState", circleColor: getRandomColor()))
-        var newButton = UIButton(frame: CGRect(x: (states.count - 1)*200 + 20, y: 20, width: 180, height: 180))
-        //newButton.addTarget(self, action: "changeState:", forControlEvents: UIControlEvents.TouchDown)
-        //newButton.addTarget(self, action: "liftUpState:", forControlEvents: UIControlEvents.TouchUpInside)
+        var newButton = UIButton(frame: CGRect(x: stateButtons[stateButtons.count - 1].frame.origin.x + self.view.frame.width, y: 20, width: 180, height: 180))
         newButton.layer.cornerRadius = (newButton.bounds.size.height/2)
         newButton.backgroundColor = states[states.count - 1].circleColor
         stateButtons.append(newButton)
-        stateScrollView.contentSize = CGSizeMake(CGFloat(200*states.count), 200)
-
+        stateScrollView.contentSize = CGSizeMake(CGFloat(states.count) * (self.view.frame.width), 220)
         stateScrollView.addSubview(newButton)
         
+        println ("add size ")
+        println (stateScrollView.contentSize)
+        println(self.view.frame.width)
         
-        stateScrollView.setContentOffset(CGPoint(x: CGFloat(200*(states.count - 1)), y: 0), animated: true)
         
-        currentPage+=1
+        stateScrollView.setContentOffset(CGPoint(x: (self.view.frame.width)*(CGFloat(states.count - 1)), y: 0), animated: true)
+        //currentPage+=1
     }
     
     @IBOutlet weak var stateScrollView: UIScrollView!
@@ -70,41 +71,56 @@ class APRMainViewController: UIViewController, UIScrollViewDelegate, UIGestureRe
         states.append(state(name: "Studying", circleColor: UIColor.magentaColor()))
         states.append(state(name: "Fucking", circleColor: UIColor.greenColor()))
         
-        var i = 0
-
-        for state in states {
+        stateButtons.append(UIButton(frame: CGRect(x:self.view.frame.width/2 - 87, y: 20, width: 180, height: 180)))
+        stateButtons[0].backgroundColor = states[0].circleColor
+        stateButtons[0].layer.cornerRadius = (stateButtons[0].bounds.size.height/2)
+        
+        println("added target")
+    
+        
+        var gs =  UIGestureRecognizer(target: self, action: "longPress")
+        stateScrollView.addSubview(stateButtons[0])
+        
+        for i in 1 ... states.count - 1 {
             
-            stateButtons.append(UIButton(frame: CGRect(x: i*200 + 20, y: 20, width: 180, height: 180)))
+            stateButtons.append(UIButton(frame: CGRect(x: stateButtons[i-1].frame.origin.x + self.view.frame.width, y: 20, width: 180, height: 180)))
             stateButtons[i].backgroundColor = states[i].circleColor
             stateButtons[i].layer.cornerRadius = (stateButtons[i].bounds.size.height/2)
             
-            //newButton.setTitleColor(getRandomColor(), forState: UIControlState.Normal)
-            //newButton.setTitle(states[i].name, forState: UIControlState.Normal)
+
             
             println("added target")
-//            stateButtons[i].addTarget(self, action: "changeState:", forControlEvents: UIControlEvents.TouchDown)
-//            stateButtons[i].addTarget(self, action: "liftUpState:", forControlEvents: UIControlEvents.TouchUpInside)
+
         
            var gs =  UIGestureRecognizer(target: self, action: "longPress")
            stateScrollView.addSubview(stateButtons[i])
-            i+=1
             
         }
         
-        stateScrollView.contentSize = CGSizeMake(CGFloat(200*states.count), 200)
-        println(stateScrollView.contentSize)
+        stateScrollView.contentSize = CGSizeMake(CGFloat(states.count) * (self.view.frame.width), 220)
 
-        
+        println ("load size ")
+        println (stateScrollView.contentSize)
+        println(self.view.frame.width)
+
        
-        
-        // Do any additional setup after loading the view.
     }
     
     override func viewDidLayoutSubviews() {
         
-        println("set size")
+        updateCircleLayer()
         
-        let circlePath = UIBezierPath(arcCenter: CGPoint(x: stateScrollView.frame.origin.x + 45, y: stateScrollView.frame.origin.y + 10),  radius: 100, startAngle: CGFloat(-M_PI/2), endAngle: CGFloat(3*M_PI/2.0), clockwise: true)
+
+    }
+    
+    func updateCircleLayer () {
+        
+        if (Int(currentPage) < stateButtons.count) {
+        
+        var xpos = stateButtons[Int(currentPage)].center.x
+        var ypos = stateButtons[Int(currentPage)].center.y
+        
+        let circlePath = UIBezierPath(arcCenter: CGPoint(x: xpos  , y: ypos ),  radius: 100, startAngle: CGFloat(-M_PI/2), endAngle: CGFloat(3*M_PI/2.0), clockwise: true)
         
         // Setup the CAShapeLayer with the path, colors, and line width
         circleLayer.path = circlePath.CGPath
@@ -117,7 +133,8 @@ class APRMainViewController: UIViewController, UIScrollViewDelegate, UIGestureRe
         // Add the circleLayer to the view's layer's sublayers
         stateScrollView.layer.addSublayer(circleLayer)
         
-
+    }
+        
     }
     
     
@@ -226,10 +243,13 @@ class APRMainViewController: UIViewController, UIScrollViewDelegate, UIGestureRe
      func scrollViewDidScroll(scrollView: UIScrollView) {
         var width = Double(scrollView.frame.size.width)
         currentPage = (Double(scrollView.contentOffset.x) + (0.5 * width)) / width - 0.5
+        println(scrollView.contentOffset.x)
         println(currentPage)
         circleLayer.strokeEnd = 0.0
 
         scrollView.userInteractionEnabled = true
+        updateCircleLayer()
+        
     }
         
     override func didReceiveMemoryWarning() {
