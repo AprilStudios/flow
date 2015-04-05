@@ -1,28 +1,25 @@
-//
-//  APRMainViewController.swift
-//  flow
-//
-//  Created by Darvish Kamalia on 4/4/15.
-//  Copyright (c) 2015 AprilStudios. All rights reserved.
-//
 
 import UIKit
 import QuartzCore
 
 struct state {
-    
     var name: String
     var circleColor: UIColor
-    
-    
 }
 
-//  Controls the Main View
-//  This includes the states selector, and the label from the current state
-//
 
-class APRMainViewController: UIViewController, UIScrollViewDelegate, UIGestureRecognizerDelegate  {
-    
+/**
+ * APRMainViewController
+ *
+ * Controls the Main View
+ * This includes the states selector, and the label from the current state
+ *
+ * :author: Darvish Kamalia
+ * :version: 0.1
+ */
+class APRMainViewController: UIViewController, UIScrollViewDelegate, UIGestureRecognizerDelegate
+{
+    //MARK: Private Instance Vars
     var states: [state] = []
     let circleLayer: CAShapeLayer! = CAShapeLayer()
     var newView:UIView?
@@ -33,34 +30,49 @@ class APRMainViewController: UIViewController, UIScrollViewDelegate, UIGestureRe
     var prevPage: Double = 0
     var lpgc = UILongPressGestureRecognizer()
 
-    @IBAction func addStateButton(sender: AnyObject) {
-        
+    @IBOutlet weak var stateScrollView: UIScrollView!
+
+    /** 
+     * addStateButton
+     *
+     * Called when user presses addStateButton.
+     * Scrolls scrollView to the last addState circle.
+     *
+     * :param: sender - of event
+     */
+    @IBAction func addStateButton(sender: AnyObject)
+    {
         states.append(state(name: "newState", circleColor: getRandomColor()))
-        var newButton = UIButton(frame: CGRect(x: (states.count - 1)*200 + 20, y: 20, width: 180, height: 180))
-        //newButton.addTarget(self, action: "changeState:", forControlEvents: UIControlEvents.TouchDown)
-        //newButton.addTarget(self, action: "liftUpState:", forControlEvents: UIControlEvents.TouchUpInside)
+        var newButton = UIButton(frame: CGRect(x: stateButtons[stateButtons.count - 1].frame.origin.x + self.view.frame.width, y: 20, width: 180, height: 180))
         newButton.layer.cornerRadius = (newButton.bounds.size.height/2)
         newButton.backgroundColor = states[states.count - 1].circleColor
         stateButtons.append(newButton)
-        stateScrollView.contentSize = CGSizeMake(CGFloat(200*states.count), 200)
-
+        stateScrollView.contentSize = CGSizeMake(CGFloat(states.count) * (self.view.frame.width), 220)
         stateScrollView.addSubview(newButton)
         
-        
-        stateScrollView.setContentOffset(CGPoint(x: CGFloat(200*(states.count - 1)), y: 0), animated: true)
-        
-        currentPage+=1
+        stateScrollView.setContentOffset(CGPoint(x: (self.view.frame.width)*(CGFloat(states.count - 1)), y: 0), animated: true)
+        //currentPage+=1
     }
     
-    @IBOutlet weak var stateScrollView: UIScrollView!
     
-    override func viewDidLoad() {
+    //MARK: - View LifeCycle Methods
+    /** 
+     * viewDidLoad
+     *
+     * Called when view is loaded
+     */
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
+        
+        //NavBar username setting
+        let nickname: AnyObject? = NSUserDefaults.standardUserDefaults().objectForKey("nickname");
+        self.navigationItem.title = nickname as? String;
         
         var lpgc  = UILongPressGestureRecognizer(target: self, action: "handleLongPress:")
         lpgc.delegate = self
         view.addGestureRecognizer(lpgc)
-        println ("old")
+        
         stateScrollView.showsHorizontalScrollIndicator = false
         stateScrollView.showsVerticalScrollIndicator = false
         
@@ -70,60 +82,76 @@ class APRMainViewController: UIViewController, UIScrollViewDelegate, UIGestureRe
         states.append(state(name: "Studying", circleColor: UIColor.magentaColor()))
         states.append(state(name: "Fucking", circleColor: UIColor.greenColor()))
         
-        var i = 0
-
-        for state in states {
-            
-            stateButtons.append(UIButton(frame: CGRect(x: i*200 + 20, y: 20, width: 180, height: 180)))
+        stateButtons.append(UIButton(frame: CGRect(x:self.view.frame.width/2 - 87, y: 20, width: 180, height: 180)))
+        stateButtons[0].backgroundColor = states[0].circleColor
+        stateButtons[0].layer.cornerRadius = (stateButtons[0].bounds.size.height/2)
+    
+        
+        var gs =  UIGestureRecognizer(target: self, action: "longPress")
+        stateScrollView.addSubview(stateButtons[0])
+        
+        for i in 1 ... states.count - 1
+        {
+            stateButtons.append(UIButton(frame: CGRect(x: stateButtons[i-1].frame.origin.x + self.view.frame.width, y: 20, width: 180, height: 180)))
             stateButtons[i].backgroundColor = states[i].circleColor
             stateButtons[i].layer.cornerRadius = (stateButtons[i].bounds.size.height/2)
-            
-            //newButton.setTitleColor(getRandomColor(), forState: UIControlState.Normal)
-            //newButton.setTitle(states[i].name, forState: UIControlState.Normal)
-            
-            println("added target")
-//            stateButtons[i].addTarget(self, action: "changeState:", forControlEvents: UIControlEvents.TouchDown)
-//            stateButtons[i].addTarget(self, action: "liftUpState:", forControlEvents: UIControlEvents.TouchUpInside)
         
-           var gs =  UIGestureRecognizer(target: self, action: "longPress")
-           stateScrollView.addSubview(stateButtons[i])
-            i+=1
-            
+            var gs =  UIGestureRecognizer(target: self, action: "longPress")
+            stateScrollView.addSubview(stateButtons[i])
         }
         
-        stateScrollView.contentSize = CGSizeMake(CGFloat(200*states.count), 200)
-        println(stateScrollView.contentSize)
-
-        
-       
-        
-        // Do any additional setup after loading the view.
+        stateScrollView.contentSize = CGSizeMake(CGFloat(states.count) * (self.view.frame.width), 220)
     }
     
-    override func viewDidLayoutSubviews() {
+    /**
+     * viewDidLayoutSubview
+     *
+     *
+     */
+    override func viewDidLayoutSubviews()
+    {
+        updateCircleLayer()
+    }
+    
+    override func didReceiveMemoryWarning()
+    {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    /**
+     * updateCircleLayer
+     *
+     *
+     *
+     */
+    func updateCircleLayer()
+    {
         
-        println("set size")
+        if (Int(currentPage) < stateButtons.count)
+        {
+            var xpos = stateButtons[Int(currentPage)].center.x
+            var ypos = stateButtons[Int(currentPage)].center.y
         
-        let circlePath = UIBezierPath(arcCenter: CGPoint(x: stateScrollView.frame.origin.x + 45, y: stateScrollView.frame.origin.y + 10),  radius: 100, startAngle: CGFloat(-M_PI/2), endAngle: CGFloat(3*M_PI/2.0), clockwise: true)
+            let circlePath = UIBezierPath(arcCenter: CGPoint(x: xpos  , y: ypos ),  radius: 100, startAngle: CGFloat(-M_PI/2), endAngle: CGFloat(3*M_PI/2.0), clockwise: true)
         
-        // Setup the CAShapeLayer with the path, colors, and line width
-        circleLayer.path = circlePath.CGPath
-        circleLayer.fillColor = UIColor.clearColor().CGColor
-        circleLayer.lineWidth = 5.0
-        
-        // Don't draw the circle initially
-        circleLayer.strokeEnd = 0.0
-        
-        // Add the circleLayer to the view's layer's sublayers
-        stateScrollView.layer.addSublayer(circleLayer)
-        
-
+            // Setup the CAShapeLayer with the path, colors, and line width
+            circleLayer.path = circlePath.CGPath
+            circleLayer.fillColor = UIColor.clearColor().CGColor
+            circleLayer.lineWidth = 5.0
+            
+            // Don't draw the circle initially
+            circleLayer.strokeEnd = 0.0
+            
+            // Add the circleLayer to the view's layer's sublayers
+            stateScrollView.layer.addSublayer(circleLayer)
+        }
     }
     
     
-    override func animationDidStop(anim: CAAnimation!, finished flag: Bool) {
+    override func animationDidStop(anim: CAAnimation!, finished flag: Bool)
+    {
         finishedButtonAnimation = true
-        println("anime")
         
         var pulseAnimation:CABasicAnimation = CABasicAnimation(keyPath: "opacity");
         pulseAnimation.duration = 0.25
@@ -135,9 +163,8 @@ class APRMainViewController: UIViewController, UIScrollViewDelegate, UIGestureRe
     }
     
     
-    func animateCircle(duration: NSTimeInterval) {
-        println("animating")
-        
+    func animateCircle(duration: NSTimeInterval)
+    {
         circleLayer.strokeColor = states[Int(currentPage)].circleColor.CGColor
         // We want to animate the strokeEnd property of the circleLayer
         let animation = CABasicAnimation(keyPath: "strokeEnd")
@@ -157,106 +184,64 @@ class APRMainViewController: UIViewController, UIScrollViewDelegate, UIGestureRe
         
         // Do the actual animation
         circleLayer.addAnimation(animation, forKey: "animateCircle")
-        
-        
     }
     
-    func handleLongPress (recognizer: UILongPressGestureRecognizer) {
-        
-        if (recognizer.state == UIGestureRecognizerState.Began){
-            
-            if (!startedButtonAnimation){
-                
-                println("starting animation")
+    func handleLongPress(recognizer: UILongPressGestureRecognizer)
+    {
+        if (recognizer.state == UIGestureRecognizerState.Began)
+        {
+            if (!startedButtonAnimation)
+            {
                 animateCircle(1)
                 startedButtonAnimation = true
                 finishedButtonAnimation = false
                 
             }
         }
-            
-            else if (recognizer.state == UIGestureRecognizerState.Ended) {
-                
-                if (finishedButtonAnimation) {
-                    
-                    println("finished")
-                    finishedButtonAnimation = false
-                    startedButtonAnimation = false
-                    
-                }
-                    
-                else {
-                    
-                    println("failed")
-                    circleLayer.removeAnimationForKey("animateCircle")
-                    circleLayer.strokeEnd = 0.0
-                    startedButtonAnimation = false
-                    
-                }
-
-                
+        else if (recognizer.state == UIGestureRecognizerState.Ended)
+        {
+            if (finishedButtonAnimation)
+            {
+                finishedButtonAnimation = false
+                startedButtonAnimation = false
             }
+            else
+            {
+                circleLayer.removeAnimationForKey("animateCircle")
+                circleLayer.strokeEnd = 0.0
+                startedButtonAnimation = false
+            }
+        }
     
     }
     
-    
-//    func changeState (Sender: UIButton!){
-//        
-//        println("called")
-//        if (!startedButtonAnimation){
-//        animateCircle(1)
-//        }
-//        startedButtonAnimation = true
-//    }
-//    
-//    func liftUpState(Sender: UIButton! ){
-//        
-
-//   }
-    
-    func scrollViewDidBeginScroll(scrollView: UIScrollView) {
+    func scrollViewDidBeginScroll(scrollView: UIScrollView)
+    {
         var width = Double(scrollView.frame.size.width)
         prevPage = (Double(scrollView.contentOffset.x) + (0.5 * width)) / width - 0.5
         circleLayer.strokeEnd = 0.0
 
         scrollView.userInteractionEnabled = false
-        
     }
     
-     func scrollViewDidScroll(scrollView: UIScrollView) {
+     func scrollViewDidScroll(scrollView: UIScrollView)
+     {
         var width = Double(scrollView.frame.size.width)
         currentPage = (Double(scrollView.contentOffset.x) + (0.5 * width)) / width - 0.5
+        println(scrollView.contentOffset.x)
         println(currentPage)
         circleLayer.strokeEnd = 0.0
 
         scrollView.userInteractionEnabled = true
-    }
-        
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        updateCircleLayer()
     }
     
-    func getRandomColor() -> UIColor{
-        
+    func getRandomColor() -> UIColor
+    {
         var randomRed:CGFloat = CGFloat(drand48())
-        
         var randomGreen:CGFloat = CGFloat(drand48())
-        
         var randomBlue:CGFloat = CGFloat(drand48())
-        
         return UIColor(red: randomRed, green: randomGreen, blue: randomBlue, alpha: 1.0)
-        
     }
-    
-    /*
-    // MARK: - Navigation
-    
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    // Get the new view controller using segue.destinationViewController.
-    // Pass the selected object to the new view controller.
-    }
-    */
     
 }

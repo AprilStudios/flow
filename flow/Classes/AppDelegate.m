@@ -54,7 +54,7 @@
     UIViewController *vc = (UIViewController *)[sb instantiateViewControllerWithIdentifier:vcName];
     [self.window setRootViewController:vc];
     
-    //Show window
+    //UI Customization
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     
@@ -115,11 +115,11 @@
     // Saves changes in the application's managed object context before the application terminates.
     
     //temp: clear all user data
-//    NSString *appDomain = [[NSBundle mainBundle] bundleIdentifier];
-//    [[NSUserDefaults standardUserDefaults] removePersistentDomainForName:appDomain];
-//    
-//    FBSDKLoginManager *manager = [[FBSDKLoginManager alloc] init];
-//    [manager logOut];
+    NSString *appDomain = [[NSBundle mainBundle] bundleIdentifier];
+    [[NSUserDefaults standardUserDefaults] removePersistentDomainForName:appDomain];
+    
+    FBSDKLoginManager *manager = [[FBSDKLoginManager alloc] init];
+    [manager logOut];
 }
 
 
