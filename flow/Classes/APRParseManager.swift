@@ -5,8 +5,6 @@ import Foundation
 * @brief APRParseManager
 *
 * This class handles direct interaction with Parse, including saving data in the form of PFObjects,
-* 
-*
 *
 *
 * @author Alex Hong, Kevin Wu
@@ -33,12 +31,14 @@ class APRParseManager: NSObject
         return Static.instance!
     }
     
-
-    //MARK: - Add Functions
     /**
      * addUser
      *
-     * Given an APRUser, saves to Parse cloud.
+     * Adds the given APRUser to ParseCloud
+     *
+     * :note: doesn't guard against User already being in database
+     *
+     * :param: user - to save to Parse
      */
     func addUser(user: APRUser)
     {
@@ -46,7 +46,9 @@ class APRParseManager: NSObject
         tempUser["userID"] = user.getUserID()
         tempUser["nickname"] = user.getNickname()
         
-        println("user[nick: %@, id: %@]", user.getUserID(), user.getNickname());
+        var array = [String]()
+        tempUser["userStates"] = array
+        /*(tempUser["userStates"] as [String]).append("what")*/
         
         tempUser.saveInBackgroundWithBlock {
         (success: Bool, error: NSError!) -> Void in
@@ -58,6 +60,43 @@ class APRParseManager: NSObject
         }
     }
     
+    /**
+     * addUser
+     *
+     * Adds the given APRUser to ParseCloud,
+     * and runs completion code block.
+     *
+     * :param: user - to save to Parse
+     * :param: completion - code block to run upon completion
+     */
+    func addUser(user:APRUser, completion:((finishedUser:NSNumber)->Void))-> Void
+    {
+        var tempUser = PFObject(className:"APRUser")
+        tempUser["userID"] = user.getUserID()
+        tempUser["nickname"] = user.getNickname()
+        
+        var array = ["1", "2", "3"]
+        array.append("WHAT")
+        tempUser["userStates"] = array
+        /*(tempUser["userStates"] as [String]).append("what")*/
+        
+        tempUser.saveInBackgroundWithBlock{
+        (success: Bool, error: NSError!) -> Void in
+            if (success)
+            {
+                var objID = tempUser.objectId
+                println("WTF:::: ")
+                println(objID)
+                user.setObjectID(objID)
+            }
+            else
+            {
+                println("ERROR???")
+            }
+            completion(finishedUser: 1)
+        }
+    }
+    
     
     /**
      * addState
@@ -66,24 +105,27 @@ class APRParseManager: NSObject
      *
      * :param: state - to be added
      */
-    func addState(state: APRState)
+    func addState(s: APRState)
     {
         var tempState = PFObject(className:"APRState")
-        tempState["stateID"] = state.getStateID()
-        tempState["name"] = state.getName()
-        tempState["color"] = state.getColor()
-        tempState["icon"] = state.getIcon()
-        
+        tempState["stateID"] = s.getStateID()
+        tempState["name"] = s.getName()
+        tempState["color"] = s.getColor()
+        tempState["icon"] = s.getIcon()
+        println("what")
         tempState.saveInBackgroundWithBlock {
         (success: Bool, error: NSError!) -> Void in
             if (success)
             {
                 var objID = tempState.objectId
-                state.setObjectID(objID)
+                s.setObjectID(objID)
             }
         }
+        return
     }
 
+
+    
     /**
      * addState
      *
@@ -93,90 +135,81 @@ class APRParseManager: NSObject
      * :param: state - state to add
      * :param: completion - code block to run on completion
      */
-    func addState(state:APRState, completion:((success:Bool)->Void))
+    func addState(s: APRState, completion:((finishedState:NSNumber)->Void))->Void
     {
         var tempState = PFObject(className:"APRState")
-        tempState["stateID"] = state.getStateID()
-        tempState["name"] = state.getName()
-        tempState["color"] = state.getColor()
-        tempState["icon"] = state.getIcon()
+        tempState["stateID"] = s.getStateID()
+        tempState["name"] = s.getName()
+        tempState["color"] = s.getColor()
+        tempState["icon"] = s.getIcon()
         
         tempState.saveInBackgroundWithBlock {
         (success: Bool, error: NSError!) -> Void in
             if (success)
             {
                 var objID = tempState.objectId
-                state.setObjectID(objID)
+                s.setObjectID(objID)
+                completion(finishedState: 1)
             }
         }
-        completion(success: true)
+        return
     }
     
     /*
     Adds state s to a part of user u's states variable (An NSArray) and the amount of time they were in such a state
     */
-    /*func addStateForUser(u: APRUser, s: APRState) {
-        var userQuery = PFQuery(className:"APRUser");
-        var stateQuery = PFQuery(className:"APRState")
-        userQuery.getObjectInBackgroundWithId(u.getObjectID()) {
-            (tempUser: PFObject!, error: NSError!) -> Void in
+    func addStateForUser(user:APRUser, state:APRState)
+    {
+        var tempUserArray = user.getUserStates()
+        var tempUser = PFQuery(className:"APRUser")
+        
+        tempUser.getObjectInBackgroundWithId(user.getObjectID()) {
+        (updateUser: PFObject!, error: NSError!) -> Void in
+        
             if error != nil
             {
                 println(error)
             }
             else
             {
-                //User Found
-                stateQuery.getObjectInBackgroundWithId(s.getObjectID()) {
-                    (tempState: PFObject!, error: NSError!) -> Void in
-                    if error != nil
+                for tempState in tempUserArray
+                {
+                    if tempState.getObjectID() == state.getObjectID()
                     {
-                        self.addState(s, completion: {(Bool) in
-                            //State found
-                            if (self.createdUserStatesID) {
-                                var userStatesID = [String]()
-                                userStatesID = (tempUser["userStatesID"] as? NSArray) as Array!
-                                userStatesID.append(s.getObjectID())
-                                tempUser["userStatesID"] = userStatesID
-                            } else {
-                                var userStatesID = ["2", "3"]
-                                tempUser["userStatesID"] = userStatesID
-                                self.createdUserStatesID = true
-                            }
-                        })
+                        return
                     }
-                    //State found
-                    if (self.createdUserStatesID) {
-                        var userStatesID = [String]()
-                        userStatesID = (tempUser["userStatesID"] as? NSArray) as Array!
-                        userStatesID.append(s.getObjectID())
-                        tempUser["userStatesID"] = userStatesID
-                    } else {
-                        var userStatesID = [s.getObjectID()]
-                        tempUser["userStatesID"] = userStatesID
-                        self.createdUserStatesID = true
-                    }
-                    tempState.saveInBackground()
-                    tempUser.saveInBackground()
                 }
+                var tempStates = updateUser["userStates"] as [String]
+                tempStates.append(state.getObjectID())
+                updateUser["userStates"] = tempStates
+                updateUser.saveInBackground()
             }
         }
-    }*/
+    }
     
-    /*func makeUser(objectId:String)-> APRUser {
-        var userQuery = PFQuery(className: "APRUser")
-        userQuery.getObjectInBackgroundWithId(u) {
-            (userObject: PFObject!, error:NSError!)-> Void in
-            if error == nil && userObject != nil {
-                println(userObject)
-            } else {
-                println(error)
+    /**
+     * stateExists
+     *
+     * Checks Parse if state exists.
+     * 
+     * :param: state - to check if duplicate
+     * :param: completion - code block to run after completion
+     */
+    func stateExists(state:APRState, completion:((doesStateExists:Bool)->Void)) -> Void
+    {
+        var stateQuery = PFQuery(className:"APRState")
+        stateQuery.getObjectInBackgroundWithId(state.getObjectID()) {
+        (tempState: PFObject!, error: NSError!) -> Void in
+            if error != nil
+            {
+                completion(doesStateExists:true)
+            }
+            else
+            {
+                completion(doesStateExists:false)
             }
         }
-    }*/
-    /*func makeState(objectId:String)-> APRState {
-
-    }*/
+    }
 
 
     //MARK: - Nickname Functions
@@ -313,11 +346,13 @@ class APRParseManager: NSObject
                         return
                     }
                 }
-            }
-            else
-            {
-                println("Error")
+                else
+                {
+                    println("Error")
+                }
             }
         }
     }
 }
+
+
