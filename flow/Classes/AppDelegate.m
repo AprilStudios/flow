@@ -35,17 +35,17 @@
     /* Set RootVC */
     NSString *sbName = @"Setup";
     NSString *vcName = @"LoginVC";
-    //if ( [[NSUserDefaults standardUserDefaults] objectForKey:@"nickname"] )
-    //{
+    if ( [[NSUserDefaults standardUserDefaults] objectForKey:@"nickname"] )
+    {
        sbName = @"Main";
        vcName = @"MainTabBarController";
-    //}
+    }
     
     UIStoryboard *sb = [UIStoryboard storyboardWithName:sbName bundle:nil];
     UIViewController *vc = (UIViewController *)[sb instantiateViewControllerWithIdentifier:vcName];
     [self.window setRootViewController:vc];
     
-    //Show window
+    //UI Customization
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     

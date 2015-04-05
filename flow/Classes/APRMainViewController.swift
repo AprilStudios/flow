@@ -54,13 +54,18 @@ class APRMainViewController: UIViewController, UIScrollViewDelegate, UIGestureRe
     
     @IBOutlet weak var stateScrollView: UIScrollView!
     
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
+        
+        //NavBar username setting
+        let nickname: AnyObject? = NSUserDefaults.standardUserDefaults().objectForKey("nickname");
+        self.navigationItem.title = nickname as? String;
         
         var lpgc  = UILongPressGestureRecognizer(target: self, action: "handleLongPress:")
         lpgc.delegate = self
         view.addGestureRecognizer(lpgc)
-        println ("old")
+        
         stateScrollView.showsHorizontalScrollIndicator = false
         stateScrollView.showsVerticalScrollIndicator = false
         
@@ -73,14 +78,13 @@ class APRMainViewController: UIViewController, UIScrollViewDelegate, UIGestureRe
         stateButtons.append(UIButton(frame: CGRect(x:self.view.frame.width/2 - 87, y: 20, width: 180, height: 180)))
         stateButtons[0].backgroundColor = states[0].circleColor
         stateButtons[0].layer.cornerRadius = (stateButtons[0].bounds.size.height/2)
-        
-        println("added target")
     
         
         var gs =  UIGestureRecognizer(target: self, action: "longPress")
         stateScrollView.addSubview(stateButtons[0])
         
-        for i in 1 ... states.count - 1 {
+        for i in 1 ... states.count - 1
+        {
             
             stateButtons.append(UIButton(frame: CGRect(x: stateButtons[i-1].frame.origin.x + self.view.frame.width, y: 20, width: 180, height: 180)))
             stateButtons[i].backgroundColor = states[i].circleColor
@@ -97,12 +101,6 @@ class APRMainViewController: UIViewController, UIScrollViewDelegate, UIGestureRe
         }
         
         stateScrollView.contentSize = CGSizeMake(CGFloat(states.count) * (self.view.frame.width), 220)
-
-        println ("load size ")
-        println (stateScrollView.contentSize)
-        println(self.view.frame.width)
-
-       
     }
     
     override func viewDidLayoutSubviews() {
