@@ -42,7 +42,7 @@
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gZQ-mA-BLj">
                                 <rect key="frame" x="197" y="459" width="22" height="22"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <color key="tintColor" patternImage="032AE8E4-F471-427A-AD9E-9F75845766B8" colorSpace="pattern"/>
+                                <color key="tintColor" patternImage="1BDD8394-D780-4255-9FFD-9313DD51F75C" colorSpace="pattern"/>
                                 <state key="normal">
                                     <color key="titleColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -70,7 +70,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="032AE8E4-F471-427A-AD9E-9F75845766B8" width="256" height="256">
+        <image name="1BDD8394-D780-4255-9FFD-9313DD51F75C" width="256" height="256">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGTk9YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK8QEQcI
 ExQZHh8nKzIzNDw/QkhLVSRudWxs1QkKCwwNDg8QERJWTlNTaXplViRjbGFzc1xOU0ltYWdlRmxhZ3NW
@@ -4503,7 +4503,7 @@ tc42zrbPN8+40DnQutE80b7SP9LB00TTxtRJ1MvVTtXR1lXW2Ndc1+DYZNjo2WzZ8dp22vvbgNwF3Ird
 EN2W3hzeot8p36/gNuC94UThzOJT4tvjY+Pr5HPk/OWE5g3mlucf56noMui86Ubp0Opb6uXrcOv77Ibt
 Ee2c7ijutO9A78zwWPDl8XLx//KM8xnzp/Q09ML1UPXe9m32+/eK+Bn4qPk4+cf6V/rn+3f8B/yY/Sn9
 uv5L/tz/bf//gAjSLC0uL1okY2xhc3NuYW1lWCRjbGFzc2VzXU5TTXV0YWJsZURhdGGjLjAxVk5TRGF0
-YVhOU09iamVjdF8QFHt7MCwgMH0sIHsyNTYsIDI1Nn19XxAUe3swLCAwfSwgezI1NiwgMjU2fX3TLC01
+YVhOU09iamVjdF8QFHt7MCwgMH0sIHs1MTIsIDUxMn19XxAUe3swLCAwfSwgezUxMiwgNTEyfX3TLC01
 Njc6WyRjbGFzc2hpbnRzXxAUTlNDR0ltYWdlU25hcHNob3RSZXCjODkxXxAUTlNDR0ltYWdlU25hcHNo
 b3RSZXBaTlNJbWFnZVJlcKE7XxAQTlNDYWNoZWRJbWFnZVJlcNIsLT0+V05TQXJyYXmiPTHSLC1AQV5O
 U011dGFibGVBcnJheaNAPTHTQ0QKRUZHV05TV2hpdGVcTlNDb2xvclNwYWNlRDAgMAAQA4AP0iwtSUpX

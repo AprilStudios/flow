@@ -247,9 +247,9 @@
                 self.errorLabel.text = @"Sorry, that nickname already exists!";
             else
             {
-                [[NSUserDefaults standardUserDefaults] setObject:nickname forKey:@"nickname"];
-                //SAVE TO PARSE
                 [self showMainTabBarController];
+                [[NSUserDefaults standardUserDefaults] setObject:nickname forKey:@"nickname"];
+                [manager addUser:[[APRUser alloc] initWithNickname:nickname userID:[FBSDKAccessToken currentAccessToken].userID]];
             }
         }];
     }

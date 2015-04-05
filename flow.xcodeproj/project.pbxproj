@@ -7,14 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7C4E9D931ACFF73C005D5258 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C4E9D911ACFF73C005D5258 /* Main.storyboard */; };
 		7CE3F46C1ACFDC7F008A3AA3 /* APRMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE3F46B1ACFDC7F008A3AA3 /* APRMainViewController.swift */; };
 		953512AD1ACFC29B00B0B2C9 /* flow.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 953512AB1ACFC29B00B0B2C9 /* flow.xcdatamodeld */; };
 		953512AF1ACFC29B00B0B2C9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 953512AE1ACFC29B00B0B2C9 /* Images.xcassets */; };
 		953512BE1ACFC29C00B0B2C9 /* flowTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 953512BD1ACFC29C00B0B2C9 /* flowTests.m */; };
 		955B18B61ACFC31D00D0D8EA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 955B18B51ACFC31D00D0D8EA /* AppDelegate.m */; };
-		956D046E1ACFC540009BC09C /* Setup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 956D046A1ACFC540009BC09C /* Setup.storyboard */; };
-		956D046F1ACFC540009BC09C /* (null) in Resources */ = {isa = PBXBuildFile; };
 		958C8E301ACFEA88002EC76B /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 958C8E2D1ACFEA88002EC76B /* FBSDKCoreKit.framework */; };
 		958C8E311ACFEA88002EC76B /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 958C8E2E1ACFEA88002EC76B /* FBSDKLoginKit.framework */; };
 		958C8E321ACFEA88002EC76B /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 958C8E2F1ACFEA88002EC76B /* FBSDKShareKit.framework */; };
@@ -45,8 +42,10 @@
 		9598571E1AD0B4AC00E1FE11 /* Start.png in Resources */ = {isa = PBXBuildFile; fileRef = 9598570A1AD0B4AC00E1FE11 /* Start.png */; };
 		9598571F1AD0B4AC00E1FE11 /* Flow Circle.idraw in Resources */ = {isa = PBXBuildFile; fileRef = 9598570D1AD0B4AC00E1FE11 /* Flow Circle.idraw */; };
 		959857201AD0B4AC00E1FE11 /* Flow Circle.png in Resources */ = {isa = PBXBuildFile; fileRef = 9598570E1AD0B4AC00E1FE11 /* Flow Circle.png */; };
+		959857211AD0CF2500E1FE11 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C4E9D911ACFF73C005D5258 /* Main.storyboard */; };
+		959857221AD0CF2500E1FE11 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 953512B01ACFC29B00B0B2C9 /* LaunchScreen.xib */; };
+		959857231AD0CF2500E1FE11 /* Setup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 956D046A1ACFC540009BC09C /* Setup.storyboard */; };
 		95F829FE1ACFC92500DC5864 /* APRLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95F829FD1ACFC92500DC5864 /* APRLoginViewController.m */; };
-		95F82A101ACFCCC300DC5864 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 953512B01ACFC29B00B0B2C9 /* LaunchScreen.xib */; };
 		95F82A141ACFCD0900DC5864 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 95F82A121ACFCD0900DC5864 /* main.m */; };
 		FA9DBD881ACFEBDF00806A2C /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA9DBD7D1ACFEBDF00806A2C /* AudioToolbox.framework */; };
 		FA9DBD891ACFEBDF00806A2C /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA9DBD7E1ACFEBDF00806A2C /* CFNetwork.framework */; };
@@ -475,7 +474,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				95F82A101ACFCCC300DC5864 /* LaunchScreen.xib in Resources */,
+				959857211AD0CF2500E1FE11 /* Main.storyboard in Resources */,
+				959857221AD0CF2500E1FE11 /* LaunchScreen.xib in Resources */,
+				959857231AD0CF2500E1FE11 /* Setup.storyboard in Resources */,
 				959857111AD0B4AC00E1FE11 /* Amazing Grotesk Demi Italic.otf in Resources */,
 				9598571E1AD0B4AC00E1FE11 /* Start.png in Resources */,
 				959857191AD0B4AC00E1FE11 /* tweed_@2X.png in Resources */,
@@ -485,19 +486,16 @@
 				959857101AD0B4AC00E1FE11 /* Amazing Grotesk Book.otf in Resources */,
 				9598571F1AD0B4AC00E1FE11 /* Flow Circle.idraw in Resources */,
 				959857201AD0B4AC00E1FE11 /* Flow Circle.png in Resources */,
-				7C4E9D931ACFF73C005D5258 /* Main.storyboard in Resources */,
 				959857141AD0B4AC00E1FE11 /* Amazing Grotesk Light.otf in Resources */,
 				9598571D1AD0B4AC00E1FE11 /* Start Button.idraw in Resources */,
 				953512AF1ACFC29B00B0B2C9 /* Images.xcassets in Resources */,
 				959857121AD0B4AC00E1FE11 /* Amazing Grotesk Demi.otf in Resources */,
 				9598571A1AD0B4AC00E1FE11 /* Facebook Login Button.idraw in Resources */,
-				956D046E1ACFC540009BC09C /* Setup.storyboard in Resources */,
 				9598571C1AD0B4AC00E1FE11 /* FBLogin.png in Resources */,
 				959857181AD0B4AC00E1FE11 /* tweed.png in Resources */,
 				9598571B1AD0B4AC00E1FE11 /* FBLogin (Pressed).png in Resources */,
 				959857161AD0B4AC00E1FE11 /* Amazing Grotesk Ultra.otf in Resources */,
 				959857131AD0B4AC00E1FE11 /* Amazing Grotesk Light Italic.otf in Resources */,
-				956D046F1ACFC540009BC09C /* (null) in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

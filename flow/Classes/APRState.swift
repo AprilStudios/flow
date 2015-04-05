@@ -11,16 +11,19 @@ import Foundation
 */
 @objc class APRState: NSObject
 {
+    //MARK: - Private Instance Vars
     private var name: String
     private var color: String
     private var icon: String
     private var stateID: Int
     private var objectID: String
 
+
+    //MARK: - Init Funcs
     /**
-     * @method init
+     * init
      *
-     *
+     * Initializes an APRUser with blank fields.
      */
     override init()
     {
@@ -33,22 +36,23 @@ import Foundation
     }
     
     /**
+     * init
      *
-     *
-     *
+     * Creates a APRUser with the given params.
      */
-    init(n:String, c:String, i:String, s:Int, o:String)
+    init(name:String, color:String, icon:String, stateID:Int, objectID:String)
     {
-        self.name=n
-        self.color=c
-        self.icon=i
-        self.stateID=s
-        self.objectID=o
+        self.name = name
+        self.color = color
+        self.icon = icon
+        self.stateID = stateID
+        self.objectID = objectID
+        
         super.init()
     }
     
     
-    /* Accessors */
+    //MARK: - Accessors
     func getName() -> String
     {
         return name

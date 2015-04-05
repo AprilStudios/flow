@@ -46,6 +46,8 @@ class APRParseManager: NSObject
         tempUser["userID"] = user.getUserID()
         tempUser["nickname"] = user.getNickname()
         
+        println("user[nick: %@, id: %@]", user.getUserID(), user.getNickname());
+        
         tempUser.saveInBackgroundWithBlock {
         (success: Bool, error: NSError!) -> Void in
             if (success)
@@ -217,6 +219,8 @@ class APRParseManager: NSObject
      */
     func userIDForNicknameExists(nickname:NSString, completion:((userID:NSString?, found:Bool) -> Void)) -> Void
     {
+        println("hello?")
+    
         var query = PFQuery(className: "APRUser");
         query.whereKey("userID", equalTo:nickname);
         

@@ -17,6 +17,7 @@ import Foundation
  */
 @objc class APRUser: NSObject
 {
+    //MARK: - Private Instance Vars
     private var state: APRState
     private var nickname: String
     private var userID: String
@@ -26,12 +27,17 @@ import Foundation
     private var userStates:[APRState]
     private var stateVisabilities:Dictionary<APRState, Bool>
     
+    /**
+     * init
+     *
+     * Initalizes an APRUser with blank fields.
+     */
     override init()
     {
         self.state = APRState()
-        self.nickname=String()
-        self.userID=String()
-        self.objectID=String()
+        self.nickname = String()
+        self.userID = String()
+        self.objectID = String()
         self.timeSinceChanged = NSDate()
         self.stateTimes = Dictionary<APRState,Int32>()
         self.userStates = [APRState]()
@@ -40,12 +46,17 @@ import Foundation
         super.init()
     }
     
-    init(n:String, u:String)
+    /**
+     * init
+     *
+     * Initializes an APRUser with given nickname and userID
+     */
+    init(nickname:String, userID:String)
     {
         self.state = APRState()
-        self.nickname=n
-        self.userID=u
-        self.objectID=String()
+        self.nickname = nickname
+        self.userID = userID
+        self.objectID = String()
         self.timeSinceChanged = NSDate()
         self.stateTimes = Dictionary<APRState,Int32>()
         self.userStates = [APRState]()
@@ -53,7 +64,9 @@ import Foundation
         super.init()
     }
     
-    //Accessor functions
+    
+    
+    //MARK: - Accessors
     func getState()-> APRState {
         return state
     }
@@ -89,6 +102,7 @@ import Foundation
     func setObjectID(o:String)-> Void{
         objectID = o
     }
+    
     /**
     * @method <setTimeSinceChanged>
     *
