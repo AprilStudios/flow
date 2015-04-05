@@ -105,7 +105,7 @@ class APRMainViewController: UIViewController, UIScrollViewDelegate, UIGestureRe
         
         println("set size")
         
-        let circlePath = UIBezierPath(arcCenter: CGPoint(x: buttonsView.frame.origin.x + 35, y: buttonsView.frame.origin.y + 65),  radius: 100, startAngle: CGFloat(-M_PI/2), endAngle: CGFloat(3*M_PI/2.0), clockwise: true)
+        let circlePath = UIBezierPath(arcCenter: CGPoint(x: buttonsView.frame.origin.x + 45, y: buttonsView.frame.origin.y + 10),  radius: 100, startAngle: CGFloat(-M_PI/2), endAngle: CGFloat(3*M_PI/2.0), clockwise: true)
         
         // Setup the CAShapeLayer with the path, colors, and line width
         circleLayer.path = circlePath.CGPath
