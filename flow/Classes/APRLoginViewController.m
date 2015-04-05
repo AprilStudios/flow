@@ -30,7 +30,7 @@
 
 
 @implementation APRLoginViewController
-
+#pragma mark View Life Cycle Methods
 /**
  * @method viewDidLoad
  *
