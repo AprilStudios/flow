@@ -104,7 +104,6 @@ class APRParseManager: NSObject
         var tempState = PFObject(className:"APRState")
         //tempState["stateID"] = s.getStateID()
         tempState["name"] = s.getName()
-        tempState["color"] = s.getColor()
         tempState["icon"] = s.getIcon()
         println("what")
         tempState.saveInBackgroundWithBlock {
@@ -134,7 +133,6 @@ class APRParseManager: NSObject
         var tempState = PFObject(className:"APRState")
         //tempState["stateID"] = s.getStateID()
         tempState["name"] = s.getName()
-        tempState["color"] = s.getColor()
         tempState["icon"] = s.getIcon()
         
         tempState.saveInBackgroundWithBlock {

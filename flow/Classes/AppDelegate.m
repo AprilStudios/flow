@@ -30,7 +30,7 @@
     
     APRParseManager *parseManager = [[APRParseManager alloc]init];
     APRUser* u = [[APRUser alloc]initWithNickname:@"KYLE" userID:@"TAN"];
-    APRState* s = [[APRState alloc]initWithName:@"WHO" color:@"PINK" icon:@"PEW" objectID:@"swagag"];
+    APRState* s = [[APRState alloc]initWithName:@"WHO" icon:@"PEW" objectID:@"swagag"];
     [parseManager addUser:u completion:^(BOOL finished){
         [parseManager addState:s completion:^(BOOL finished){
             [parseManager addStateForUser:u state:s];

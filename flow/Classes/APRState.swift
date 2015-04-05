@@ -13,9 +13,7 @@ import Foundation
 {
     //MARK: - Private Instance Vars
     private var name: String
-    private var color: String
     private var icon: String
-    //private var stateID: Int
     private var objectID: String
 
 
@@ -28,9 +26,7 @@ import Foundation
     override init()
     {
         self.name = String()
-        self.color = String()
         self.icon = String()
-        //self.stateID = Int()
         self.objectID = String()
         super.init()
     }
@@ -40,12 +36,10 @@ import Foundation
      *
      * Creates a APRUser with the given params.
      */
-    init(name:String, color:String, icon:String, /*stateID:Int,*/ objectID:String)
+    init(name:String, icon:String, objectID:String)
     {
         self.name = name
-        self.color = color
         self.icon = icon
-        //self.stateID = stateID
         self.objectID = objectID
         
         super.init()
@@ -58,21 +52,10 @@ import Foundation
         return name
     }
     
-    func getColor() -> String
-    {
-        return color
-    }
-
     func getIcon() -> String
     {
         return icon
     }
-    
-    /*func getStateID() -> Int
-    {
-        return stateID
-    }*/
-    
     func getObjectID() -> String
     {
         return objectID
@@ -82,12 +65,6 @@ import Foundation
     {
         name = n
     }
-    
-    func setColor(c:String) -> Void
-    {
-        color = c
-    }
-    
     func setIcon(i:String) -> Void
     {
         icon = i

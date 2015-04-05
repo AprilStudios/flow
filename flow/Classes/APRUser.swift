@@ -26,6 +26,7 @@ import Foundation
     private var stateTimes: Dictionary<APRState,Int32>
     private var userStates:[APRState]
     private var stateVisabilities:Dictionary<APRState, Bool>
+    private var stateColors:Dictionary<APRState, UIColor>
     
     /**
      * init
@@ -42,6 +43,7 @@ import Foundation
         self.stateTimes = Dictionary<APRState,Int32>()
         self.userStates = [APRState]()
         self.stateVisabilities = Dictionary<APRState, Bool>()
+        self.stateColors=Dictionary<APRState, UIColor>()
         
         super.init()
     }
@@ -61,6 +63,7 @@ import Foundation
         self.stateTimes = Dictionary<APRState,Int32>()
         self.userStates = [APRState]()
         self.stateVisabilities = Dictionary<APRState, Bool>()
+        self.stateColors=Dictionary<APRState, UIColor>()
         super.init()
     }
     
@@ -90,6 +93,9 @@ import Foundation
     }
     func getStateVisabilities()-> Dictionary<APRState, Bool> {
         return stateVisabilities
+    }
+    func getStateColors()-> Dictionary<APRState, UIColor> {
+        return stateColors
     }
     
     //Mutator functions
@@ -150,5 +156,8 @@ import Foundation
     }
     func setStateVisabilities(s: APRState, b: Bool)-> Void {
         stateVisabilities[s]=b
+    }
+    func setStateColors(state:APRState, color:UIColor)-> Void {
+        stateColors[state]=color
     }
 }
