@@ -405,14 +405,91 @@ class APRParseManager: NSObject
     
     /**
     *
-    * @method calculate(Duration)Total
+    * :method calculate(Duration)Total
     *
-    * @note Given a user and a state, calculates the total amount
+    * :note Given a user and a state, calculates the total amount
     * of time spent in that state in a given duration
     *
     * Returns the time in seconds, Int32
     */
     func calculateDailyTotal(user:APRUser, state:APRState)-> Int32
+    {
+        var result:Int32 = 0
+        var userQuery = PFQuery(className: "APRUser")
+        userQuery.getObjectInBackgroundWithId(user.getObjectID()){
+            (tempUser:PFObject!, error:NSError!) -> Void in
+            if error != nil
+            {
+                println(error)
+            }
+            else
+            {
+                var tempDates:Dictionary<String, [NSDate]> = tempUser["dataTracker"] as Dictionary<String, [NSDate]>
+                var arrayDates:[NSDate]=tempDates[state.getObjectID()]!
+                for var index = 1; index < arrayDates.count; index+=2
+                {
+                    if(arrayDates[index].timeIntervalSinceNow<86400)
+                    {
+                        if(arrayDates[index-1].timeIntervalSinceNow<86400)
+                        {
+                            var temp:NSTimeInterval = arrayDates[index].timeIntervalSinceDate(arrayDates[index-1])
+                            var time:Int = Int(temp)
+                            result+=time
+                        }
+                        else
+                        {
+                            var time:Int = 86400-Int(arrayDates[index].timeIntervalSinceNow)
+                            result+=time
+                        }
+                    }
+                }
+            }
+            
+        }
+        
+        return result
+    }
+
+    
+    func calculateWeeklyTotal(user:APRUser, state:APRState)-> Int32
+    {
+        var result:Int32 = 0
+        var userQuery = PFQuery(className: "APRUser")
+        userQuery.getObjectInBackgroundWithId(user.getObjectID()){
+            (tempUser:PFObject!, error:NSError!) -> Void in
+            if error != nil
+            {
+                println(error)
+            }
+            else
+            {
+                var tempDates:Dictionary<String, [NSDate]> = tempUser["dataTracker"] as Dictionary<String, [NSDate]>
+                var arrayDates:[NSDate]=tempDates[state.getObjectID()]!
+                for var index = 1; index < arrayDates.count; index+=2
+                {
+                    if(arrayDates[index].timeIntervalSinceNow<604800)
+                    {
+                        if(arrayDates[index-1].timeIntervalSinceNow<604800)
+                        {
+                            var temp:NSTimeInterval = arrayDates[index].timeIntervalSinceDate(arrayDates[index-1])
+                            var time:Int = Int(temp)
+                            result+=time
+                        }
+                        else
+                        {
+                            var time:Int = 604800-Int(arrayDates[index].timeIntervalSinceNow)
+                            result+=time
+                        }
+                    }
+                }
+            }
+            
+        }
+        
+        return result
+    }
+    
+    func calculateTotal(user:APRUser, state:APRState)-> Int32
     {
         var result:Int32 = 0
         var userQuery = PFQuery(className: "APRUser")
@@ -429,23 +506,11 @@ class APRParseManager: NSObject
                 for var index=1; index<arrayDates.count; index+=2
                 {
                     var temp:NSTimeInterval = arrayDates[index].timeIntervalSinceDate(arrayDates[index-1])
-                    var time:Int = temp as Int
+                    var time:Int = Int(temp)
                     result+=time
                 }
             }
         }
-        return result
-    }
-    
-    func calculateWeeklyTotal(user:APRUser, state:APRState)-> Int32
-    {
-        var result:Int32 = 0
-        return result
-    }
-    
-    func calculateTotal(user:APRUser, state:APRState)-> Int32
-    {
-        var result:Int32 = 0
         return result
 
     }
