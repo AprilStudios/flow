@@ -7,14 +7,21 @@
 @interface APRLoginViewController ()
 {
     BOOL stopSpin;
+    BOOL returningUser;
 }
 
 //IBOutlets
 @property (nonatomic, weak) IBOutlet UIImageView *flowCircle;
+@property (nonatomic, weak) IBOutlet UILabel *errorLabel;
+@property (nonatomic, weak) IBOutlet UITextField *nameField;
+@property (nonatomic, weak) IBOutlet UIButton *startButton;
 @property (nonatomic, weak) IBOutlet UIButton *loginButton;
 
 //private helpers
 - (void)saveToken:(FBSDKAccessToken *)token;
+
+//navigation
+- (void)showMainTabBarController;
 
 @end
 #pragma mark -
@@ -33,27 +40,46 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+    
+    //setup
     stopSpin = NO;
+    [self rotateFlowCircle];
     [self setNeedsStatusBarAppearanceUpdate];
+    
+    if ( [FBSDKAccessToken currentAccessToken] )
+    {
+        self.loginButton.hidden = YES;
+        self.startButton.hidden = NO;
+        self.errorLabel.hidden = NO;
+        self.nameField.hidden = NO;
+    }
 }
 
-
 /**
- * @method viewWillLoad
+ * @method viewWillAppear
  *
- * Called when this view is about to appear
- * @note called every time this view is going to appear
+ * Called when the view is about to appear.
+ * @note called every time view is going to appear.
  */
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    
-    [self rotateFlowCircle];
+}
+
+/**
+ * @mthod viewDidAppear:
+ *
+ * Called when the view has appeared on the screen.
+ * Check for an AccessToken and switch accordingly.
+ */
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:YES];
+
 }
 
 
-#pragma mark - LoginButton Callback
+#pragma mark - IBAction/Event Callback
 /**
  * @method login
  *
@@ -83,11 +109,49 @@
                  [FBSDKAccessToken setCurrentAccessToken:result.token];
                  [self saveToken:result.token];
                  
-                 stopSpin = YES;
-                 [self performSegueWithIdentifier:@"UsernameSegue" sender:self];
+                 self.loginButton.hidden = YES;
+                 self.startButton.hidden = NO;
+                 self.errorLabel.hidden = NO;
+                 self.nameField.hidden = NO;
             }
          }
      }];
+}
+
+/**
+ * @method start
+ *
+ * Called when "Start" button is pressed
+ */
+- (IBAction)start:(id)sender
+{
+    [self.nameField resignFirstResponder];
+    [self checkNickname:self.nameField.text];
+}
+
+/**
+ * @method textFieldShouldBeginEditing
+ *
+ * Called when user starts editing nameField.
+ * Reset the error label.
+ */
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField
+{
+    self.errorLabel.text = @"";
+    return YES;
+}
+
+/**
+ * @method textFieldShouldReturn
+ *
+ * Called when user presses "Go" on keyboard.
+ */
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [self.nameField resignFirstResponder];
+    [self checkNickname:self.nameField.text];
+    
+    return YES;
 }
 
 
@@ -148,17 +212,33 @@
     [[NSUserDefaults standardUserDefaults] setObject:tokenData forKey:@"currentAccessToken"];
 }
 
+/**
+ * @method checkNickname
+ *
+ * Checks whether the given nickname already exists.
+ */
+- (void)checkNickname:(NSString *)nickname
+{
+    if ( nickname.length == 0 )
+        self.errorLabel.text = @"Enter a nickname!";
+    else
+    {
+        //parse stuff
+    }
+}
+
 
 #pragma mark - Navigation
 /**
- * @method toMain
+ * @method showMainTabBarController
  *
- * Switches to Main Storyboard
+ * Shows the main TabBarController.
+ * @note temporarily shows MainVC
  */
-- (void)toMain
+- (void)showMainTabBarController
 {
-    UIStoryboard *secondStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    UIViewController *mainVC = [secondStoryBoard instantiateViewControllerWithIdentifier:@"MainVC"];
+    UIStoryboard *mainSB = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UIViewController *mainVC = [mainSB instantiateViewControllerWithIdentifier:@"MainVC"];
     [self presentViewController:mainVC animated:YES completion:NULL];
 }
 

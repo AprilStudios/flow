@@ -13,7 +13,7 @@
 		953512AF1ACFC29B00B0B2C9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 953512AE1ACFC29B00B0B2C9 /* Images.xcassets */; };
 		953512BE1ACFC29C00B0B2C9 /* flowTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 953512BD1ACFC29C00B0B2C9 /* flowTests.m */; };
 		955B18B61ACFC31D00D0D8EA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 955B18B51ACFC31D00D0D8EA /* AppDelegate.m */; };
-		956D046E1ACFC540009BC09C /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 956D046A1ACFC540009BC09C /* Login.storyboard */; };
+		956D046E1ACFC540009BC09C /* Setup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 956D046A1ACFC540009BC09C /* Setup.storyboard */; };
 		956D046F1ACFC540009BC09C /* (null) in Resources */ = {isa = PBXBuildFile; };
 		958C8E301ACFEA88002EC76B /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 958C8E2D1ACFEA88002EC76B /* FBSDKCoreKit.framework */; };
 		958C8E311ACFEA88002EC76B /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 958C8E2E1ACFEA88002EC76B /* FBSDKLoginKit.framework */; };
@@ -27,7 +27,6 @@
 		959856F21AD0780D00E1FE11 /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 959856ED1AD0780D00E1FE11 /* ParseFacebookUtils.framework */; };
 		959856F31AD0780D00E1FE11 /* ParseFacebookUtilsV4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 959856EE1AD0780D00E1FE11 /* ParseFacebookUtilsV4.framework */; };
 		959856F41AD0780D00E1FE11 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 959856EF1AD0780D00E1FE11 /* ParseUI.framework */; };
-		95D8609E1AD065970081DE57 /* APRNicknameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95D8609D1AD065970081DE57 /* APRNicknameViewController.m */; };
 		95D860B91AD06B180081DE57 /* Amazing Grotesk Book Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 95D860A21AD06B180081DE57 /* Amazing Grotesk Book Italic.otf */; };
 		95D860BA1AD06B180081DE57 /* Amazing Grotesk Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = 95D860A31AD06B180081DE57 /* Amazing Grotesk Book.otf */; };
 		95D860BB1AD06B180081DE57 /* Amazing Grotesk Demi Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 95D860A41AD06B180081DE57 /* Amazing Grotesk Demi Italic.otf */; };
@@ -85,7 +84,7 @@
 		953512BD1ACFC29C00B0B2C9 /* flowTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = flowTests.m; sourceTree = "<group>"; };
 		955B18B41ACFC31D00D0D8EA /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Classes/AppDelegate.h; sourceTree = "<group>"; };
 		955B18B51ACFC31D00D0D8EA /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = Classes/AppDelegate.m; sourceTree = "<group>"; };
-		956D046B1ACFC540009BC09C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Login.storyboard; sourceTree = "<group>"; };
+		956D046B1ACFC540009BC09C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Setup.storyboard; sourceTree = "<group>"; };
 		958C8E2D1ACFEA88002EC76B /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		958C8E2E1ACFEA88002EC76B /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		958C8E2F1ACFEA88002EC76B /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
@@ -98,8 +97,6 @@
 		959856ED1AD0780D00E1FE11 /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtils.framework; sourceTree = "<group>"; };
 		959856EE1AD0780D00E1FE11 /* ParseFacebookUtilsV4.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtilsV4.framework; sourceTree = "<group>"; };
 		959856EF1AD0780D00E1FE11 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
-		95D8609C1AD065970081DE57 /* APRNicknameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = APRNicknameViewController.h; path = Classes/APRNicknameViewController.h; sourceTree = "<group>"; };
-		95D8609D1AD065970081DE57 /* APRNicknameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = APRNicknameViewController.m; path = Classes/APRNicknameViewController.m; sourceTree = "<group>"; };
 		95D860A21AD06B180081DE57 /* Amazing Grotesk Book Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Amazing Grotesk Book Italic.otf"; sourceTree = "<group>"; };
 		95D860A31AD06B180081DE57 /* Amazing Grotesk Book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Amazing Grotesk Book.otf"; sourceTree = "<group>"; };
 		95D860A41AD06B180081DE57 /* Amazing Grotesk Demi Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Amazing Grotesk Demi Italic.otf"; sourceTree = "<group>"; };
@@ -256,7 +253,7 @@
 			children = (
 				7C4E9D911ACFF73C005D5258 /* Main.storyboard */,
 				953512B01ACFC29B00B0B2C9 /* LaunchScreen.xib */,
-				956D046A1ACFC540009BC09C /* Login.storyboard */,
+				956D046A1ACFC540009BC09C /* Setup.storyboard */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -310,8 +307,6 @@
 			children = (
 				95F829FC1ACFC92500DC5864 /* APRLoginViewController.h */,
 				95F829FD1ACFC92500DC5864 /* APRLoginViewController.m */,
-				95D8609C1AD065970081DE57 /* APRNicknameViewController.h */,
-				95D8609D1AD065970081DE57 /* APRNicknameViewController.m */,
 			);
 			name = SetupVC;
 			sourceTree = "<group>";
@@ -508,7 +503,7 @@
 				953512AF1ACFC29B00B0B2C9 /* Images.xcassets in Resources */,
 				95D860BC1AD06B180081DE57 /* Amazing Grotesk Demi.otf in Resources */,
 				95D860C41AD06B180081DE57 /* Facebook Login Button.idraw in Resources */,
-				956D046E1ACFC540009BC09C /* Login.storyboard in Resources */,
+				956D046E1ACFC540009BC09C /* Setup.storyboard in Resources */,
 				95D860C61AD06B180081DE57 /* FBLogin.png in Resources */,
 				95D860C21AD06B180081DE57 /* tweed.png in Resources */,
 				95D860C51AD06B180081DE57 /* FBLogin (Pressed).png in Resources */,
@@ -538,7 +533,6 @@
 				95F82A141ACFCD0900DC5864 /* main.m in Sources */,
 				7CE3F46C1ACFDC7F008A3AA3 /* APRMainViewController.swift in Sources */,
 				959856E51AD0776800E1FE11 /* APRState.swift in Sources */,
-				95D8609E1AD065970081DE57 /* APRNicknameViewController.m in Sources */,
 				959856E61AD0776800E1FE11 /* APRUser.swift in Sources */,
 				955B18B61ACFC31D00D0D8EA /* AppDelegate.m in Sources */,
 			);
@@ -580,12 +574,12 @@
 			name = LaunchScreen.xib;
 			sourceTree = "<group>";
 		};
-		956D046A1ACFC540009BC09C /* Login.storyboard */ = {
+		956D046A1ACFC540009BC09C /* Setup.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				956D046B1ACFC540009BC09C /* Base */,
 			);
-			name = Login.storyboard;
+			name = Setup.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

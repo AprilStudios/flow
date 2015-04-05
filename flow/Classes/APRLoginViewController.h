@@ -12,6 +12,6 @@
  * @author Bohui (Dennis) Moon
  * @version 0.1
  */
-@interface APRLoginViewController : UIViewController
+@interface APRLoginViewController : UIViewController <UITextFieldDelegate>
 
 @end
