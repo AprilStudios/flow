@@ -69,7 +69,7 @@ class APRParseManager: NSObject
      * :param: user - to save to Parse
      * :param: completion - code block to run upon completion
      */
-    func addUser(user:APRUser, completion:((finishedUser:NSNumber)->Void))-> Void
+    func addUser(user:APRUser, completion:((finished:Bool) -> Void)) -> Void
     {
         var tempUser = PFObject(className:"APRUser")
         tempUser["userID"] = user.getUserID()
@@ -82,6 +82,7 @@ class APRParseManager: NSObject
         
         tempUser.saveInBackgroundWithBlock{
         (success: Bool, error: NSError!) -> Void in
+        
             if (success)
             {
                 var objID = tempUser.objectId
@@ -93,7 +94,7 @@ class APRParseManager: NSObject
             {
                 println("ERROR???")
             }
-            completion(finishedUser: 1)
+            completion(finished:true)
         }
     }
     
@@ -135,7 +136,7 @@ class APRParseManager: NSObject
      * :param: state - state to add
      * :param: completion - code block to run on completion
      */
-    func addState(s: APRState, completion:((finishedState:NSNumber)->Void))->Void
+    func addState(s: APRState, completion:((finished:Bool) -> Void)) -> Void
     {
         var tempState = PFObject(className:"APRState")
         tempState["stateID"] = s.getStateID()
@@ -149,7 +150,7 @@ class APRParseManager: NSObject
             {
                 var objID = tempState.objectId
                 s.setObjectID(objID)
-                completion(finishedState: 1)
+                completion(finished: true)
             }
         }
         return
