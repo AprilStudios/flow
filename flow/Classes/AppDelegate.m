@@ -38,7 +38,7 @@
     if ( [[NSUserDefaults standardUserDefaults] objectForKey:@"nickname"] )
     {
        sbName = @"Main";
-       vcName = @"MainVC";
+       vcName = @"MainTabBarController";
     }
     
     UIStoryboard *sb = [UIStoryboard storyboardWithName:sbName bundle:nil];
