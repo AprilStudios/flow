@@ -289,7 +289,7 @@
 - (void)showMainTabBarController
 {
     UIStoryboard *mainSB = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    UIViewController *mainVC = [mainSB instantiateViewControllerWithIdentifier:@"MainVC"];
+    UIViewController *mainVC = [mainSB instantiateViewControllerWithIdentifier:@"MainTabBarController"];
     [self presentViewController:mainVC animated:YES completion:NULL];
 }
 
