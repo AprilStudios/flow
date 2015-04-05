@@ -42,7 +42,7 @@
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gZQ-mA-BLj">
                                 <rect key="frame" x="197" y="459" width="22" height="22"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <color key="tintColor" patternImage="032AE8E4-F471-427A-AD9E-9F75845766B8" colorSpace="pattern"/>
+                                <color key="tintColor" patternImage="9D8E2B8F-6665-4EAB-B3A0-B7E1A2F39336" colorSpace="pattern"/>
                                 <state key="normal">
                                     <color key="titleColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -70,7 +70,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="032AE8E4-F471-427A-AD9E-9F75845766B8" width="256" height="256">
+        <image name="9D8E2B8F-6665-4EAB-B3A0-B7E1A2F39336" width="256" height="256">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGTk9YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK8QEQcI
 ExQZHh8nKzIzNDw/QkhLVSRudWxs1QkKCwwNDg8QERJWTlNTaXplViRjbGFzc1xOU0ltYWdlRmxhZ3NW

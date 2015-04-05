@@ -44,6 +44,8 @@ class APRMainViewController: UIViewController, UIScrollViewDelegate  {
 
         stateScrollView.addSubview(newButton)
         
+        
+        stateScrollView.setContentOffset(CGPoint(x: CGFloat(200*(states.count - 1)), y: 0), animated: true)
     }
     @IBOutlet weak var buttonsView: UIView!
     
