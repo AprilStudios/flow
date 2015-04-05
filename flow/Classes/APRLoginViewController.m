@@ -100,7 +100,7 @@
         }
         else if (result.isCancelled)
         {
-            // Handle cancellations
+            //Do nothing for cancel
         }
         else
         {
