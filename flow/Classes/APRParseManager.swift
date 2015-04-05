@@ -75,8 +75,7 @@ class APRParseManager: NSObject
         tempUser["userID"] = user.getUserID()
         tempUser["nickname"] = user.getNickname()
         
-        var array = ["1", "2", "3"]
-        array.append("WHAT")
+        var array = [String]()
         tempUser["userStates"] = array
         /*(tempUser["userStates"] as [String]).append("what")*/
         
@@ -86,13 +85,7 @@ class APRParseManager: NSObject
             if (success)
             {
                 var objID = tempUser.objectId
-                println("WTF:::: ")
-                println(objID)
                 user.setObjectID(objID)
-            }
-            else
-            {
-                println("ERROR???")
             }
             completion(finished:true)
         }
@@ -109,7 +102,7 @@ class APRParseManager: NSObject
     func addState(s: APRState)
     {
         var tempState = PFObject(className:"APRState")
-        tempState["stateID"] = s.getStateID()
+        //tempState["stateID"] = s.getStateID()
         tempState["name"] = s.getName()
         tempState["color"] = s.getColor()
         tempState["icon"] = s.getIcon()
@@ -139,7 +132,7 @@ class APRParseManager: NSObject
     func addState(s: APRState, completion:((finished:Bool) -> Void)) -> Void
     {
         var tempState = PFObject(className:"APRState")
-        tempState["stateID"] = s.getStateID()
+        //tempState["stateID"] = s.getStateID()
         tempState["name"] = s.getName()
         tempState["color"] = s.getColor()
         tempState["icon"] = s.getIcon()
@@ -276,7 +269,7 @@ class APRParseManager: NSObject
      * nicknameForUserID
      *
      * Given an userID and completion handler,
-     * tells whether the userID has a
+     * tells whether the userID has a associated nickname
      *
      * :param: userID - to search nickname using
      * :param: completion - code block to run upon completion
@@ -354,6 +347,109 @@ class APRParseManager: NSObject
             }
         }
     }
+    
+    /**
+     *
+     * getDateTracker
+     *
+     * Gets the dictionary of state ID's to Array of Dates where
+     * the state was active date 0 to date 1, date 2 to date 3 and
+     * so on.
+     * 
+     * :param: no params
+     */
+    func getDateTrackerOfUser(user:APRUser, completion:((dateTracker:Dictionary<String, [NSDate]>)->Void))->Void
+    {
+        var userQuery = PFQuery(className: "APRUser")
+        userQuery.getObjectInBackgroundWithId(user.getObjectID()) {
+        (tempUser: PFObject!, error: NSError!) -> Void in
+            if error != nil
+            {
+                println(error)
+            }
+            else
+            {
+                var tempDateTracker:Dictionary<String, [NSDate]> = tempUser["dateTracker"] as Dictionary<String, [NSDate]>
+                completion(dateTracker: tempDateTracker)
+            }
+        }
+    }
+    /**
+    *
+    * setDateTrackerOfUser
+    *
+    * Appends a NSDate value to the end of the NSDate Array
+    * associated with the state value for a given user
+    *
+    */
+    func setDateTrackerOfUser(user:APRUser, state:APRState, date:NSDate) -> Void
+    {
+        var userQuery = PFQuery(className: "APRUser")
+        userQuery.getObjectInBackgroundWithId(user.getObjectID()) {
+        (tempUser: PFObject!, error: NSError!) -> Void in
+            if error != nil
+            {
+                println(error)
+            }
+            else
+            {
+                var tempDates:Dictionary<String, [NSDate]> = tempUser["dateTracker"] as Dictionary<String, [NSDate]>
+                tempDates[state.getObjectID()]?.append(date)
+                tempUser["dateTracker"] = tempDates
+                tempUser.saveInBackground()
+            }
+        }
+        
+    }
+    
+    
+    /**
+    *
+    * @method calculate(Duration)Total
+    *
+    * @note Given a user and a state, calculates the total amount
+    * of time spent in that state in a given duration
+    *
+    * Returns the time in seconds, Int32
+    */
+    func calculateDailyTotal(user:APRUser, state:APRState)-> Int32
+    {
+        var result:Int32 = 0
+        var userQuery = PFQuery(className: "APRUser")
+        userQuery.getObjectInBackgroundWithId(user.getObjectID()){
+        (tempUser:PFObject!, error:NSError!) -> Void in
+            if error != nil
+            {
+                println(error)
+            }
+            else
+            {
+                var tempDates:Dictionary<String, [NSDate]> = tempUser["dateTracker"] as Dictionary<String, [NSDate]>
+                var arrayDates:[NSDate]=tempDates[state.getObjectID()]!
+                for var index=1; index<arrayDates.count; index+=2
+                {
+                    var temp:NSTimeInterval = arrayDates[index].timeIntervalSinceDate(arrayDates[index-1])
+                    var time:Int = temp as Int
+                    result+=time
+                }
+            }
+        }
+        return result
+    }
+    
+    func calculateWeeklyTotal(user:APRUser, state:APRState)-> Int32
+    {
+        var result:Int32 = 0
+        return result
+    }
+    
+    func calculateTotal(user:APRUser, state:APRState)-> Int32
+    {
+        var result:Int32 = 0
+        return result
+
+    }
+
 }
 
 

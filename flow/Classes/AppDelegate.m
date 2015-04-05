@@ -21,12 +21,21 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
+    
     /* Parse */
     [Parse enableLocalDatastore];
     [Parse setApplicationId:@"Buvc8IDSHi03HzlX3yvsfKcRivHGUE6Ii29yXdjb"
                   clientKey:@"Y2D55Q2nA3CgUWQGS61IlHy3K5r9iop8wM3fAkQF"];
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     
+    APRParseManager *parseManager = [[APRParseManager alloc]init];
+    APRUser* u = [[APRUser alloc]initWithNickname:@"KYLE" userID:@"TAN"];
+    APRState* s = [[APRState alloc]initWithName:@"WHO" color:@"PINK" icon:@"PEW" stateID:12 objectID:@"swagag"];
+    [parseManager addUser:u completion:^(BOOL finished){
+        [parseManager addState:s completion:^(BOOL finished){
+            [parseManager addStateForUser:u state:s];
+        }];
+    }];
     
     /* Facebook */
     FBSDKAccessToken *token = [self loadAccessToken];
