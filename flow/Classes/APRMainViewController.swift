@@ -32,11 +32,23 @@ class APRMainViewController: UIViewController, UIScrollViewDelegate  {
     var currentPage: Double = 0
     var prevPage: Double = 0
 
+    @IBAction func addStateButton(sender: AnyObject) {
+        
+        states.append(state(name: "newState", circleColor: getRandomColor()))
+        var newButton = UIButton(frame: CGRect(x: (states.count - 1)*200 + 20, y: 20, width: 180, height: 180))
+        newButton.addTarget(self, action: "changeState:", forControlEvents: UIControlEvents.TouchDown)
+        newButton.addTarget(self, action: "liftUpState:", forControlEvents: UIControlEvents.TouchUpInside)
+        newButton.layer.cornerRadius = (newButton.bounds.size.height/2)
+        newButton.backgroundColor = states[states.count - 1].circleColor
+        stateScrollView.contentSize = CGSizeMake(CGFloat(200*states.count), 200)
+
+        stateScrollView.addSubview(newButton)
+        
+    }
     @IBOutlet weak var buttonsView: UIView!
     
     @IBOutlet weak var stateScrollView: UIScrollView!
     
-    @IBOutlet weak var currentStateLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -82,7 +94,7 @@ class APRMainViewController: UIViewController, UIScrollViewDelegate  {
         
         println("set size")
         
-        let circlePath = UIBezierPath(arcCenter: CGPoint(x: buttonsView.frame.origin.x + 91, y: buttonsView.frame.origin.y + 65),  radius: 100, startAngle: CGFloat(-M_PI/2), endAngle: CGFloat(3*M_PI/2.0), clockwise: true)
+        let circlePath = UIBezierPath(arcCenter: CGPoint(x: buttonsView.frame.origin.x + 35, y: buttonsView.frame.origin.y + 65),  radius: 100, startAngle: CGFloat(-M_PI/2), endAngle: CGFloat(3*M_PI/2.0), clockwise: true)
         
         // Setup the CAShapeLayer with the path, colors, and line width
         circleLayer.path = circlePath.CGPath
@@ -142,9 +154,8 @@ class APRMainViewController: UIViewController, UIScrollViewDelegate  {
     func changeState (Sender: UIButton!){
         
         println("called")
-        //currentStateLabel.text = Sender.titleColorForState(UIControlState.Normal)?.description
         if (!startedButtonAnimation){
-        animateCircle(0.5)
+        animateCircle(1)
         }
         startedButtonAnimation = true
     }
@@ -162,6 +173,7 @@ class APRMainViewController: UIViewController, UIScrollViewDelegate  {
         else {
             
             circleLayer.removeAnimationForKey("animateCircle")
+            startedButtonAnimation = false
             
         }
         
