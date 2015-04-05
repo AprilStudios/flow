@@ -27,24 +27,24 @@
 		959856F21AD0780D00E1FE11 /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 959856ED1AD0780D00E1FE11 /* ParseFacebookUtils.framework */; };
 		959856F31AD0780D00E1FE11 /* ParseFacebookUtilsV4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 959856EE1AD0780D00E1FE11 /* ParseFacebookUtilsV4.framework */; };
 		959856F41AD0780D00E1FE11 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 959856EF1AD0780D00E1FE11 /* ParseUI.framework */; };
-		95D860B91AD06B180081DE57 /* Amazing Grotesk Book Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 95D860A21AD06B180081DE57 /* Amazing Grotesk Book Italic.otf */; };
-		95D860BA1AD06B180081DE57 /* Amazing Grotesk Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = 95D860A31AD06B180081DE57 /* Amazing Grotesk Book.otf */; };
-		95D860BB1AD06B180081DE57 /* Amazing Grotesk Demi Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 95D860A41AD06B180081DE57 /* Amazing Grotesk Demi Italic.otf */; };
-		95D860BC1AD06B180081DE57 /* Amazing Grotesk Demi.otf in Resources */ = {isa = PBXBuildFile; fileRef = 95D860A51AD06B180081DE57 /* Amazing Grotesk Demi.otf */; };
-		95D860BD1AD06B180081DE57 /* Amazing Grotesk Light Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 95D860A61AD06B180081DE57 /* Amazing Grotesk Light Italic.otf */; };
-		95D860BE1AD06B180081DE57 /* Amazing Grotesk Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 95D860A71AD06B180081DE57 /* Amazing Grotesk Light.otf */; };
-		95D860BF1AD06B180081DE57 /* Amazing Grotesk Ultra Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 95D860A81AD06B180081DE57 /* Amazing Grotesk Ultra Italic.otf */; };
-		95D860C01AD06B180081DE57 /* Amazing Grotesk Ultra.otf in Resources */ = {isa = PBXBuildFile; fileRef = 95D860A91AD06B180081DE57 /* Amazing Grotesk Ultra.otf */; };
-		95D860C11AD06B180081DE57 /* license.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 95D860AA1AD06B180081DE57 /* license.pdf */; };
-		95D860C21AD06B180081DE57 /* tweed.png in Resources */ = {isa = PBXBuildFile; fileRef = 95D860AD1AD06B180081DE57 /* tweed.png */; };
-		95D860C31AD06B180081DE57 /* tweed_@2X.png in Resources */ = {isa = PBXBuildFile; fileRef = 95D860AE1AD06B180081DE57 /* tweed_@2X.png */; };
-		95D860C41AD06B180081DE57 /* Facebook Login Button.idraw in Resources */ = {isa = PBXBuildFile; fileRef = 95D860B01AD06B180081DE57 /* Facebook Login Button.idraw */; };
-		95D860C51AD06B180081DE57 /* FBLogin (Pressed).png in Resources */ = {isa = PBXBuildFile; fileRef = 95D860B11AD06B180081DE57 /* FBLogin (Pressed).png */; };
-		95D860C61AD06B180081DE57 /* FBLogin.png in Resources */ = {isa = PBXBuildFile; fileRef = 95D860B21AD06B180081DE57 /* FBLogin.png */; };
-		95D860C71AD06B180081DE57 /* Start Button.idraw in Resources */ = {isa = PBXBuildFile; fileRef = 95D860B31AD06B180081DE57 /* Start Button.idraw */; };
-		95D860C81AD06B180081DE57 /* Start.png in Resources */ = {isa = PBXBuildFile; fileRef = 95D860B41AD06B180081DE57 /* Start.png */; };
-		95D860C91AD06B180081DE57 /* Flow Circle.idraw in Resources */ = {isa = PBXBuildFile; fileRef = 95D860B71AD06B180081DE57 /* Flow Circle.idraw */; };
-		95D860CA1AD06B180081DE57 /* Flow Circle.png in Resources */ = {isa = PBXBuildFile; fileRef = 95D860B81AD06B180081DE57 /* Flow Circle.png */; };
+		9598570F1AD0B4AC00E1FE11 /* Amazing Grotesk Book Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 959856F81AD0B4AC00E1FE11 /* Amazing Grotesk Book Italic.otf */; };
+		959857101AD0B4AC00E1FE11 /* Amazing Grotesk Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = 959856F91AD0B4AC00E1FE11 /* Amazing Grotesk Book.otf */; };
+		959857111AD0B4AC00E1FE11 /* Amazing Grotesk Demi Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 959856FA1AD0B4AC00E1FE11 /* Amazing Grotesk Demi Italic.otf */; };
+		959857121AD0B4AC00E1FE11 /* Amazing Grotesk Demi.otf in Resources */ = {isa = PBXBuildFile; fileRef = 959856FB1AD0B4AC00E1FE11 /* Amazing Grotesk Demi.otf */; };
+		959857131AD0B4AC00E1FE11 /* Amazing Grotesk Light Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 959856FC1AD0B4AC00E1FE11 /* Amazing Grotesk Light Italic.otf */; };
+		959857141AD0B4AC00E1FE11 /* Amazing Grotesk Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 959856FD1AD0B4AC00E1FE11 /* Amazing Grotesk Light.otf */; };
+		959857151AD0B4AC00E1FE11 /* Amazing Grotesk Ultra Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 959856FE1AD0B4AC00E1FE11 /* Amazing Grotesk Ultra Italic.otf */; };
+		959857161AD0B4AC00E1FE11 /* Amazing Grotesk Ultra.otf in Resources */ = {isa = PBXBuildFile; fileRef = 959856FF1AD0B4AC00E1FE11 /* Amazing Grotesk Ultra.otf */; };
+		959857171AD0B4AC00E1FE11 /* license.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 959857001AD0B4AC00E1FE11 /* license.pdf */; };
+		959857181AD0B4AC00E1FE11 /* tweed.png in Resources */ = {isa = PBXBuildFile; fileRef = 959857031AD0B4AC00E1FE11 /* tweed.png */; };
+		959857191AD0B4AC00E1FE11 /* tweed_@2X.png in Resources */ = {isa = PBXBuildFile; fileRef = 959857041AD0B4AC00E1FE11 /* tweed_@2X.png */; };
+		9598571A1AD0B4AC00E1FE11 /* Facebook Login Button.idraw in Resources */ = {isa = PBXBuildFile; fileRef = 959857061AD0B4AC00E1FE11 /* Facebook Login Button.idraw */; };
+		9598571B1AD0B4AC00E1FE11 /* FBLogin (Pressed).png in Resources */ = {isa = PBXBuildFile; fileRef = 959857071AD0B4AC00E1FE11 /* FBLogin (Pressed).png */; };
+		9598571C1AD0B4AC00E1FE11 /* FBLogin.png in Resources */ = {isa = PBXBuildFile; fileRef = 959857081AD0B4AC00E1FE11 /* FBLogin.png */; };
+		9598571D1AD0B4AC00E1FE11 /* Start Button.idraw in Resources */ = {isa = PBXBuildFile; fileRef = 959857091AD0B4AC00E1FE11 /* Start Button.idraw */; };
+		9598571E1AD0B4AC00E1FE11 /* Start.png in Resources */ = {isa = PBXBuildFile; fileRef = 9598570A1AD0B4AC00E1FE11 /* Start.png */; };
+		9598571F1AD0B4AC00E1FE11 /* Flow Circle.idraw in Resources */ = {isa = PBXBuildFile; fileRef = 9598570D1AD0B4AC00E1FE11 /* Flow Circle.idraw */; };
+		959857201AD0B4AC00E1FE11 /* Flow Circle.png in Resources */ = {isa = PBXBuildFile; fileRef = 9598570E1AD0B4AC00E1FE11 /* Flow Circle.png */; };
 		95F829FE1ACFC92500DC5864 /* APRLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95F829FD1ACFC92500DC5864 /* APRLoginViewController.m */; };
 		95F82A101ACFCCC300DC5864 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 953512B01ACFC29B00B0B2C9 /* LaunchScreen.xib */; };
 		95F82A141ACFCD0900DC5864 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 95F82A121ACFCD0900DC5864 /* main.m */; };
@@ -97,34 +97,28 @@
 		959856ED1AD0780D00E1FE11 /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtils.framework; sourceTree = "<group>"; };
 		959856EE1AD0780D00E1FE11 /* ParseFacebookUtilsV4.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtilsV4.framework; sourceTree = "<group>"; };
 		959856EF1AD0780D00E1FE11 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
-		95D860A21AD06B180081DE57 /* Amazing Grotesk Book Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Amazing Grotesk Book Italic.otf"; sourceTree = "<group>"; };
-		95D860A31AD06B180081DE57 /* Amazing Grotesk Book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Amazing Grotesk Book.otf"; sourceTree = "<group>"; };
-		95D860A41AD06B180081DE57 /* Amazing Grotesk Demi Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Amazing Grotesk Demi Italic.otf"; sourceTree = "<group>"; };
-		95D860A51AD06B180081DE57 /* Amazing Grotesk Demi.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Amazing Grotesk Demi.otf"; sourceTree = "<group>"; };
-		95D860A61AD06B180081DE57 /* Amazing Grotesk Light Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Amazing Grotesk Light Italic.otf"; sourceTree = "<group>"; };
-		95D860A71AD06B180081DE57 /* Amazing Grotesk Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Amazing Grotesk Light.otf"; sourceTree = "<group>"; };
-		95D860A81AD06B180081DE57 /* Amazing Grotesk Ultra Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Amazing Grotesk Ultra Italic.otf"; sourceTree = "<group>"; };
-		95D860A91AD06B180081DE57 /* Amazing Grotesk Ultra.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Amazing Grotesk Ultra.otf"; sourceTree = "<group>"; };
-		95D860AA1AD06B180081DE57 /* license.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = license.pdf; sourceTree = "<group>"; };
-		95D860AD1AD06B180081DE57 /* tweed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tweed.png; sourceTree = "<group>"; };
-		95D860AE1AD06B180081DE57 /* tweed_@2X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tweed_@2X.png"; sourceTree = "<group>"; };
-		95D860B01AD06B180081DE57 /* Facebook Login Button.idraw */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Facebook Login Button.idraw"; sourceTree = "<group>"; };
-		95D860B11AD06B180081DE57 /* FBLogin (Pressed).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "FBLogin (Pressed).png"; sourceTree = "<group>"; };
-		95D860B21AD06B180081DE57 /* FBLogin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FBLogin.png; sourceTree = "<group>"; };
-		95D860B31AD06B180081DE57 /* Start Button.idraw */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Start Button.idraw"; sourceTree = "<group>"; };
-		95D860B41AD06B180081DE57 /* Start.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Start.png; sourceTree = "<group>"; };
-		95D860B71AD06B180081DE57 /* Flow Circle.idraw */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Flow Circle.idraw"; sourceTree = "<group>"; };
-		95D860B81AD06B180081DE57 /* Flow Circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Flow Circle.png"; sourceTree = "<group>"; };
+		959856F81AD0B4AC00E1FE11 /* Amazing Grotesk Book Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Amazing Grotesk Book Italic.otf"; sourceTree = "<group>"; };
+		959856F91AD0B4AC00E1FE11 /* Amazing Grotesk Book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Amazing Grotesk Book.otf"; sourceTree = "<group>"; };
+		959856FA1AD0B4AC00E1FE11 /* Amazing Grotesk Demi Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Amazing Grotesk Demi Italic.otf"; sourceTree = "<group>"; };
+		959856FB1AD0B4AC00E1FE11 /* Amazing Grotesk Demi.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Amazing Grotesk Demi.otf"; sourceTree = "<group>"; };
+		959856FC1AD0B4AC00E1FE11 /* Amazing Grotesk Light Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Amazing Grotesk Light Italic.otf"; sourceTree = "<group>"; };
+		959856FD1AD0B4AC00E1FE11 /* Amazing Grotesk Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Amazing Grotesk Light.otf"; sourceTree = "<group>"; };
+		959856FE1AD0B4AC00E1FE11 /* Amazing Grotesk Ultra Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Amazing Grotesk Ultra Italic.otf"; sourceTree = "<group>"; };
+		959856FF1AD0B4AC00E1FE11 /* Amazing Grotesk Ultra.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Amazing Grotesk Ultra.otf"; sourceTree = "<group>"; };
+		959857001AD0B4AC00E1FE11 /* license.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = license.pdf; sourceTree = "<group>"; };
+		959857031AD0B4AC00E1FE11 /* tweed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tweed.png; sourceTree = "<group>"; };
+		959857041AD0B4AC00E1FE11 /* tweed_@2X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tweed_@2X.png"; sourceTree = "<group>"; };
+		959857061AD0B4AC00E1FE11 /* Facebook Login Button.idraw */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Facebook Login Button.idraw"; sourceTree = "<group>"; };
+		959857071AD0B4AC00E1FE11 /* FBLogin (Pressed).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "FBLogin (Pressed).png"; sourceTree = "<group>"; };
+		959857081AD0B4AC00E1FE11 /* FBLogin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FBLogin.png; sourceTree = "<group>"; };
+		959857091AD0B4AC00E1FE11 /* Start Button.idraw */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Start Button.idraw"; sourceTree = "<group>"; };
+		9598570A1AD0B4AC00E1FE11 /* Start.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Start.png; sourceTree = "<group>"; };
+		9598570D1AD0B4AC00E1FE11 /* Flow Circle.idraw */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Flow Circle.idraw"; sourceTree = "<group>"; };
+		9598570E1AD0B4AC00E1FE11 /* Flow Circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Flow Circle.png"; sourceTree = "<group>"; };
 		95F829FC1ACFC92500DC5864 /* APRLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = APRLoginViewController.h; path = Classes/APRLoginViewController.h; sourceTree = "<group>"; };
 		95F829FD1ACFC92500DC5864 /* APRLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = APRLoginViewController.m; path = Classes/APRLoginViewController.m; sourceTree = "<group>"; };
 		95F82A111ACFCD0900DC5864 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		95F82A121ACFCD0900DC5864 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		FA9DBD711ACFEB1400806A2C /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
-		FA9DBD721ACFEB1400806A2C /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
-		FA9DBD731ACFEB1400806A2C /* ParseCrashReporting.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseCrashReporting.framework; sourceTree = "<group>"; };
-		FA9DBD741ACFEB1400806A2C /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtils.framework; sourceTree = "<group>"; };
-		FA9DBD751ACFEB1400806A2C /* ParseFacebookUtilsV4.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtilsV4.framework; sourceTree = "<group>"; };
-		FA9DBD761ACFEB1400806A2C /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
 		FA9DBD7D1ACFEBDF00806A2C /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		FA9DBD7E1ACFEBDF00806A2C /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		FA9DBD7F1ACFEBDF00806A2C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -204,7 +198,7 @@
 				955B18B11ACFC2C900D0D8EA /* Classes */,
 				953512AE1ACFC29B00B0B2C9 /* Images.xcassets */,
 				953512A41ACFC29B00B0B2C9 /* Supporting Files */,
-				95D8609F1AD06B180081DE57 /* Resources */,
+				959856F51AD0B4AC00E1FE11 /* Resources */,
 			);
 			path = flow;
 			sourceTree = "<group>";
@@ -319,89 +313,83 @@
 			name = MainVC;
 			sourceTree = "<group>";
 		};
-		95D8609F1AD06B180081DE57 /* Resources */ = {
+		959856F51AD0B4AC00E1FE11 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				95D860A01AD06B180081DE57 /* Fonts */,
-				95D860AB1AD06B180081DE57 /* Images */,
+				959856F61AD0B4AC00E1FE11 /* Fonts */,
+				959857011AD0B4AC00E1FE11 /* Images */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		95D860A01AD06B180081DE57 /* Fonts */ = {
+		959856F61AD0B4AC00E1FE11 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				95D860A11AD06B180081DE57 /* Amazing Grotesk */,
+				959856F71AD0B4AC00E1FE11 /* Amazing Grotesk */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
 		};
-		95D860A11AD06B180081DE57 /* Amazing Grotesk */ = {
+		959856F71AD0B4AC00E1FE11 /* Amazing Grotesk */ = {
 			isa = PBXGroup;
 			children = (
-				95D860A21AD06B180081DE57 /* Amazing Grotesk Book Italic.otf */,
-				95D860A31AD06B180081DE57 /* Amazing Grotesk Book.otf */,
-				95D860A41AD06B180081DE57 /* Amazing Grotesk Demi Italic.otf */,
-				95D860A51AD06B180081DE57 /* Amazing Grotesk Demi.otf */,
-				95D860A61AD06B180081DE57 /* Amazing Grotesk Light Italic.otf */,
-				95D860A71AD06B180081DE57 /* Amazing Grotesk Light.otf */,
-				95D860A81AD06B180081DE57 /* Amazing Grotesk Ultra Italic.otf */,
-				95D860A91AD06B180081DE57 /* Amazing Grotesk Ultra.otf */,
-				95D860AA1AD06B180081DE57 /* license.pdf */,
+				959856F81AD0B4AC00E1FE11 /* Amazing Grotesk Book Italic.otf */,
+				959856F91AD0B4AC00E1FE11 /* Amazing Grotesk Book.otf */,
+				959856FA1AD0B4AC00E1FE11 /* Amazing Grotesk Demi Italic.otf */,
+				959856FB1AD0B4AC00E1FE11 /* Amazing Grotesk Demi.otf */,
+				959856FC1AD0B4AC00E1FE11 /* Amazing Grotesk Light Italic.otf */,
+				959856FD1AD0B4AC00E1FE11 /* Amazing Grotesk Light.otf */,
+				959856FE1AD0B4AC00E1FE11 /* Amazing Grotesk Ultra Italic.otf */,
+				959856FF1AD0B4AC00E1FE11 /* Amazing Grotesk Ultra.otf */,
+				959857001AD0B4AC00E1FE11 /* license.pdf */,
 			);
 			path = "Amazing Grotesk";
 			sourceTree = "<group>";
 		};
-		95D860AB1AD06B180081DE57 /* Images */ = {
+		959857011AD0B4AC00E1FE11 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				95D860AC1AD06B180081DE57 /* Backgrounds */,
-				95D860AF1AD06B180081DE57 /* Buttons */,
-				95D860B51AD06B180081DE57 /* Icons */,
-				95D860B61AD06B180081DE57 /* Logos */,
-				FA9DBD711ACFEB1400806A2C /* Bolts.framework */,
-				FA9DBD721ACFEB1400806A2C /* Parse.framework */,
-				FA9DBD731ACFEB1400806A2C /* ParseCrashReporting.framework */,
-				FA9DBD741ACFEB1400806A2C /* ParseFacebookUtils.framework */,
-				FA9DBD751ACFEB1400806A2C /* ParseFacebookUtilsV4.framework */,
-				FA9DBD761ACFEB1400806A2C /* ParseUI.framework */,
+				959857021AD0B4AC00E1FE11 /* Backgrounds */,
+				959857051AD0B4AC00E1FE11 /* Buttons */,
+				9598570B1AD0B4AC00E1FE11 /* Icons */,
+				9598570C1AD0B4AC00E1FE11 /* Logos */,
 			);
 			path = Images;
 			sourceTree = "<group>";
 		};
-		95D860AC1AD06B180081DE57 /* Backgrounds */ = {
+		959857021AD0B4AC00E1FE11 /* Backgrounds */ = {
 			isa = PBXGroup;
 			children = (
-				95D860AD1AD06B180081DE57 /* tweed.png */,
-				95D860AE1AD06B180081DE57 /* tweed_@2X.png */,
+				959857031AD0B4AC00E1FE11 /* tweed.png */,
+				959857041AD0B4AC00E1FE11 /* tweed_@2X.png */,
 			);
 			path = Backgrounds;
 			sourceTree = "<group>";
 		};
-		95D860AF1AD06B180081DE57 /* Buttons */ = {
+		959857051AD0B4AC00E1FE11 /* Buttons */ = {
 			isa = PBXGroup;
 			children = (
-				95D860B01AD06B180081DE57 /* Facebook Login Button.idraw */,
-				95D860B11AD06B180081DE57 /* FBLogin (Pressed).png */,
-				95D860B21AD06B180081DE57 /* FBLogin.png */,
-				95D860B31AD06B180081DE57 /* Start Button.idraw */,
-				95D860B41AD06B180081DE57 /* Start.png */,
+				959857061AD0B4AC00E1FE11 /* Facebook Login Button.idraw */,
+				959857071AD0B4AC00E1FE11 /* FBLogin (Pressed).png */,
+				959857081AD0B4AC00E1FE11 /* FBLogin.png */,
+				959857091AD0B4AC00E1FE11 /* Start Button.idraw */,
+				9598570A1AD0B4AC00E1FE11 /* Start.png */,
 			);
 			path = Buttons;
 			sourceTree = "<group>";
 		};
-		95D860B51AD06B180081DE57 /* Icons */ = {
+		9598570B1AD0B4AC00E1FE11 /* Icons */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = Icons;
 			sourceTree = "<group>";
 		};
-		95D860B61AD06B180081DE57 /* Logos */ = {
+		9598570C1AD0B4AC00E1FE11 /* Logos */ = {
 			isa = PBXGroup;
 			children = (
-				95D860B71AD06B180081DE57 /* Flow Circle.idraw */,
-				95D860B81AD06B180081DE57 /* Flow Circle.png */,
+				9598570D1AD0B4AC00E1FE11 /* Flow Circle.idraw */,
+				9598570E1AD0B4AC00E1FE11 /* Flow Circle.png */,
 			);
 			path = Logos;
 			sourceTree = "<group>";
@@ -488,27 +476,27 @@
 			buildActionMask = 2147483647;
 			files = (
 				95F82A101ACFCCC300DC5864 /* LaunchScreen.xib in Resources */,
-				95D860BB1AD06B180081DE57 /* Amazing Grotesk Demi Italic.otf in Resources */,
-				95D860C81AD06B180081DE57 /* Start.png in Resources */,
-				95D860C31AD06B180081DE57 /* tweed_@2X.png in Resources */,
-				95D860BF1AD06B180081DE57 /* Amazing Grotesk Ultra Italic.otf in Resources */,
-				95D860B91AD06B180081DE57 /* Amazing Grotesk Book Italic.otf in Resources */,
-				95D860C11AD06B180081DE57 /* license.pdf in Resources */,
-				95D860BA1AD06B180081DE57 /* Amazing Grotesk Book.otf in Resources */,
-				95D860C91AD06B180081DE57 /* Flow Circle.idraw in Resources */,
-				95D860CA1AD06B180081DE57 /* Flow Circle.png in Resources */,
+				959857111AD0B4AC00E1FE11 /* Amazing Grotesk Demi Italic.otf in Resources */,
+				9598571E1AD0B4AC00E1FE11 /* Start.png in Resources */,
+				959857191AD0B4AC00E1FE11 /* tweed_@2X.png in Resources */,
+				959857151AD0B4AC00E1FE11 /* Amazing Grotesk Ultra Italic.otf in Resources */,
+				9598570F1AD0B4AC00E1FE11 /* Amazing Grotesk Book Italic.otf in Resources */,
+				959857171AD0B4AC00E1FE11 /* license.pdf in Resources */,
+				959857101AD0B4AC00E1FE11 /* Amazing Grotesk Book.otf in Resources */,
+				9598571F1AD0B4AC00E1FE11 /* Flow Circle.idraw in Resources */,
+				959857201AD0B4AC00E1FE11 /* Flow Circle.png in Resources */,
 				7C4E9D931ACFF73C005D5258 /* Main.storyboard in Resources */,
-				95D860BE1AD06B180081DE57 /* Amazing Grotesk Light.otf in Resources */,
-				95D860C71AD06B180081DE57 /* Start Button.idraw in Resources */,
+				959857141AD0B4AC00E1FE11 /* Amazing Grotesk Light.otf in Resources */,
+				9598571D1AD0B4AC00E1FE11 /* Start Button.idraw in Resources */,
 				953512AF1ACFC29B00B0B2C9 /* Images.xcassets in Resources */,
-				95D860BC1AD06B180081DE57 /* Amazing Grotesk Demi.otf in Resources */,
-				95D860C41AD06B180081DE57 /* Facebook Login Button.idraw in Resources */,
+				959857121AD0B4AC00E1FE11 /* Amazing Grotesk Demi.otf in Resources */,
+				9598571A1AD0B4AC00E1FE11 /* Facebook Login Button.idraw in Resources */,
 				956D046E1ACFC540009BC09C /* Setup.storyboard in Resources */,
-				95D860C61AD06B180081DE57 /* FBLogin.png in Resources */,
-				95D860C21AD06B180081DE57 /* tweed.png in Resources */,
-				95D860C51AD06B180081DE57 /* FBLogin (Pressed).png in Resources */,
-				95D860C01AD06B180081DE57 /* Amazing Grotesk Ultra.otf in Resources */,
-				95D860BD1AD06B180081DE57 /* Amazing Grotesk Light Italic.otf in Resources */,
+				9598571C1AD0B4AC00E1FE11 /* FBLogin.png in Resources */,
+				959857181AD0B4AC00E1FE11 /* tweed.png in Resources */,
+				9598571B1AD0B4AC00E1FE11 /* FBLogin (Pressed).png in Resources */,
+				959857161AD0B4AC00E1FE11 /* Amazing Grotesk Ultra.otf in Resources */,
+				959857131AD0B4AC00E1FE11 /* Amazing Grotesk Light Italic.otf in Resources */,
 				956D046F1ACFC540009BC09C /* (null) in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
