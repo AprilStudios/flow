@@ -39,7 +39,6 @@
     /* Set RootVC */
     NSString *sbName = @"Setup";
     NSString *vcName = @"LoginVC";
-    [[NSUserDefaults standardUserDefaults] setObject:@"test" forKey:@"nickname"];
     if ( [[NSUserDefaults standardUserDefaults] objectForKey:@"nickname"] )
     {
        sbName = @"Main";

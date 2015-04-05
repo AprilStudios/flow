@@ -19,6 +19,8 @@
 
 //private helpers
 - (void)saveToken:(FBSDKAccessToken *)token;
+- (void)showNicknameSelection;
+- (void)rotateFlowCircle;
 
 //navigation
 - (void)showMainTabBarController;
@@ -90,32 +92,27 @@
     FBSDKLoginManager *login = [[FBSDKLoginManager alloc] init];
     
     [login logInWithReadPermissions:@[@"email"]
-     handler:^(FBSDKLoginManagerLoginResult *result, NSError *error)
-     {
-         if (error)
-         {
-             // Process error
-         }
-         else if (result.isCancelled)
-         {
-             // Handle cancellations
-         }
-         else
-         {
-             // If you ask for multiple permissions at once, you
-             // should check if specific permissions missing
-             if ([result.grantedPermissions containsObject:@"email"])
-             {
-                 [FBSDKAccessToken setCurrentAccessToken:result.token];
-                 [self saveToken:result.token];
-                 
-                 self.loginButton.hidden = YES;
-                 self.startButton.hidden = NO;
-                 self.errorLabel.hidden = NO;
-                 self.nameField.hidden = NO;
+    handler:^(FBSDKLoginManagerLoginResult *result, NSError *error)
+    {
+        if (error)
+        {
+            // Process error
+        }
+        else if (result.isCancelled)
+        {
+            // Handle cancellations
+        }
+        else
+        {
+            // If you ask for multiple permissions at once, you
+            // should check if specific permissions missing
+            if ([result.grantedPermissions containsObject:@"email"])
+            {
+                [self saveToken:result.token];
+                [self checkUserID:result.token.userID];
             }
-         }
-     }];
+        }
+    }];
 }
 
 /**
@@ -193,6 +190,19 @@
 }
 
 /**
+ * @method showNicknameSelection
+ *
+ * Hides the FB login button, and shows GUI for nickname.
+ */
+- (void)showNicknameSelection
+{
+    self.loginButton.hidden = YES;
+    self.startButton.hidden = NO;
+    self.errorLabel.hidden = NO;
+    self.nameField.hidden = NO;
+}
+
+/**
  * @method saveToken:
  *
  * Gets the current access token and saves it to NSUserDefaults.
@@ -201,6 +211,8 @@
  */
 - (void)saveToken:(FBSDKAccessToken *)token
 {
+    [FBSDKAccessToken setCurrentAccessToken:token];
+
     NSDictionary *tokenData = [[NSMutableDictionary alloc] init];
     [tokenData setValue:token.appID forKey:@"appID"];
     [tokenData setValue:token.userID forKey:@"userID"];
@@ -215,7 +227,11 @@
 /**
  * @method checkNickname
  *
- * Checks whether the given nickname already exists.
+ * Checks validity of given nickname.
+ * First it needs to be not empty,
+ * then is checked for whether its already on ParseCloud.
+ * If so, errorLabel is shown as existing nickname.
+ * Otherwise, it's taken and screen is pushed to MainTabBarController.
  */
 - (void)checkNickname:(NSString *)nickname
 {
@@ -223,8 +239,43 @@
         self.errorLabel.text = @"Enter a nickname!";
     else
     {
-        //parse stuff
+        APRParseManager *manager = [APRParseManager sharedManager];
+        [manager userIDForNicknameExists:nickname
+        completion:^(NSString *userID, BOOL found)
+        {
+            if (found)
+                self.errorLabel.text = @"Sorry, that nickname already exists!";
+            else
+            {
+                [[NSUserDefaults standardUserDefaults] setObject:nickname forKey:@"nickname"];
+                //SAVE TO PARSE
+                [self showMainTabBarController];
+            }
+        }];
     }
+}
+
+/**
+ * @method checkUserID
+ *
+ * Checks whether or not the given userID
+ * exists on ParseCloud already.
+ * If it does not, show the Nickname selection GUI.
+ * Otherwise, move on to MainTabBarController as returning user.
+ */
+- (void)checkUserID:(NSString *)userID
+{
+    [[APRParseManager sharedManager] nicknameForUserIDExists:userID
+     completion:^(NSString *nickname, BOOL found)
+     {
+         if (!found)
+             [self showNicknameSelection];
+         else
+         {
+             [[NSUserDefaults standardUserDefaults] setObject:nickname forKey:@"nickname"];
+             [self showMainTabBarController];
+         }
+     }];
 }
 
 
