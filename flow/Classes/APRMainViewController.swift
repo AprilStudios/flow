@@ -32,7 +32,6 @@ class APRMainViewController: UIViewController, UIScrollViewDelegate, UIGestureRe
     var currentPage: Double = 0
     var prevPage: Double = 0
     var lpgc = UILongPressGestureRecognizer()
-    var pieView: PieChartView?
 
     @IBAction func addStateButton(sender: AnyObject) {
         
