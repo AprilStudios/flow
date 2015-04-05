@@ -410,6 +410,10 @@ class APRParseManager: NSObject
     * :note Given a user and a state, calculates the total amount
     * of time spent in that state in a given duration
     *
+    * :note If a state spans between >24 hours and >7 days,
+    * it will be split into two portions, and only the part
+    * within the day/week will be included
+    *
     * Returns the time in seconds, Int32
     */
     func calculateDailyTotal(user:APRUser, state:APRState)-> Int32
@@ -483,7 +487,6 @@ class APRParseManager: NSObject
                     }
                 }
             }
-            
         }
         
         return result
