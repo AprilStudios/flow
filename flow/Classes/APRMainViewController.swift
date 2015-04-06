@@ -176,6 +176,7 @@ class APRMainViewController: UIViewController, UIScrollViewDelegate, UIGestureRe
             
             // Don't draw the circle initially
             circleLayer.strokeEnd = 0.0
+            circleLayer.hidden = true
             println("because update")
             
             // Add the circleLayer to the view's layer's sublayers
@@ -216,6 +217,7 @@ class APRMainViewController: UIViewController, UIScrollViewDelegate, UIGestureRe
         animation.delegate = self       // Set the circleLayer's strokeEnd property to 1.0 now so that it's the
         // right value when the animation ends.
         circleLayer.strokeEnd = 1.0
+        circleLayer.hidden = false
         
         // Do the actual animation
         circleLayer.addAnimation(animation, forKey: "animateCircle")
@@ -256,7 +258,7 @@ class APRMainViewController: UIViewController, UIScrollViewDelegate, UIGestureRe
     {
         var width = Double(scrollView.frame.size.width)
         prevPage = (Double(scrollView.contentOffset.x) + (0.5 * width)) / width - 0.5
-        circleLayer.strokeEnd = 0.0
+        circleLayer.hidden = true
         println("lol nope")
         
         scrollView.userInteractionEnabled = false
@@ -274,12 +276,13 @@ class APRMainViewController: UIViewController, UIScrollViewDelegate, UIGestureRe
         if (Int(currentPage) == chosenPage){
             println("chosenPage")
             println(currentPage)
-            circleLayer.strokeEnd = 1.0
+            circleLayer.hidden = false
+            animateCircle(0.5)
         }
             
         else {
             
-            circleLayer.strokeEnd = 0.0
+            circleLayer.hidden = true
         }
         
         
