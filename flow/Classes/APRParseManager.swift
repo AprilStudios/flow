@@ -50,14 +50,14 @@ class APRParseManager: NSObject
         tempUser["userStates"] = array
         /*(tempUser["userStates"] as [String]).append("what")*/
         
-        tempUser.saveInBackgroundWithBlock {
-        (success: Bool, error: NSError!) -> Void in
-            if (success)
-            {
-                var objID = tempUser.objectId
-                user.setObjectID(objID)
-            }
-        }
+//        tempUser.saveInBackgroundWithBlock {
+//        (success: Bool, error: NSError!) -> Void in
+//            if (success)
+//            {
+//                var objID = tempUser.objectId
+//                user.setObjectID(objID)
+//            }
+//        }
     }
     
     /**
@@ -80,22 +80,22 @@ class APRParseManager: NSObject
         tempUser["userStates"] = array
         /*(tempUser["userStates"] as [String]).append("what")*/
         
-        tempUser.saveInBackgroundWithBlock{
-        (success: Bool, error: NSError!) -> Void in
-        
-            if (success)
-            {
-                var objID = tempUser.objectId
-                println("WTF:::: ")
-                println(objID)
-                user.setObjectID(objID)
-            }
-            else
-            {
-                println("ERROR???")
-            }
-            completion(finished:true)
-        }
+//        tempUser.saveInBackgroundWithBlock{
+//        (success: Bool, error: NSError!) -> Void in
+//        
+//            if (success)
+//            {
+//                var objID = tempUser.objectId
+//                println("WTF:::: ")
+//                println(objID)
+//                user.setObjectID(objID)
+//            }
+//            else
+//            {
+//                println("ERROR???")
+//            }
+//            completion(finished:true)
+//        }
     }
     
     
@@ -114,14 +114,14 @@ class APRParseManager: NSObject
         tempState["color"] = s.getColor()
         tempState["icon"] = s.getIcon()
         println("what")
-        tempState.saveInBackgroundWithBlock {
-        (success: Bool, error: NSError!) -> Void in
-            if (success)
-            {
-                var objID = tempState.objectId
-                s.setObjectID(objID)
-            }
-        }
+//        tempState.saveInBackgroundWithBlock {
+//        (success: Bool, error: NSError!) -> Void in
+//            if (success)
+//            {
+//                var objID = tempState.objectId
+//                s.setObjectID(objID)
+//            }
+//        }
         return
     }
 
@@ -144,15 +144,15 @@ class APRParseManager: NSObject
         tempState["color"] = s.getColor()
         tempState["icon"] = s.getIcon()
         
-        tempState.saveInBackgroundWithBlock {
-        (success: Bool, error: NSError!) -> Void in
-            if (success)
-            {
-                var objID = tempState.objectId
-                s.setObjectID(objID)
-                completion(finished: true)
-            }
-        }
+//        tempState.saveInBackgroundWithBlock {
+//        (success: Bool, error: NSError!) -> Void in
+//            if (success)
+//            {
+//                var objID = tempState.objectId
+//                s.setObjectID(objID)
+//                completion(finished: true)
+//            }
+//        }
         return
     }
     
@@ -163,29 +163,29 @@ class APRParseManager: NSObject
     {
         var tempUserArray = user.getUserStates()
         var tempUser = PFQuery(className:"APRUser")
-        
-        tempUser.getObjectInBackgroundWithId(user.getObjectID()) {
-        (updateUser: PFObject!, error: NSError!) -> Void in
-        
-            if error != nil
-            {
-                println(error)
-            }
-            else
-            {
-                for tempState in tempUserArray
-                {
-                    if tempState.getObjectID() == state.getObjectID()
-                    {
-                        return
-                    }
-                }
-                var tempStates = updateUser["userStates"] as [String]
-                tempStates.append(state.getObjectID())
-                updateUser["userStates"] = tempStates
-                updateUser.saveInBackground()
-            }
-        }
+//        
+//        tempUser.getObjectInBackgroundWithId(user.getObjectID()) {
+//        (updateUser: PFObject!, error: NSError!) -> Void in
+//        
+//            if error != nil
+//            {
+//                println(error)
+//            }
+//            else
+//            {
+//                for tempState in tempUserArray
+//                {
+//                    if tempState.getObjectID() == state.getObjectID()
+//                    {
+//                        return
+//                    }
+//                }
+//                var tempStates = updateUser["userStates"] as [String]
+//                tempStates.append(state.getObjectID())
+//                updateUser["userStates"] = tempStates
+//                updateUser.saveInBackground()
+//            }
+//        }
     }
     
     /**
@@ -199,17 +199,17 @@ class APRParseManager: NSObject
     func stateExists(state:APRState, completion:((doesStateExists:Bool)->Void)) -> Void
     {
         var stateQuery = PFQuery(className:"APRState")
-        stateQuery.getObjectInBackgroundWithId(state.getObjectID()) {
-        (tempState: PFObject!, error: NSError!) -> Void in
-            if error != nil
-            {
-                completion(doesStateExists:true)
-            }
-            else
-            {
-                completion(doesStateExists:false)
-            }
-        }
+//        stateQuery.getObjectInBackgroundWithId(state.getObjectID()) {
+//        (tempState: PFObject!, error: NSError!) -> Void in
+//            if error != nil
+//            {
+//                completion(doesStateExists:true)
+//            }
+//            else
+//            {
+//                completion(doesStateExists:false)
+//            }
+//        }
     }
 
 
@@ -228,17 +228,17 @@ class APRParseManager: NSObject
         var query = PFQuery(className: "APRUser");
         query.whereKey("userID", equalTo:userID);
         
-        query.getFirstObjectInBackgroundWithBlock {
-        (object: PFObject!, error: NSError!) -> Void in
-            if (error != nil)
-            {
-                completion(nickname:nil, found:false);
-            }
-            else
-            {
-                completion(nickname:object["nickname"] as? NSString, found:(object != nil) );
-            }
-        }
+//        query.getFirstObjectInBackgroundWithBlock {
+//        (object: PFObject!, error: NSError!) -> Void in
+//            if (error != nil)
+//            {
+//                completion(nickname:nil, found:false);
+//            }
+//            else
+//            {
+//                completion(nickname:object["nickname"] as? NSString, found:(object != nil) );
+//            }
+//        }
     }
     
     
@@ -258,17 +258,17 @@ class APRParseManager: NSObject
         var query = PFQuery(className: "APRUser");
         query.whereKey("userID", equalTo:nickname);
         
-        query.getFirstObjectInBackgroundWithBlock {
-            (object: PFObject!, error: NSError!) -> Void in
-            if (error != nil)
-            {
-                completion(userID:nil, found:false);
-            }
-            else
-            {
-                completion(userID:object["userID"] as? NSString, found:(object != nil) );
-            }
-        }
+//        query.getFirstObjectInBackgroundWithBlock {
+//            (object: PFObject!, error: NSError!) -> Void in
+//            if (error != nil)
+//            {
+//                completion(userID:nil, found:false);
+//            }
+//            else
+//            {
+//                completion(userID:object["userID"] as? NSString, found:(object != nil) );
+//            }
+//        }
     }
     
     
@@ -286,31 +286,31 @@ class APRParseManager: NSObject
         var userQuery = PFQuery(className: "APRUser")
         userQuery.whereKey("userID", equalTo:userID)
         
-        userQuery.findObjectsInBackgroundWithBlock {
-        (objects: [AnyObject]!, error: NSError!) -> Void in
-            if error == nil
-            {
-                println("Successfully retrieved")
-                if let objects = objects as? [PFObject]
-                {
-                    if objects.count==1
-                    {
-                        let n = objects[0]["nickname"] as NSString
-                        completion(nickname: n)
-                        return
-                    }
-                    else
-                    {
-                        completion(nickname: nil)
-                        return
-                    }
-                }
-            }
-            else
-            {
-                println("Error")
-            }
-        }
+//        userQuery.findObjectsInBackgroundWithBlock {
+//        (objects: [AnyObject]!, error: NSError!) -> Void in
+//            if error == nil
+//            {
+//                println("Successfully retrieved")
+//                if let objects = objects as? [PFObject]
+//                {
+//                    if objects.count==1
+//                    {
+//                        let n = objects[0]["nickname"] as NSString
+//                        completion(nickname: n)
+//                        return
+//                    }
+//                    else
+//                    {
+//                        completion(nickname: nil)
+//                        return
+//                    }
+//                }
+//            }
+//            else
+//            {
+//                println("Error")
+//            }
+//        }
     }
 
     /**
@@ -328,31 +328,31 @@ class APRParseManager: NSObject
         var userQuery = PFQuery(className: "APRUser")
         userQuery.whereKey("nickname", equalTo:nickname)
         
-        userQuery.findObjectsInBackgroundWithBlock {
-        (objects: [AnyObject]!, error: NSError!) -> Void in
-            if error == nil
-            {
-                println("Successfully retrieved")
-                if let objects = objects as? [PFObject]
-                {
-                    if objects.count==1
-                    {
-                        let n = objects[0]["userID"] as NSString
-                        completion(userID: n)
-                        return
-                    }
-                    else
-                    {
-                        completion(userID: nil)
-                        return
-                    }
-                }
-                else
-                {
-                    println("Error")
-                }
-            }
-        }
+//        userQuery.findObjectsInBackgroundWithBlock {
+//        (objects: [AnyObject]!, error: NSError!) -> Void in
+//            if error == nil
+//            {
+//                println("Successfully retrieved")
+//                if let objects = objects as? [PFObject]
+//                {
+//                    if objects.count==1
+//                    {
+//                        let n = objects[0]["userID"] as NSString
+//                        completion(userID: n)
+//                        return
+//                    }
+//                    else
+//                    {
+//                        completion(userID: nil)
+//                        return
+//                    }
+//                }
+//                else
+//                {
+//                    println("Error")
+//                }
+//            }
+//        }
     }
 }
 

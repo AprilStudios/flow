@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		512ADD94D5C7ECD7C752B28C /* Pods_flow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F85EA7549540216623910D0 /* Pods_flow.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		7CE3F46C1ACFDC7F008A3AA3 /* APRMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE3F46B1ACFDC7F008A3AA3 /* APRMainViewController.swift */; };
 		953512AD1ACFC29B00B0B2C9 /* flow.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 953512AB1ACFC29B00B0B2C9 /* flow.xcdatamodeld */; };
 		953512AF1ACFC29B00B0B2C9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 953512AE1ACFC29B00B0B2C9 /* Images.xcassets */; };
@@ -73,9 +74,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3A8F8E3B049E9140A551E323 /* Pods-flow.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-flow.release.xcconfig"; path = "Pods/Target Support Files/Pods-flow/Pods-flow.release.xcconfig"; sourceTree = "<group>"; };
 		7C4E9D921ACFF73C005D5258 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = flow/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7CE3F46A1ACFDC7F008A3AA3 /* flow-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "flow-Bridging-Header.h"; sourceTree = "<group>"; };
 		7CE3F46B1ACFDC7F008A3AA3 /* APRMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APRMainViewController.swift; path = Classes/APRMainViewController.swift; sourceTree = "<group>"; };
+		7F85EA7549540216623910D0 /* Pods_flow.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_flow.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		953512A11ACFC29B00B0B2C9 /* flow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = flow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		953512AC1ACFC29B00B0B2C9 /* flow.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = flow.xcdatamodel; sourceTree = "<group>"; };
 		953512AE1ACFC29B00B0B2C9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -122,6 +125,7 @@
 		95F829FD1ACFC92500DC5864 /* APRLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = APRLoginViewController.m; path = Classes/APRLoginViewController.m; sourceTree = "<group>"; };
 		95F82A111ACFCD0900DC5864 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		95F82A121ACFCD0900DC5864 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		B7F77D8B6606AB456796AC05 /* Pods-flow.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-flow.debug.xcconfig"; path = "Pods/Target Support Files/Pods-flow/Pods-flow.debug.xcconfig"; sourceTree = "<group>"; };
 		FA9DBD7D1ACFEBDF00806A2C /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		FA9DBD7E1ACFEBDF00806A2C /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		FA9DBD7F1ACFEBDF00806A2C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -160,6 +164,7 @@
 				FA9DBD921ACFEBDF00806A2C /* SystemConfiguration.framework in Frameworks */,
 				959856F11AD0780D00E1FE11 /* ParseCrashReporting.framework in Frameworks */,
 				959856F31AD0780D00E1FE11 /* ParseFacebookUtilsV4.framework in Frameworks */,
+				512ADD94D5C7ECD7C752B28C /* Pods_flow.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -173,6 +178,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2632FDD9D2EA4B82591489A0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7F85EA7549540216623910D0 /* Pods_flow.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		953512981ACFC29B00B0B2C9 = {
 			isa = PBXGroup;
 			children = (
@@ -180,6 +193,8 @@
 				953512BA1ACFC29B00B0B2C9 /* flowTests */,
 				953512A21ACFC29B00B0B2C9 /* Products */,
 				7CE3F46A1ACFDC7F008A3AA3 /* flow-Bridging-Header.h */,
+				A093A495CBF2B57EBBD15994 /* Pods */,
+				2632FDD9D2EA4B82591489A0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -399,6 +414,15 @@
 			path = Logos;
 			sourceTree = "<group>";
 		};
+		A093A495CBF2B57EBBD15994 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B7F77D8B6606AB456796AC05 /* Pods-flow.debug.xcconfig */,
+				3A8F8E3B049E9140A551E323 /* Pods-flow.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -406,9 +430,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 953512C11ACFC29C00B0B2C9 /* Build configuration list for PBXNativeTarget "flow" */;
 			buildPhases = (
+				7DF6679E2A5CC475E7E5F56B /* Check Pods Manifest.lock */,
 				9535129D1ACFC29B00B0B2C9 /* Sources */,
 				9535129E1ACFC29B00B0B2C9 /* Frameworks */,
 				9535129F1ACFC29B00B0B2C9 /* Resources */,
+				78ED238B5716EFB33754AA4A /* Embed Pods Frameworks */,
+				CF6AB1D2CC4469C39D8A7696 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -515,6 +542,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		78ED238B5716EFB33754AA4A /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-flow/Pods-flow-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7DF6679E2A5CC475E7E5F56B /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		CF6AB1D2CC4469C39D8A7696 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-flow/Pods-flow-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		9535129D1ACFC29B00B0B2C9 /* Sources */ = {
@@ -659,6 +734,7 @@
 		};
 		953512C21ACFC29C00B0B2C9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B7F77D8B6606AB456796AC05 /* Pods-flow.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
@@ -672,6 +748,10 @@
 				INFOPLIST_FILE = flow/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"-framework",
+					"\"PNChartSwift\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "flow-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -680,6 +760,7 @@
 		};
 		953512C31ACFC29C00B0B2C9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3A8F8E3B049E9140A551E323 /* Pods-flow.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
@@ -693,6 +774,10 @@
 				INFOPLIST_FILE = flow/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"-framework",
+					"\"PNChartSwift\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "flow-Bridging-Header.h";
 			};
