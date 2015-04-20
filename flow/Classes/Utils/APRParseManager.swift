@@ -329,7 +329,7 @@ class APRParseManager: NSObject
         userQuery.whereKey("nickname", equalTo:nickname)
         
         userQuery.findObjectsInBackgroundWithBlock {
-        (objects: [AnyObject]!, error: NSError!) -> Void in
+        (objects: [AnyObject]?, error: NSError!) -> Void in
             if error == nil
             {
                 println("Successfully retrieved")

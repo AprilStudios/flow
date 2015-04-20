@@ -28,18 +28,16 @@
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     
     
-    /* Facebook */
-    FBSDKAccessToken *token = [self loadAccessToken];
-    [FBSDKAccessToken setCurrentAccessToken:token];
+
     
     /* Set RootVC */
     NSString *sbName = @"Setup";
     NSString *vcName = @"LoginVC";
-    if ( [[NSUserDefaults standardUserDefaults] objectForKey:@"nickname"] )
-    {
-       sbName = @"Main";
-       vcName = @"MainTabBarController";
-    }
+//    if ( [[NSUserDefaults standardUserDefaults] objectForKey:@"nickname"] )
+//    {
+//       sbName = @"Main";
+//       vcName = @"MainTabBarController";
+//    }
     
     UIStoryboard *sb = [UIStoryboard storyboardWithName:sbName bundle:nil];
     UIViewController *vc = (UIViewController *)[sb instantiateViewControllerWithIdentifier:vcName];
